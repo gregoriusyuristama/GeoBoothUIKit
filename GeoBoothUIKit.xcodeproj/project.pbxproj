@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C849C6BE7E56117E5712DBA /* Pods_GeoBoothUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFDF96532ABB9850438E188 /* Pods_GeoBoothUIKit.framework */; };
+		B694BE472B73CD490084F9FE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B694BE462B73CD490084F9FE /* .swiftlint.yml */; };
+		B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BE4D2B73D13A0084F9FE /* UIImage+Resize.swift */; };
+		B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BE512B73D1800084F9FE /* ResourcePath.swift */; };
+		B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BE532B73D1F40084F9FE /* AppLabel.swift */; };
+		B694BE582B73D3070084F9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B694BE572B73D3070084F9FE /* Assets.xcassets */; };
+		B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */; };
+		B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */; };
+		B6BA6D432B73B9D100E01723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */; };
+		B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D4A2B73C02600E01723 /* MapViewController.swift */; };
+		B6BA6D4D2B73C06E00E01723 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D4C2B73C06E00E01723 /* TabController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0AFDF96532ABB9850438E188 /* Pods_GeoBoothUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBoothUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1140E5BF391A46FA50FFD38B /* Pods-GeoBoothUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBoothUIKit.debug.xcconfig"; path = "Target Support Files/Pods-GeoBoothUIKit/Pods-GeoBoothUIKit.debug.xcconfig"; sourceTree = "<group>"; };
+		69EEEFBF94C5139C17A7E439 /* Pods-GeoBoothUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBoothUIKit.release.xcconfig"; path = "Target Support Files/Pods-GeoBoothUIKit/Pods-GeoBoothUIKit.release.xcconfig"; sourceTree = "<group>"; };
+		B694BE462B73CD490084F9FE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		B694BE4D2B73D13A0084F9FE /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		B694BE512B73D1800084F9FE /* ResourcePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePath.swift; sourceTree = "<group>"; };
+		B694BE532B73D1F40084F9FE /* AppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
+		B694BE572B73D3070084F9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBoothUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		B6BA6D422B73B9D100E01723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6BA6D442B73B9D100E01723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6BA6D4A2B73C02600E01723 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		B6BA6D4C2B73C06E00E01723 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6BA6D302B73B9CF00E01723 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C849C6BE7E56117E5712DBA /* Pods_GeoBoothUIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4764BBF8224DAC45470F7C62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AFDF96532ABB9850438E188 /* Pods_GeoBoothUIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B694BE492B73CF940084F9FE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B694BE4B2B73CFE40084F9FE /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B694BE562B73D2D30084F9FE /* Resources */,
+				B694BE502B73D1760084F9FE /* Constants */,
+				B694BE4C2B73D13A0084F9FE /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B694BE4C2B73D13A0084F9FE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B694BE4D2B73D13A0084F9FE /* UIImage+Resize.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B694BE502B73D1760084F9FE /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B694BE512B73D1800084F9FE /* ResourcePath.swift */,
+				B694BE532B73D1F40084F9FE /* AppLabel.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B694BE562B73D2D30084F9FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B694BE572B73D3070084F9FE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B6BA6D2A2B73B9CF00E01723 = {
+			isa = PBXGroup;
+			children = (
+				B6BA6D352B73B9CF00E01723 /* GeoBoothUIKit */,
+				B6BA6D342B73B9CF00E01723 /* Products */,
+				FD7FF27545A216E86C9046AF /* Pods */,
+				4764BBF8224DAC45470F7C62 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B6BA6D342B73B9CF00E01723 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6BA6D352B73B9CF00E01723 /* GeoBoothUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B694BE462B73CD490084F9FE /* .swiftlint.yml */,
+				B694BE492B73CF940084F9FE /* Application */,
+				B694BE4B2B73CFE40084F9FE /* Core */,
+				B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */,
+				B6BA6D442B73B9D100E01723 /* Info.plist */,
+				B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */,
+				B6BA6D4A2B73C02600E01723 /* MapViewController.swift */,
+				B6BA6D4C2B73C06E00E01723 /* TabController.swift */,
+			);
+			path = GeoBoothUIKit;
+			sourceTree = "<group>";
+		};
+		FD7FF27545A216E86C9046AF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1140E5BF391A46FA50FFD38B /* Pods-GeoBoothUIKit.debug.xcconfig */,
+				69EEEFBF94C5139C17A7E439 /* Pods-GeoBoothUIKit.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6BA6D322B73B9CF00E01723 /* GeoBoothUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6BA6D472B73B9D100E01723 /* Build configuration list for PBXNativeTarget "GeoBoothUIKit" */;
+			buildPhases = (
+				AD9A2C96276C2CED5ED6C95E /* [CP] Check Pods Manifest.lock */,
+				B6BA6D2F2B73B9CF00E01723 /* Sources */,
+				B6BA6D302B73B9CF00E01723 /* Frameworks */,
+				B6BA6D312B73B9CF00E01723 /* Resources */,
+				B694BE452B73CA640084F9FE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeoBoothUIKit;
+			productName = GeoBoothUIKit;
+			productReference = B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6BA6D2B2B73B9CF00E01723 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					B6BA6D322B73B9CF00E01723 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = B6BA6D2E2B73B9CF00E01723 /* Build configuration list for PBXProject "GeoBoothUIKit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6BA6D2A2B73B9CF00E01723;
+			productRefGroup = B6BA6D342B73B9CF00E01723 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6BA6D322B73B9CF00E01723 /* GeoBoothUIKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6BA6D312B73B9CF00E01723 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B694BE472B73CD490084F9FE /* .swiftlint.yml in Resources */,
+				B6BA6D432B73B9D100E01723 /* LaunchScreen.storyboard in Resources */,
+				B694BE582B73D3070084F9FE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD9A2C96276C2CED5ED6C95E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GeoBoothUIKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B694BE452B73CA640084F9FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6BA6D2F2B73B9CF00E01723 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */,
+				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
+				B6BA6D4D2B73C06E00E01723 /* TabController.swift in Sources */,
+				B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */,
+				B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */,
+				B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */,
+				B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6BA6D422B73B9D100E01723 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6BA6D452B73B9D100E01723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B6BA6D462B73B9D100E01723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6BA6D482B73B9D100E01723 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1140E5BF391A46FA50FFD38B /* Pods-GeoBoothUIKit.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U43A7X58YW;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B6BA6D492B73B9D100E01723 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69EEEFBF94C5139C17A7E439 /* Pods-GeoBoothUIKit.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U43A7X58YW;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6BA6D2E2B73B9CF00E01723 /* Build configuration list for PBXProject "GeoBoothUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6BA6D452B73B9D100E01723 /* Debug */,
+				B6BA6D462B73B9D100E01723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6BA6D472B73B9D100E01723 /* Build configuration list for PBXNativeTarget "GeoBoothUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6BA6D482B73B9D100E01723 /* Debug */,
+				B6BA6D492B73B9D100E01723 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6BA6D2B2B73B9CF00E01723 /* Project object */;
+}
