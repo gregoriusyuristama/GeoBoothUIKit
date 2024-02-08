@@ -24,6 +24,6 @@ extension UIImage {
         
         let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return tintedImage!
+        return tintedImage
     }
 }
