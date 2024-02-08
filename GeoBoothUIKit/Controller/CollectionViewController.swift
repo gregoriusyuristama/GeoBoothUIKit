@@ -27,13 +27,13 @@ class CollectionViewController: UIViewController {
         contentLabel = UILabel()
         contentLabel.numberOfLines = 0
         let attrString = NSMutableAttributedString(
-            string: "No Collection\n",
+            string: "\(AppLabel.emptyStateLabel[0])\n",
             attributes: [
                 NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 17)
             ]
         )
         attrString.append(NSMutableAttributedString(
-            string: "You can add new collection by tapping button ",
+            string: AppLabel.emptyStateLabel[1],
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
                 NSAttributedString.Key.foregroundColor: UIColor.gray
@@ -58,7 +58,7 @@ class CollectionViewController: UIViewController {
         attrString.append(imageToString)
         
         attrString.append(NSMutableAttributedString(
-            string: " above",
+            string: AppLabel.emptyStateLabel[2],
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17),
                 NSAttributedString.Key.foregroundColor: UIColor.gray
