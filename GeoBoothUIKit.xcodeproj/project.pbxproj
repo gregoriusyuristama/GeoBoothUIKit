@@ -13,6 +13,7 @@
 		B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BE512B73D1800084F9FE /* ResourcePath.swift */; };
 		B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BE532B73D1F40084F9FE /* AppLabel.swift */; };
 		B694BE582B73D3070084F9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B694BE572B73D3070084F9FE /* Assets.xcassets */; };
+		B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B29D4B2B751C120079BB95 /* UIImage+Color.swift */; };
 		B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */; };
 		B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */; };
 		B6BA6D432B73B9D100E01723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,7 @@
 		B694BE512B73D1800084F9FE /* ResourcePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePath.swift; sourceTree = "<group>"; };
 		B694BE532B73D1F40084F9FE /* AppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
 		B694BE572B73D3070084F9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6B29D4B2B751C120079BB95 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBoothUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B63F05E62B74213400426905 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */,
+				B6BA6D4A2B73C02600E01723 /* MapViewController.swift */,
+				B6BA6D4C2B73C06E00E01723 /* TabController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B694BE492B73CF940084F9FE /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,9 +81,9 @@
 		B694BE4B2B73CFE40084F9FE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B694BE562B73D2D30084F9FE /* Resources */,
 				B694BE502B73D1760084F9FE /* Constants */,
 				B694BE4C2B73D13A0084F9FE /* Extensions */,
+				B694BE562B73D2D30084F9FE /* Resources */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -80,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				B694BE4D2B73D13A0084F9FE /* UIImage+Resize.swift */,
+				B6B29D4B2B751C120079BB95 /* UIImage+Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -125,11 +138,9 @@
 				B694BE462B73CD490084F9FE /* .swiftlint.yml */,
 				B694BE492B73CF940084F9FE /* Application */,
 				B694BE4B2B73CFE40084F9FE /* Core */,
-				B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */,
+				B63F05E62B74213400426905 /* Controller */,
 				B6BA6D442B73B9D100E01723 /* Info.plist */,
 				B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */,
-				B6BA6D4A2B73C02600E01723 /* MapViewController.swift */,
-				B6BA6D4C2B73C06E00E01723 /* TabController.swift */,
 			);
 			path = GeoBoothUIKit;
 			sourceTree = "<group>";
@@ -161,6 +172,8 @@
 			dependencies = (
 			);
 			name = GeoBoothUIKit;
+			packageProductDependencies = (
+			);
 			productName = GeoBoothUIKit;
 			productReference = B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +277,7 @@
 				B6BA6D4D2B73C06E00E01723 /* TabController.swift in Sources */,
 				B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */,
 				B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */,
+				B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */,
 				B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */,
 				B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */,
 			);
@@ -416,8 +430,9 @@
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,8 +464,9 @@
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

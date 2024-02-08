@@ -10,4 +10,5 @@ import Foundation
 struct ResourcePath {
     static let collectionTabIcon = "rectangle.stack"
     static let mapTabIcon = "map"
+    static let plusIcon = "plus"
 }

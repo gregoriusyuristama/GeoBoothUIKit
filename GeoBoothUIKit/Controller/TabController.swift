@@ -8,7 +8,7 @@
 import UIKit
 
 class TabController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupTabs()
@@ -38,7 +38,7 @@ class TabController: UITabBarController {
     private func createNav(with title: String, and image: UIImage?, navTitle: String, viewController: UIViewController) -> UINavigationController {
         let nav = UINavigationController(rootViewController: viewController)
         nav.tabBarItem.title = title
-        let resizedImage = image?.resizeImage(22, opaque: false)
+        let resizedImage = image?.resizeImage(scaledToSize: CGSize(width: 22, height: 22))
         nav.tabBarItem.image = resizedImage
         nav.navigationBar.prefersLargeTitles = true
         
@@ -46,5 +46,5 @@ class TabController: UITabBarController {
         
         return nav
     }
-
+    
 }
