@@ -19,6 +19,8 @@
 		B6BA6D432B73B9D100E01723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */; };
 		B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D4A2B73C02600E01723 /* MapViewController.swift */; };
 		B6BA6D4D2B73C06E00E01723 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D4C2B73C06E00E01723 /* TabController.swift */; };
+		B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C72B75916F000324B8 /* LocationServices.swift */; };
+		B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		B6BA6D442B73B9D100E01723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6BA6D4A2B73C02600E01723 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B6BA6D4C2B73C06E00E01723 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		B6E4D8C72B75916F000324B8 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
+		B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAuthDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		B694BE4B2B73CFE40084F9FE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B6E4D8C52B75915A000324B8 /* Utilities */,
 				B694BE502B73D1760084F9FE /* Constants */,
 				B694BE4C2B73D13A0084F9FE /* Extensions */,
 				B694BE562B73D2D30084F9FE /* Resources */,
@@ -143,6 +148,31 @@
 				B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */,
 			);
 			path = GeoBoothUIKit;
+			sourceTree = "<group>";
+		};
+		B6E4D8C52B75915A000324B8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B6E4D8C62B759163000324B8 /* Location */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B6E4D8C62B759163000324B8 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				B6E4D8CB2B759E33000324B8 /* Protocol */,
+				B6E4D8C72B75916F000324B8 /* LocationServices.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		B6E4D8CB2B759E33000324B8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		FD7FF27545A216E86C9046AF /* Pods */ = {
@@ -272,7 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */,
 				B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */,
+				B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */,
 				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
 				B6BA6D4D2B73C06E00E01723 /* TabController.swift in Sources */,
 				B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */,
@@ -428,6 +460,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_NSLocationUsageDescription = "We need to access your location for saving album location and tracking location on map";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -462,6 +496,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_NSLocationUsageDescription = "We need to access your location for saving album location and tracking location on map";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

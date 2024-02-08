@@ -6,23 +6,57 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class MapViewController: UIViewController, MKMapViewDelegate {
+    
+    let mapView = MKMapView()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupMapView()
+        self.setupLocationManager()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    fileprivate func setupMapView() {
+        let safeArea = view.safeAreaLayoutGuide
+        
+        mapView.mapType = MKMapType.standard
+        mapView.isZoomEnabled = true
+        mapView.isScrollEnabled = true
+        mapView.center = view.center
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.delegate = self
+        mapView.showsUserLocation = true
+        
+        view.addSubview(mapView)
+        NSLayoutConstraint.activate([
+            mapView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            mapView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
+            mapView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+        ])
     }
-    */
+    
+    fileprivate func setupLocationManager() {
+        LocationServices.shared.locationManager.requestWhenInUseAuthorization()
+        LocationServices.shared.changeAuthDelegate = self
+    }
+    
+    func followUserIfPossible(authStatus: CLAuthorizationStatus) {
+        if authStatus == .authorizedWhenInUse {
+            mapView.setUserTrackingMode(.follow, animated: true)
+        } else if authStatus == .authorizedAlways {
+            LocationServices.shared.locationManager.allowsBackgroundLocationUpdates = true
+            mapView.setUserTrackingMode(.follow, animated: true)
+        }
+    }
+    
+}
 
+extension MapViewController: ChangeAuthDelegate {
+    func authorizationChanged(authStatus: CLAuthorizationStatus) {
+        followUserIfPossible(authStatus: authStatus)
+    }
+    
 }

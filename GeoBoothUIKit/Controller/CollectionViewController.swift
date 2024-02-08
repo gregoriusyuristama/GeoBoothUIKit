@@ -9,6 +9,7 @@ import UIKit
 
 class CollectionViewController: UIViewController {
     
+    /// Label displaying empty prompt when user doesn't have any album
     var contentLabel: UILabel!
     
     override func viewDidLoad() {
@@ -23,6 +24,7 @@ class CollectionViewController: UIViewController {
         let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: nil)
         self.navigationItem.rightBarButtonItem = addButton
     }
+    
     fileprivate func setupContentLabel() {
         contentLabel = UILabel()
         contentLabel.numberOfLines = 0
@@ -69,6 +71,8 @@ class CollectionViewController: UIViewController {
         contentLabel.attributedText = attrString
         contentLabel.textAlignment = .center
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        // MARK: Auto Layout
         let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             contentLabel.topAnchor.constraint(equalTo: safeArea.topAnchor),
