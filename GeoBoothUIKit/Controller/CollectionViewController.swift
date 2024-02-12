@@ -14,14 +14,16 @@ class CollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
+        self.modalPresentationCapturesStatusBarAppearance = true
         self.setupNavbarItem()
         self.setupContentLabel()
     }
     
     fileprivate func setupNavbarItem() {
         let plusIcon = UIImage(named: ResourcePath.plusIcon)?.resizeImage(scaledToSize: CGSize(width: 22, height: 22))
-        let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: nil)
+        let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: #selector(showAddModal))
         self.navigationItem.rightBarButtonItem = addButton
     }
     
@@ -82,4 +84,8 @@ class CollectionViewController: UIViewController {
         ])
     }
     
+    @objc func showAddModal(sender: UIButton!) {
+        let addAlbumVC = AddAlbumViewController()
+        self.present(addAlbumVC, animated: true, completion: nil)
+    }
 }
