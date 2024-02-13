@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "1FF4630D-2FA6-463F-AFA5-6365522CEE1D",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:GeoBoothUIKit.xcodeproj",
+        "identifier" : "B6A1685D2B7B3A4F001457B0",
+        "name" : "GeoBoothUIKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:GeoBoothUIKit.xcodeproj",
+        "identifier" : "B6A1686A2B7B3A63001457B0",
+        "name" : "GeoBoothUIKitUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

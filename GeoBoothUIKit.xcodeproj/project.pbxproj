@@ -18,6 +18,9 @@
 		B6A168612B7B3A4F001457B0 /* GeoBoothUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A168602B7B3A4F001457B0 /* GeoBoothUIKitTests.swift */; };
 		B6A1686E2B7B3A64001457B0 /* GeoBoothUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A1686D2B7B3A64001457B0 /* GeoBoothUIKitUITests.swift */; };
 		B6A168702B7B3A64001457B0 /* GeoBoothUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A1686F2B7B3A64001457B0 /* GeoBoothUIKitUITestsLaunchTests.swift */; };
+		B6A168772B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = B6A168762B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan */; };
+		B6A168782B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = B6A168762B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan */; };
+		B6A168792B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = B6A168762B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan */; };
 		B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B29D4B2B751C120079BB95 /* UIImage+Color.swift */; };
 		B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */; };
 		B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */; };
@@ -61,6 +64,7 @@
 		B6A1686B2B7B3A63001457B0 /* GeoBoothUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoBoothUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A1686D2B7B3A64001457B0 /* GeoBoothUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoBoothUIKitUITests.swift; sourceTree = "<group>"; };
 		B6A1686F2B7B3A64001457B0 /* GeoBoothUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoBoothUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B6A168762B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GeoBoothUIKitTestPlan.xctestplan; sourceTree = "<group>"; };
 		B6B29D4B2B751C120079BB95 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBoothUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		B6BA6D2A2B73B9CF00E01723 = {
 			isa = PBXGroup;
 			children = (
+				B6A168762B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan */,
 				B6BA6D352B73B9CF00E01723 /* GeoBoothUIKit */,
 				B6A1685F2B7B3A4F001457B0 /* GeoBoothUIKitTests */,
 				B6A1686C2B7B3A64001457B0 /* GeoBoothUIKitUITests */,
@@ -358,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A168782B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6A168792B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B694BE472B73CD490084F9FE /* .swiftlint.yml in Resources */,
+				B6A168772B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan in Resources */,
 				B6BA6D432B73B9D100E01723 /* LaunchScreen.storyboard in Resources */,
 				B694BE582B73D3070084F9FE /* Assets.xcassets in Resources */,
 			);
@@ -405,8 +413,7 @@
 		};
 		B694BE452B73CA640084F9FE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -417,9 +424,9 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -495,13 +502,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U43A7X58YW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoBoothUIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeoBoothUIKit";
 			};
 			name = Debug;
@@ -514,13 +525,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U43A7X58YW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoBoothUIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeoBoothUIKit";
 			};
 			name = Release;
@@ -532,13 +547,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U43A7X58YW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = GeoBoothUIKit;
 			};
 			name = Debug;
@@ -550,13 +569,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = U43A7X58YW;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = GeoBoothUIKit;
 			};
 			name = Release;
