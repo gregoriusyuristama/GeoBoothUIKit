@@ -85,7 +85,7 @@ class CollectionViewController: UIViewController {
     }
     
     @objc func showAddModal(sender: UIButton!) {
-        let addAlbumVC = AddAlbumViewController()
+        let addAlbumVC = UINavigationController(rootViewController: AddAlbumViewController())
         self.present(addAlbumVC, animated: true, completion: nil)
     }
 }

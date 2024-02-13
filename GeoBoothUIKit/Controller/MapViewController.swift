@@ -34,6 +34,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.delegate = self
         mapView.showsUserLocation = true
+        if #available(iOS 17.0, *) {
+            mapView.showsUserTrackingButton = true
+        } else {
+            // Fallback on earlier versions
+        }
         
         view.addSubview(mapView)
         NSLayoutConstraint.activate([

@@ -29,6 +29,13 @@
 		B6BA6D4D2B73C06E00E01723 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D4C2B73C06E00E01723 /* TabController.swift */; };
 		B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C72B75916F000324B8 /* LocationServices.swift */; };
 		B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */; };
+		B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */; };
+		B6F76D802B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D7E2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift */; };
+		B6F76D812B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F76D7F2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.xib */; };
+		B6F76D842B7BE1EE00909C80 /* MapViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D822B7BE1EE00909C80 /* MapViewTableViewCell.swift */; };
+		B6F76D852B7BE1EE00909C80 /* MapViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F76D832B7BE1EE00909C80 /* MapViewTableViewCell.xib */; };
+		B6F76D882B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D862B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift */; };
+		B6F76D892B7BE69700909C80 /* AddAlbumButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6F76D872B7BE69700909C80 /* AddAlbumButtonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +82,13 @@
 		B6BA6D4C2B73C06E00E01723 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		B6E4D8C72B75916F000324B8 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAuthDelegate.swift; sourceTree = "<group>"; };
+		B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumTableViewController.swift; sourceTree = "<group>"; };
+		B6F76D7E2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumTextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		B6F76D7F2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAlbumTextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		B6F76D822B7BE1EE00909C80 /* MapViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewTableViewCell.swift; sourceTree = "<group>"; };
+		B6F76D832B7BE1EE00909C80 /* MapViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewTableViewCell.xib; sourceTree = "<group>"; };
+		B6F76D862B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumButtonTableViewCell.swift; sourceTree = "<group>"; };
+		B6F76D872B7BE69700909C80 /* AddAlbumButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAlbumButtonTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +128,7 @@
 		B63F05E62B74213400426905 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */,
 				B6A167672B79732A001457B0 /* AddAlbumViewController.swift */,
 				B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */,
 				B6BA6D4A2B73C02600E01723 /* MapViewController.swift */,
@@ -215,6 +230,7 @@
 				B694BE492B73CF940084F9FE /* Application */,
 				B694BE4B2B73CFE40084F9FE /* Core */,
 				B63F05E62B74213400426905 /* Controller */,
+				B6F76D7D2B7BDF1000909C80 /* View */,
 				B6BA6D442B73B9D100E01723 /* Info.plist */,
 				B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */,
 			);
@@ -244,6 +260,19 @@
 				B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B6F76D7D2B7BDF1000909C80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6F76D7E2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift */,
+				B6F76D7F2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.xib */,
+				B6F76D822B7BE1EE00909C80 /* MapViewTableViewCell.swift */,
+				B6F76D832B7BE1EE00909C80 /* MapViewTableViewCell.xib */,
+				B6F76D862B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift */,
+				B6F76D872B7BE69700909C80 /* AddAlbumButtonTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FD7FF27545A216E86C9046AF /* Pods */ = {
@@ -380,9 +409,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B694BE472B73CD490084F9FE /* .swiftlint.yml in Resources */,
+				B6F76D892B7BE69700909C80 /* AddAlbumButtonTableViewCell.xib in Resources */,
 				B6A168772B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan in Resources */,
 				B6BA6D432B73B9D100E01723 /* LaunchScreen.storyboard in Resources */,
+				B6F76D812B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.xib in Resources */,
 				B694BE582B73D3070084F9FE /* Assets.xcassets in Resources */,
+				B6F76D852B7BE1EE00909C80 /* MapViewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +445,8 @@
 		};
 		B694BE452B73CA640084F9FE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -424,7 +457,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
@@ -460,10 +493,14 @@
 				B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */,
 				B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */,
 				B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */,
+				B6F76D842B7BE1EE00909C80 /* MapViewTableViewCell.swift in Sources */,
 				B6A167692B79732A001457B0 /* AddAlbumViewController.swift in Sources */,
 				B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */,
 				B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */,
+				B6F76D802B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift in Sources */,
 				B6A167E32B79A7A1001457B0 /* SceneDelegate.swift in Sources */,
+				B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */,
+				B6F76D882B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +752,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -751,6 +789,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

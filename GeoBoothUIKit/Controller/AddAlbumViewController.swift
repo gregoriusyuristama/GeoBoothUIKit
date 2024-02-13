@@ -8,26 +8,42 @@
 import UIKit
 
 class AddAlbumViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
-        self.view.isOpaque = true
-        self.view.clearsContextBeforeDrawing = true
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false  
-        
-        self.view.addSubview(label)
-        // MARK: Auto Layout
-        let safeArea = view.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            label.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            label.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            label.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
-        ])
-        label.text = "Hello, world"
-        label.textAlignment = .center
+        self.setUpNavMenu()
+        self.setUpContent()
     }
-
+    
+    private func setUpNavMenu() {
+        self.navigationItem.title = "Add New Album"
+        let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeModal))
+        self.navigationItem.leftBarButtonItem = closeButton
+    }
+    
+    private func setUpContent() {
+        
+        let addPlaceholder = UIView()
+        addPlaceholder.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(addPlaceholder)
+        
+        let addAlbumTableView = AddAlbumTableViewController()
+        addPlaceholder.addSubview(addAlbumTableView.tableView)
+        self.addChild(addAlbumTableView)
+        addAlbumTableView.didMove(toParent: self)
+        
+        // MARK: Auto Layout
+        NSLayoutConstraint.activate([
+            addAlbumTableView.tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            addAlbumTableView.tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            addAlbumTableView.tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            addAlbumTableView.tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 250)
+        ])
+        
+    }
+    
+    @objc func closeModal() {
+        self.dismiss(animated: true)
+    }
+    
 }
