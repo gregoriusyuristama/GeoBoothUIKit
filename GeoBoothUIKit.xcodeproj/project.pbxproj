@@ -15,6 +15,9 @@
 		B694BE582B73D3070084F9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B694BE572B73D3070084F9FE /* Assets.xcassets */; };
 		B6A167692B79732A001457B0 /* AddAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A167672B79732A001457B0 /* AddAlbumViewController.swift */; };
 		B6A167E32B79A7A1001457B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A167E22B79A7A1001457B0 /* SceneDelegate.swift */; };
+		B6A168612B7B3A4F001457B0 /* GeoBoothUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A168602B7B3A4F001457B0 /* GeoBoothUIKitTests.swift */; };
+		B6A1686E2B7B3A64001457B0 /* GeoBoothUIKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A1686D2B7B3A64001457B0 /* GeoBoothUIKitUITests.swift */; };
+		B6A168702B7B3A64001457B0 /* GeoBoothUIKitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A1686F2B7B3A64001457B0 /* GeoBoothUIKitUITestsLaunchTests.swift */; };
 		B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B29D4B2B751C120079BB95 /* UIImage+Color.swift */; };
 		B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */; };
 		B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */; };
@@ -24,6 +27,23 @@
 		B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C72B75916F000324B8 /* LocationServices.swift */; };
 		B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6A168622B7B3A4F001457B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6BA6D2B2B73B9CF00E01723 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6BA6D322B73B9CF00E01723;
+			remoteInfo = GeoBoothUIKit;
+		};
+		B6A168712B7B3A64001457B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6BA6D2B2B73B9CF00E01723 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6BA6D322B73B9CF00E01723;
+			remoteInfo = GeoBoothUIKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0AFDF96532ABB9850438E188 /* Pods_GeoBoothUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBoothUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +56,11 @@
 		B694BE572B73D3070084F9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6A167672B79732A001457B0 /* AddAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumViewController.swift; sourceTree = "<group>"; };
 		B6A167E22B79A7A1001457B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B6A1685E2B7B3A4F001457B0 /* GeoBoothUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoBoothUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A168602B7B3A4F001457B0 /* GeoBoothUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoBoothUIKitTests.swift; sourceTree = "<group>"; };
+		B6A1686B2B7B3A63001457B0 /* GeoBoothUIKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeoBoothUIKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A1686D2B7B3A64001457B0 /* GeoBoothUIKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoBoothUIKitUITests.swift; sourceTree = "<group>"; };
+		B6A1686F2B7B3A64001457B0 /* GeoBoothUIKitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoBoothUIKitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B6B29D4B2B751C120079BB95 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 		B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoBoothUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +74,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B6A1685B2B7B3A4F001457B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6A168682B7B3A63001457B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6BA6D302B73B9CF00E01723 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,10 +164,29 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B6A1685F2B7B3A4F001457B0 /* GeoBoothUIKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6A168602B7B3A4F001457B0 /* GeoBoothUIKitTests.swift */,
+			);
+			path = GeoBoothUIKitTests;
+			sourceTree = "<group>";
+		};
+		B6A1686C2B7B3A64001457B0 /* GeoBoothUIKitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B6A1686D2B7B3A64001457B0 /* GeoBoothUIKitUITests.swift */,
+				B6A1686F2B7B3A64001457B0 /* GeoBoothUIKitUITestsLaunchTests.swift */,
+			);
+			path = GeoBoothUIKitUITests;
+			sourceTree = "<group>";
+		};
 		B6BA6D2A2B73B9CF00E01723 = {
 			isa = PBXGroup;
 			children = (
 				B6BA6D352B73B9CF00E01723 /* GeoBoothUIKit */,
+				B6A1685F2B7B3A4F001457B0 /* GeoBoothUIKitTests */,
+				B6A1686C2B7B3A64001457B0 /* GeoBoothUIKitUITests */,
 				B6BA6D342B73B9CF00E01723 /* Products */,
 				FD7FF27545A216E86C9046AF /* Pods */,
 				4764BBF8224DAC45470F7C62 /* Frameworks */,
@@ -139,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */,
+				B6A1685E2B7B3A4F001457B0 /* GeoBoothUIKitTests.xctest */,
+				B6A1686B2B7B3A63001457B0 /* GeoBoothUIKitUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,6 +253,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B6A1685D2B7B3A4F001457B0 /* GeoBoothUIKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6A168642B7B3A4F001457B0 /* Build configuration list for PBXNativeTarget "GeoBoothUIKitTests" */;
+			buildPhases = (
+				B6A1685A2B7B3A4F001457B0 /* Sources */,
+				B6A1685B2B7B3A4F001457B0 /* Frameworks */,
+				B6A1685C2B7B3A4F001457B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6A168632B7B3A4F001457B0 /* PBXTargetDependency */,
+			);
+			name = GeoBoothUIKitTests;
+			productName = GeoBoothUIKitTests;
+			productReference = B6A1685E2B7B3A4F001457B0 /* GeoBoothUIKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B6A1686A2B7B3A63001457B0 /* GeoBoothUIKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6A168732B7B3A64001457B0 /* Build configuration list for PBXNativeTarget "GeoBoothUIKitUITests" */;
+			buildPhases = (
+				B6A168672B7B3A63001457B0 /* Sources */,
+				B6A168682B7B3A63001457B0 /* Frameworks */,
+				B6A168692B7B3A63001457B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6A168722B7B3A64001457B0 /* PBXTargetDependency */,
+			);
+			name = GeoBoothUIKitUITests;
+			productName = GeoBoothUIKitUITests;
+			productReference = B6A1686B2B7B3A63001457B0 /* GeoBoothUIKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		B6BA6D322B73B9CF00E01723 /* GeoBoothUIKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6BA6D472B73B9D100E01723 /* Build configuration list for PBXNativeTarget "GeoBoothUIKit" */;
@@ -224,6 +320,14 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					B6A1685D2B7B3A4F001457B0 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = B6BA6D322B73B9CF00E01723;
+					};
+					B6A1686A2B7B3A63001457B0 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = B6BA6D322B73B9CF00E01723;
+					};
 					B6BA6D322B73B9CF00E01723 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -243,11 +347,27 @@
 			projectRoot = "";
 			targets = (
 				B6BA6D322B73B9CF00E01723 /* GeoBoothUIKit */,
+				B6A1685D2B7B3A4F001457B0 /* GeoBoothUIKitTests */,
+				B6A1686A2B7B3A63001457B0 /* GeoBoothUIKitUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B6A1685C2B7B3A4F001457B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6A168692B7B3A63001457B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6BA6D312B73B9CF00E01723 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +424,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B6A1685A2B7B3A4F001457B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A168612B7B3A4F001457B0 /* GeoBoothUIKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6A168672B7B3A63001457B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6A168702B7B3A64001457B0 /* GeoBoothUIKitUITestsLaunchTests.swift in Sources */,
+				B6A1686E2B7B3A64001457B0 /* GeoBoothUIKitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6BA6D2F2B73B9CF00E01723 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +462,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B6A168632B7B3A4F001457B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6BA6D322B73B9CF00E01723 /* GeoBoothUIKit */;
+			targetProxy = B6A168622B7B3A4F001457B0 /* PBXContainerItemProxy */;
+		};
+		B6A168722B7B3A64001457B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6BA6D322B73B9CF00E01723 /* GeoBoothUIKit */;
+			targetProxy = B6A168712B7B3A64001457B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -337,6 +487,80 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B6A168652B7B3A4F001457B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U43A7X58YW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoBoothUIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeoBoothUIKit";
+			};
+			name = Debug;
+		};
+		B6A168662B7B3A4F001457B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U43A7X58YW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeoBoothUIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeoBoothUIKit";
+			};
+			name = Release;
+		};
+		B6A168742B7B3A64001457B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U43A7X58YW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GeoBoothUIKit;
+			};
+			name = Debug;
+		};
+		B6A168752B7B3A64001457B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U43A7X58YW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.gregoriusyuristama.GeoBoothUIKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GeoBoothUIKit;
+			};
+			name = Release;
+		};
 		B6BA6D452B73B9D100E01723 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -531,6 +755,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B6A168642B7B3A4F001457B0 /* Build configuration list for PBXNativeTarget "GeoBoothUIKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6A168652B7B3A4F001457B0 /* Debug */,
+				B6A168662B7B3A4F001457B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6A168732B7B3A64001457B0 /* Build configuration list for PBXNativeTarget "GeoBoothUIKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6A168742B7B3A64001457B0 /* Debug */,
+				B6A168752B7B3A64001457B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B6BA6D2E2B73B9CF00E01723 /* Build configuration list for PBXProject "GeoBoothUIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
