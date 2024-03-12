@@ -21,6 +21,8 @@ class CollectionViewController: UIViewController {
         self.setupContentLabel()
     }
     
+    
+    // TODO: refactor setup to createModule
     fileprivate func setupNavbarItem() {
         let plusIcon = UIImage(named: ResourcePath.plusIcon)?.resizeImage(scaledToSize: CGSize(width: 22, height: 22))
         let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: #selector(showAddModal))

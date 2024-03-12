@@ -15,6 +15,9 @@ class AddAlbumViewController: UIViewController {
         self.setUpContent()
     }
     
+    
+    // TODO: refactor setup to createModule
+    
     private func setUpNavMenu() {
         self.navigationItem.title = "Add New Album"
         let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(closeModal))

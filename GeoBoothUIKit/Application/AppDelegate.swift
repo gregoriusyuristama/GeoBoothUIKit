@@ -16,13 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
+        
+        let submodules = (
+            collection: CollectionRouter.build(usingNavigationFactory: NavigationBuilder.build),
+            map: MapRouter.build(usingNavigationFactory: NavigationBuilder.build)
+        )
+        
+        let tabBarController = HomeRouter.start(usingSubmodules: submodules)
+        
         if #available(iOS 13.0, *) {
             window?.backgroundColor = .systemBackground
         } else {
             // Fallback on earlier versions
             window?.backgroundColor = .white
         }
-        window?.rootViewController = TabController()
+        window?.rootViewController = tabBarController
         
         return true
     }

@@ -7,11 +7,26 @@
 
 import UIKit
 
-class TabController: UITabBarController {
+typealias HomeTabs = (
+    collection: UIViewController,
+    map: UIViewController
+)
+
+class HomeTabBarController: UITabBarController, HomeViewProtocol {
+    var presenter: (any HomePresenterProtocol)?
+    
+    init(tabs: HomeTabs) {
+        super.init(nibName: nil, bundle: nil)
+        viewControllers = [tabs.collection, tabs.map]
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupTabs()
+//        self.setupTabs()
         // Do any additional setup after loading the view.
     }
     

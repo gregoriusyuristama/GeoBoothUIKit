@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5C849C6BE7E56117E5712DBA /* Pods_GeoBoothUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AFDF96532ABB9850438E188 /* Pods_GeoBoothUIKit.framework */; };
+		B685B7C82BA0B9F100D1AB6D /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7C72BA0B9F100D1AB6D /* AlbumModel.swift */; };
+		B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */; };
+		B685B7D12BA0C20700D1AB6D /* NavigationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */; };
+		B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */; };
+		B685B7D62BA0CDAE00D1AB6D /* CollectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D52BA0CDAE00D1AB6D /* CollectionRouter.swift */; };
+		B685B7D82BA0CE4600D1AB6D /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D72BA0CE4600D1AB6D /* MapRouter.swift */; };
+		B685B7DA2BA0CF6400D1AB6D /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D92BA0CF6400D1AB6D /* HomeProtocol.swift */; };
 		B694BE472B73CD490084F9FE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B694BE462B73CD490084F9FE /* .swiftlint.yml */; };
 		B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BE4D2B73D13A0084F9FE /* UIImage+Resize.swift */; };
 		B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BE512B73D1800084F9FE /* ResourcePath.swift */; };
@@ -26,7 +33,7 @@
 		B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */; };
 		B6BA6D432B73B9D100E01723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */; };
 		B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D4A2B73C02600E01723 /* MapViewController.swift */; };
-		B6BA6D4D2B73C06E00E01723 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D4C2B73C06E00E01723 /* TabController.swift */; };
+		B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BA6D4C2B73C06E00E01723 /* HomeTabBarController.swift */; };
 		B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C72B75916F000324B8 /* LocationServices.swift */; };
 		B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */; };
 		B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */; };
@@ -59,6 +66,13 @@
 		0AFDF96532ABB9850438E188 /* Pods_GeoBoothUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoBoothUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1140E5BF391A46FA50FFD38B /* Pods-GeoBoothUIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBoothUIKit.debug.xcconfig"; path = "Target Support Files/Pods-GeoBoothUIKit/Pods-GeoBoothUIKit.debug.xcconfig"; sourceTree = "<group>"; };
 		69EEEFBF94C5139C17A7E439 /* Pods-GeoBoothUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoBoothUIKit.release.xcconfig"; path = "Target Support Files/Pods-GeoBoothUIKit/Pods-GeoBoothUIKit.release.xcconfig"; sourceTree = "<group>"; };
+		B685B7C72BA0B9F100D1AB6D /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFactory.swift; sourceTree = "<group>"; };
+		B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProtocol.swift; sourceTree = "<group>"; };
+		B685B7D52BA0CDAE00D1AB6D /* CollectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRouter.swift; sourceTree = "<group>"; };
+		B685B7D72BA0CE4600D1AB6D /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		B685B7D92BA0CF6400D1AB6D /* HomeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		B694BE462B73CD490084F9FE /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B694BE4D2B73D13A0084F9FE /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		B694BE512B73D1800084F9FE /* ResourcePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePath.swift; sourceTree = "<group>"; };
@@ -79,7 +93,7 @@
 		B6BA6D422B73B9D100E01723 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6BA6D442B73B9D100E01723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6BA6D4A2B73C02600E01723 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		B6BA6D4C2B73C06E00E01723 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		B6BA6D4C2B73C06E00E01723 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		B6E4D8C72B75916F000324B8 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAuthDelegate.swift; sourceTree = "<group>"; };
 		B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumTableViewController.swift; sourceTree = "<group>"; };
@@ -125,21 +139,265 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B63F05E62B74213400426905 /* Controller */ = {
+		B685B7AB2BA0B78400D1AB6D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7B82BA0B82B00D1AB6D /* HomeTabBar */,
+				B685B7AC2BA0B79F00D1AB6D /* Collection */,
+				B685B7BE2BA0B87700D1AB6D /* AddCollection */,
+				B685B7AD2BA0B7B700D1AB6D /* Map */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B685B7AC2BA0B79F00D1AB6D /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7B22BA0B7D700D1AB6D /* Router */,
+				B685B7B12BA0B7D200D1AB6D /* Manager */,
+				B685B7B02BA0B7CE00D1AB6D /* Presenter */,
+				B685B7AF2BA0B7CA00D1AB6D /* Interactor */,
+				B685B7AE2BA0B7C500D1AB6D /* View */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		B685B7AD2BA0B7B700D1AB6D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7D22BA0C67700D1AB6D /* Domain */,
+				B685B7B72BA0B80100D1AB6D /* Router */,
+				B685B7B62BA0B7FD00D1AB6D /* Manager */,
+				B685B7B52BA0B7F500D1AB6D /* Presenter */,
+				B685B7B42BA0B7ED00D1AB6D /* Interactor */,
+				B685B7B32BA0B7EA00D1AB6D /* View */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		B685B7AE2BA0B7C500D1AB6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B685B7AF2BA0B7CA00D1AB6D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B685B7B02BA0B7CE00D1AB6D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B685B7B12BA0B7D200D1AB6D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B685B7B22BA0B7D700D1AB6D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7D52BA0CDAE00D1AB6D /* CollectionRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B685B7B32BA0B7EA00D1AB6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6BA6D4A2B73C02600E01723 /* MapViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B685B7B42BA0B7ED00D1AB6D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B685B7B52BA0B7F500D1AB6D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B685B7B62BA0B7FD00D1AB6D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B685B7B72BA0B80100D1AB6D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7D72BA0CE4600D1AB6D /* MapRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B685B7B82BA0B82B00D1AB6D /* HomeTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7CD2BA0C19C00D1AB6D /* Domain */,
+				B685B7BD2BA0B84B00D1AB6D /* Router */,
+				B685B7BC2BA0B84500D1AB6D /* Manager */,
+				B685B7BB2BA0B83E00D1AB6D /* Presenter */,
+				B685B7BA2BA0B83700D1AB6D /* Interactor */,
+				B685B7B92BA0B83100D1AB6D /* View */,
+			);
+			path = HomeTabBar;
+			sourceTree = "<group>";
+		};
+		B685B7B92BA0B83100D1AB6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6BA6D4C2B73C06E00E01723 /* HomeTabBarController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B685B7BA2BA0B83700D1AB6D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B685B7BB2BA0B83E00D1AB6D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B685B7BC2BA0B84500D1AB6D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B685B7BD2BA0B84B00D1AB6D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B685B7BE2BA0B87700D1AB6D /* AddCollection */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7C32BA0B89100D1AB6D /* Router */,
+				B685B7C22BA0B88C00D1AB6D /* Manager */,
+				B685B7C12BA0B88800D1AB6D /* Presenter */,
+				B685B7C02BA0B88400D1AB6D /* Interactor */,
+				B685B7BF2BA0B88000D1AB6D /* View */,
+			);
+			path = AddCollection;
+			sourceTree = "<group>";
+		};
+		B685B7BF2BA0B88000D1AB6D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6A167672B79732A001457B0 /* AddAlbumViewController.swift */,
+				B685B7C42BA0B8CF00D1AB6D /* Components */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B685B7C02BA0B88400D1AB6D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B685B7C12BA0B88800D1AB6D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B685B7C22BA0B88C00D1AB6D /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B685B7C32BA0B89100D1AB6D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B685B7C42BA0B8CF00D1AB6D /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */,
-				B6A167672B79732A001457B0 /* AddAlbumViewController.swift */,
-				B6BA6D3A2B73B9CF00E01723 /* CollectionViewController.swift */,
-				B6BA6D4A2B73C02600E01723 /* MapViewController.swift */,
-				B6BA6D4C2B73C06E00E01723 /* TabController.swift */,
+				B6F76D7E2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift */,
+				B6F76D7F2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.xib */,
+				B6F76D862B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift */,
+				B6F76D872B7BE69700909C80 /* AddAlbumButtonTableViewCell.xib */,
+				B6F76D822B7BE1EE00909C80 /* MapViewTableViewCell.swift */,
+				B6F76D832B7BE1EE00909C80 /* MapViewTableViewCell.xib */,
 			);
-			path = Controller;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B685B7C92BA0BA0700D1AB6D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7C72BA0B9F100D1AB6D /* AlbumModel.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B685B7CC2BA0C17C00D1AB6D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		B685B7CD2BA0C19C00D1AB6D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7D92BA0CF6400D1AB6D /* HomeProtocol.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B685B7D22BA0C67700D1AB6D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		B694BE492B73CF940084F9FE /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */,
 				B6BA6D362B73B9CF00E01723 /* AppDelegate.swift */,
 				B6A167E22B79A7A1001457B0 /* SceneDelegate.swift */,
 			);
@@ -149,6 +407,7 @@
 		B694BE4B2B73CFE40084F9FE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B685B7C92BA0BA0700D1AB6D /* Data */,
 				B6E4D8C52B75915A000324B8 /* Utilities */,
 				B694BE502B73D1760084F9FE /* Constants */,
 				B694BE4C2B73D13A0084F9FE /* Extensions */,
@@ -226,13 +485,11 @@
 		B6BA6D352B73B9CF00E01723 /* GeoBoothUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				B694BE462B73CD490084F9FE /* .swiftlint.yml */,
 				B694BE492B73CF940084F9FE /* Application */,
 				B694BE4B2B73CFE40084F9FE /* Core */,
-				B63F05E62B74213400426905 /* Controller */,
-				B6F76D7D2B7BDF1000909C80 /* View */,
+				B685B7AB2BA0B78400D1AB6D /* Modules */,
+				B694BE462B73CD490084F9FE /* .swiftlint.yml */,
 				B6BA6D442B73B9D100E01723 /* Info.plist */,
-				B6BA6D412B73B9D100E01723 /* LaunchScreen.storyboard */,
 			);
 			path = GeoBoothUIKit;
 			sourceTree = "<group>";
@@ -240,6 +497,7 @@
 		B6E4D8C52B75915A000324B8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B685B7CC2BA0C17C00D1AB6D /* Navigation */,
 				B6E4D8C62B759163000324B8 /* Location */,
 			);
 			path = Utilities;
@@ -260,19 +518,6 @@
 				B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		B6F76D7D2B7BDF1000909C80 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B6F76D7E2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift */,
-				B6F76D7F2B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.xib */,
-				B6F76D822B7BE1EE00909C80 /* MapViewTableViewCell.swift */,
-				B6F76D832B7BE1EE00909C80 /* MapViewTableViewCell.xib */,
-				B6F76D862B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift */,
-				B6F76D872B7BE69700909C80 /* AddAlbumButtonTableViewCell.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FD7FF27545A216E86C9046AF /* Pods */ = {
@@ -488,15 +733,22 @@
 				B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */,
 				B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */,
 				B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */,
+				B685B7D82BA0CE4600D1AB6D /* MapRouter.swift in Sources */,
 				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
-				B6BA6D4D2B73C06E00E01723 /* TabController.swift in Sources */,
+				B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */,
 				B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */,
+				B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */,
 				B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */,
+				B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */,
 				B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */,
+				B685B7D12BA0C20700D1AB6D /* NavigationFactory.swift in Sources */,
 				B6F76D842B7BE1EE00909C80 /* MapViewTableViewCell.swift in Sources */,
 				B6A167692B79732A001457B0 /* AddAlbumViewController.swift in Sources */,
 				B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */,
+				B685B7DA2BA0CF6400D1AB6D /* HomeProtocol.swift in Sources */,
 				B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */,
+				B685B7D62BA0CDAE00D1AB6D /* CollectionRouter.swift in Sources */,
+				B685B7C82BA0B9F100D1AB6D /* AlbumModel.swift in Sources */,
 				B6F76D802B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift in Sources */,
 				B6A167E32B79A7A1001457B0 /* SceneDelegate.swift in Sources */,
 				B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */,

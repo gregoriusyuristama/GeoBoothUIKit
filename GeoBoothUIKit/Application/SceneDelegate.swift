@@ -19,8 +19,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
       
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = TabController() // Your initial view controller.
         window.makeKeyAndVisible()
+        
+        let submodules = (
+            collection: CollectionRouter.build(usingNavigationFactory: NavigationBuilder.build),
+            map: MapRouter.build(usingNavigationFactory: NavigationBuilder.build)
+        )
+        
+        let tabBarController = HomeRouter.start(usingSubmodules: submodules)
+        
+        window.rootViewController = tabBarController
+    
         self.window = window
     }
 
