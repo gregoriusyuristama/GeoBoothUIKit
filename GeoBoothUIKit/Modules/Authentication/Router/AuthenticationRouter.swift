@@ -42,6 +42,7 @@ class AuthenticationRouter: AuthenticationRouterProtocol {
         
         guard let viewController = view as? UIViewController else { fatalError("Invalid View Controller Type") }
         viewController.view.window?.rootViewController = homeViewController
+        
     }
     
     

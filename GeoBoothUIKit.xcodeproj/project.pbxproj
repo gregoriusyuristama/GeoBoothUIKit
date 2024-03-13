@@ -52,6 +52,11 @@
 		B6CE19B72BA21D050086A2B1 /* CollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19B62BA21D050086A2B1 /* CollectionPresenter.swift */; };
 		B6CE19B92BA21D0D0086A2B1 /* CollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19B82BA21D0D0086A2B1 /* CollectionInteractor.swift */; };
 		B6CE19BC2BA21F910086A2B1 /* Supabase-Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CE19BB2BA21F910086A2B1 /* Supabase-Secret.plist */; };
+		B6CE19BE2BA2213B0086A2B1 /* SupabaseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19BD2BA2213B0086A2B1 /* SupabaseConfig.swift */; };
+		B6CE19C02BA221750086A2B1 /* SupabaseSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19BF2BA221750086A2B1 /* SupabaseSingleton.swift */; };
+		B6CE19C22BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */; };
+		B6CE19C52BA230B70086A2B1 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C42BA230B70086A2B1 /* UserDefaultHelper.swift */; };
+		B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */; };
 		B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C72B75916F000324B8 /* LocationServices.swift */; };
 		B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */; };
 		B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */; };
@@ -120,6 +125,11 @@
 		B6CE19B62BA21D050086A2B1 /* CollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPresenter.swift; sourceTree = "<group>"; };
 		B6CE19B82BA21D0D0086A2B1 /* CollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInteractor.swift; sourceTree = "<group>"; };
 		B6CE19BB2BA21F910086A2B1 /* Supabase-Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Supabase-Secret.plist"; sourceTree = "<group>"; };
+		B6CE19BD2BA2213B0086A2B1 /* SupabaseConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseConfig.swift; sourceTree = "<group>"; };
+		B6CE19BF2BA221750086A2B1 /* SupabaseSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseSingleton.swift; sourceTree = "<group>"; };
+		B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyConstant.swift; sourceTree = "<group>"; };
+		B6CE19C42BA230B70086A2B1 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
+		B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B6E4D8C72B75916F000324B8 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAuthDelegate.swift; sourceTree = "<group>"; };
 		B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumTableViewController.swift; sourceTree = "<group>"; };
@@ -497,6 +507,7 @@
 		B694BE4B2B73CFE40084F9FE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B6CE19C62BA235D70086A2B1 /* Themes */,
 				B685B7C92BA0BA0700D1AB6D /* Data */,
 				B6E4D8C52B75915A000324B8 /* Utilities */,
 				B694BE502B73D1760084F9FE /* Constants */,
@@ -520,6 +531,7 @@
 			children = (
 				B694BE512B73D1800084F9FE /* ResourcePath.swift */,
 				B694BE532B73D1F40084F9FE /* AppLabel.swift */,
+				B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -603,13 +615,40 @@
 			isa = PBXGroup;
 			children = (
 				B6CE19BB2BA21F910086A2B1 /* Supabase-Secret.plist */,
+				B6CE19BD2BA2213B0086A2B1 /* SupabaseConfig.swift */,
+				B6CE19BF2BA221750086A2B1 /* SupabaseSingleton.swift */,
 			);
 			path = Supabase;
+			sourceTree = "<group>";
+		};
+		B6CE19C32BA230A90086A2B1 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE19C42BA230B70086A2B1 /* UserDefaultHelper.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		B6CE19C62BA235D70086A2B1 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE19C72BA235DF0086A2B1 /* Components */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		B6CE19C72BA235DF0086A2B1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		B6E4D8C52B75915A000324B8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B6CE19C32BA230A90086A2B1 /* UserDefaults */,
 				B6CE19BA2BA21F390086A2B1 /* Supabase */,
 				B685B7CC2BA0C17C00D1AB6D /* Navigation */,
 				B6E4D8C62B759163000324B8 /* Location */,
@@ -808,20 +847,24 @@
 				B6CE19B02BA20ABF0086A2B1 /* AuthenticationPresenter.swift in Sources */,
 				B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */,
 				B6CE19B92BA21D0D0086A2B1 /* CollectionInteractor.swift in Sources */,
+				B6CE19C02BA221750086A2B1 /* SupabaseSingleton.swift in Sources */,
 				B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */,
 				B685B7D82BA0CE4600D1AB6D /* MapRouter.swift in Sources */,
 				B685B7E12BA1B69C00D1AB6D /* AuthenticationViewController.swift in Sources */,
 				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
 				B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */,
+				B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */,
 				B685B7E52BA1B6B600D1AB6D /* AuthenticationManager.swift in Sources */,
 				B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */,
 				B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */,
 				B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */,
 				B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */,
 				B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */,
+				B6CE19C52BA230B70086A2B1 /* UserDefaultHelper.swift in Sources */,
 				B685B7EA2BA1B6DC00D1AB6D /* AuthenticationProtocol.swift in Sources */,
 				B685B7D12BA0C20700D1AB6D /* NavigationFactory.swift in Sources */,
 				B685B7E72BA1B6BC00D1AB6D /* AuthenticationRouter.swift in Sources */,
+				B6CE19BE2BA2213B0086A2B1 /* SupabaseConfig.swift in Sources */,
 				B6F76D842B7BE1EE00909C80 /* MapViewTableViewCell.swift in Sources */,
 				B6A167692B79732A001457B0 /* AddAlbumViewController.swift in Sources */,
 				B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */,
@@ -835,6 +878,7 @@
 				B6A167E32B79A7A1001457B0 /* SceneDelegate.swift in Sources */,
 				B6CE19B52BA21CFD0086A2B1 /* CollectionManager.swift in Sources */,
 				B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */,
+				B6CE19C22BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift in Sources */,
 				B6F76D882B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

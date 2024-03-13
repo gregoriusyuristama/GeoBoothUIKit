@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Auth
 
 protocol AuthenticationRouterProtocol {
     var entry: UIViewController? { get set }
@@ -22,10 +23,16 @@ protocol AuthenticationManagerProtocol {
 
 protocol AuthenticationInteractorProtocol {
     var presenter: AuthenticationPresenterProtocol? { get set }
+    
+    func doAuth(email: String, password: String, completion: @escaping (User?, Error?) -> Void)
 }
 
 protocol AuthenticationViewProtocol {
     var presenter: AuthenticationPresenterProtocol? { get set }
+    
+    func updateViewIsLoading()
+    func updateViewIsNotLoading()
+    func updateViewWithError(errorMessage: String)
     
 }
 
@@ -34,5 +41,7 @@ protocol AuthenticationPresenterProtocol {
     var interactor: AuthenticationInteractorProtocol? { get set }
     var view: AuthenticationViewProtocol? { get set }
     
-    func signIn()
+    var isLoading: Bool { get set }
+    
+    func signInWithEmailPassword(email: String, password: String)
 }

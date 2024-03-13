@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class AuthenticationViewController: UIViewController, AuthenticationViewProtocol {
-    
+
     var presenter: (any AuthenticationPresenterProtocol)?
     
     private var titleLabel: UILabel = {
@@ -52,6 +52,8 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         button.layer.cornerRadius = 12
         return button
     }()
+    
+    private var spinner = LoadingViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +100,8 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     
     @objc func buttonClickedDown(sender: UIButton) {
         animateButton(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95))
-        presenter?.signIn()
+        guard let email = userNameTextField.text, let password = passwordTextField.text else { return }
+        presenter?.signInWithEmailPassword(email: email, password: password)
     }
     @objc func buttonClickedUp(sender: UIButton) {
         animateButton(sender, transform: .identity)
@@ -110,6 +113,31 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         }
     }
     
+    
+    func updateViewIsLoading() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.addChild(self.spinner)
+            self.spinner.view.frame = self.view.frame
+            self.view.addSubview(self.spinner.view)
+            self.spinner.didMove(toParent: self)
+        }
+        
+    }
+    
+    func updateViewIsNotLoading() {
+        DispatchQueue.main.async { [weak self] in
+            self?.spinner.willMove(toParent: nil)
+            self?.spinner.view.removeFromSuperview()
+            self?.spinner.removeFromParent()
+        }
+    }
+    
+    func updateViewWithError(errorMessage: String) {
+        let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     /*
      // MARK: - Navigation
