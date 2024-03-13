@@ -21,7 +21,7 @@ class HomeRouter {
         self.viewController = viewController
     }
     
-    static func start(usingSubmodules submodules: HomeRouter.Submodules) -> UITabBarController {
+    static func createModule(usingSubmodules submodules: HomeRouter.Submodules) -> UITabBarController {
         
         let tabs = HomeRouter.tabs(usingSubmodules: submodules)
         let tabBarController = HomeTabBarController(tabs: tabs)

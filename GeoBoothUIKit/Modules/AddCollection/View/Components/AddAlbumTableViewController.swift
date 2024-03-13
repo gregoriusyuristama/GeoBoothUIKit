@@ -15,11 +15,7 @@ class AddAlbumTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTable()
-        if #available(iOS 13.0, *) {
-            self.view.backgroundColor = .systemGray6
-        } else {
-            // TODO: Fallback on earlier versions
-        }
+        self.view.backgroundColor = .systemGray6
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         

@@ -7,7 +7,8 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController {
+class CollectionViewController: UIViewController, CollectionViewProtocol {
+    var presenter: (any CollectionPresenterProtocol)?
     
     /// Label displaying empty prompt when user doesn't have any album
     var contentLabel: UILabel!
@@ -16,7 +17,6 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
-        self.modalPresentationCapturesStatusBarAppearance = true
         self.setupNavbarItem()
         self.setupContentLabel()
     }

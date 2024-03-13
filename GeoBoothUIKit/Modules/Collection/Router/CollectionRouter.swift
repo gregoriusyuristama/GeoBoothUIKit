@@ -9,15 +9,28 @@ import Foundation
 import UIKit
 
 
-class CollectionRouter {
+class CollectionRouter: CollectionRouterProtocol {
     
     static func build(usingNavigationFactory factory: NavigationFactory) -> UIViewController {
-        let view = CollectionViewController()
-        view.navigationController?.navigationBar.prefersLargeTitles = true
-        view.navigationItem.title = "GeoBooth"
         let router = CollectionRouter()
-        // TODO: implement interactor, presenter
         
-        return factory(view)
+        var view: CollectionViewProtocol = CollectionViewController()
+        var presenter: CollectionPresenterProtocol = CollectionPresenter()
+        var interactor: CollectionInteratorProtocol = CollectionInteractor()
+        
+        view.presenter = presenter
+        
+        interactor.presenter = presenter
+        
+        presenter.router = router
+        presenter.view = view
+        presenter.interactor = interactor
+
+        guard let viewCollection = view as? UIViewController else { fatalError("Invalid UI Type") }
+        
+        viewCollection.navigationController?.navigationBar.prefersLargeTitles = true
+        viewCollection.navigationItem.title = "GeoBooth"
+        
+        return factory(viewCollection)
     }
 }

@@ -14,24 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        
-        let submodules = (
-            collection: CollectionRouter.build(usingNavigationFactory: NavigationBuilder.build),
-            map: MapRouter.build(usingNavigationFactory: NavigationBuilder.build)
-        )
-        
-        let tabBarController = HomeRouter.start(usingSubmodules: submodules)
-        
-        if #available(iOS 13.0, *) {
-            window?.backgroundColor = .systemBackground
-        } else {
-            // Fallback on earlier versions
-            window?.backgroundColor = .white
-        }
-        window?.rootViewController = tabBarController
-        
+        #if DEBUG
+
+        Bundle(path: "/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle")?.load()
+
+        #endif
         return true
     }
     

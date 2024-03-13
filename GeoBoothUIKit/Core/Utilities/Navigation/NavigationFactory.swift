@@ -14,13 +14,9 @@ class NavigationBuilder {
     static func build(rootView: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootView)
         navigationController.navigationBar.prefersLargeTitles = true
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            navigationController.navigationBar.scrollEdgeAppearance = appearance
-        } else {
-            // Fallback on earlier versions
-        }
+//        let appearance = UINavigationBarAppearance()
+//        appearance.configureWithOpaqueBackground()
+//        navigationController.navigationBar.scrollEdgeAppearance = appearance
         
         return navigationController
     }

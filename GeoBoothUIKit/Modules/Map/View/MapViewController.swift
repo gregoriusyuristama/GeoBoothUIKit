@@ -14,12 +14,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if #available(iOS 13.0, *) {
-            self.view.backgroundColor = .systemBackground
-        } else {
-            // Fallback on earlier versions
-            self.view.backgroundColor = .white
-        }
+        self.view.backgroundColor = .systemBackground
         self.setupMapView()
         self.setupLocationManager()
     }
