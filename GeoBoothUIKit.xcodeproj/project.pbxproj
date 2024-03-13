@@ -51,6 +51,7 @@
 		B6CE19B52BA21CFD0086A2B1 /* CollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19B42BA21CFD0086A2B1 /* CollectionManager.swift */; };
 		B6CE19B72BA21D050086A2B1 /* CollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19B62BA21D050086A2B1 /* CollectionPresenter.swift */; };
 		B6CE19B92BA21D0D0086A2B1 /* CollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19B82BA21D0D0086A2B1 /* CollectionInteractor.swift */; };
+		B6CE19BC2BA21F910086A2B1 /* Supabase-Secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = B6CE19BB2BA21F910086A2B1 /* Supabase-Secret.plist */; };
 		B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C72B75916F000324B8 /* LocationServices.swift */; };
 		B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */; };
 		B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */; };
@@ -118,6 +119,7 @@
 		B6CE19B42BA21CFD0086A2B1 /* CollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionManager.swift; sourceTree = "<group>"; };
 		B6CE19B62BA21D050086A2B1 /* CollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPresenter.swift; sourceTree = "<group>"; };
 		B6CE19B82BA21D0D0086A2B1 /* CollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInteractor.swift; sourceTree = "<group>"; };
+		B6CE19BB2BA21F910086A2B1 /* Supabase-Secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Supabase-Secret.plist"; sourceTree = "<group>"; };
 		B6E4D8C72B75916F000324B8 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAuthDelegate.swift; sourceTree = "<group>"; };
 		B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumTableViewController.swift; sourceTree = "<group>"; };
@@ -597,9 +599,18 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		B6CE19BA2BA21F390086A2B1 /* Supabase */ = {
+			isa = PBXGroup;
+			children = (
+				B6CE19BB2BA21F910086A2B1 /* Supabase-Secret.plist */,
+			);
+			path = Supabase;
+			sourceTree = "<group>";
+		};
 		B6E4D8C52B75915A000324B8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B6CE19BA2BA21F390086A2B1 /* Supabase */,
 				B685B7CC2BA0C17C00D1AB6D /* Navigation */,
 				B6E4D8C62B759163000324B8 /* Location */,
 			);
@@ -763,6 +774,7 @@
 				B6BA6D432B73B9D100E01723 /* LaunchScreen.storyboard in Resources */,
 				B6F76D812B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.xib in Resources */,
 				B694BE582B73D3070084F9FE /* Assets.xcassets in Resources */,
+				B6CE19BC2BA21F910086A2B1 /* Supabase-Secret.plist in Resources */,
 				B6F76D852B7BE1EE00909C80 /* MapViewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
