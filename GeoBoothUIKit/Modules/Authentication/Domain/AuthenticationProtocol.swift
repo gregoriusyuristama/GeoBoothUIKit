@@ -43,5 +43,7 @@ protocol AuthenticationPresenterProtocol {
     
     var isLoading: Bool { get set }
     
+    func viewWillAppear()
+    
     func signInWithEmailPassword(email: String, password: String)
 }

@@ -6,19 +6,31 @@
 //
 
 import UIKit
+import SnapKit
 
 class CollectionViewController: UIViewController, CollectionViewProtocol {
     var presenter: (any CollectionPresenterProtocol)?
     
+    var dummyData: [AlbumViewModel] = .init(repeating: .init(albumName: "Test Album"), count: 10)
+    
     /// Label displaying empty prompt when user doesn't have any album
     var contentLabel: UILabel!
+    var contentView: UIView!
+    
+    private let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
+        collectionView.isHidden = true
+        return collectionView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        // Do any additional setup after loading the view.
+        
+        
         self.setupNavbarItem()
-        self.setupContentLabel()
+        self.setupContentView()
     }
     
     
@@ -27,6 +39,19 @@ class CollectionViewController: UIViewController, CollectionViewProtocol {
         let plusIcon = UIImage(named: ResourcePath.plusIcon)?.resizeImage(scaledToSize: CGSize(width: 22, height: 22))
         let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: #selector(showAddModal))
         self.navigationItem.rightBarButtonItem = addButton
+    }
+    
+    fileprivate func setupContentView() {
+        contentView = UIView()
+        view.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.width.height.equalToSuperview()
+        }
+        if dummyData.isEmpty {
+            self.setupContentLabel()
+        } else {
+            self.setupCollectionView()
+        }
     }
     
     fileprivate func setupContentLabel() {
@@ -71,23 +96,50 @@ class CollectionViewController: UIViewController, CollectionViewProtocol {
             ]
         ))
         
-        self.view.addSubview(contentLabel)
+        self.contentView.addSubview(contentLabel)
         contentLabel.attributedText = attrString
         contentLabel.textAlignment = .center
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: Auto Layout
-        let safeArea = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
-            contentLabel.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            contentLabel.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            contentLabel.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
-            contentLabel.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
+            contentLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            contentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
     
-    @objc func showAddModal(sender: UIButton!) {
-        let addAlbumVC = UINavigationController(rootViewController: AddAlbumViewController())
-        self.present(addAlbumVC, animated: true, completion: nil)
+    fileprivate func setupCollectionView() {
+        contentView.addSubview(collectionView)
+        collectionView.snp.updateConstraints { make in
+            make.width.height.equalToSuperview()
+        }
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.isHidden = false
     }
+    
+    @objc func showAddModal(sender: UIButton!) {
+        presenter?.showAddAlbumModal()
+    }
+}
+
+extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dummyData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
+        cell.config(album: dummyData[indexPath.row], photos: nil)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.width / 2 - 32
+        let height = width * 4/3 + 32
+        return CGSize(width: width, height: height)
+    }
+    
 }

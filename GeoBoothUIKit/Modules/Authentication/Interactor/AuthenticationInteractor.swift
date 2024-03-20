@@ -7,6 +7,7 @@
 
 import Foundation
 import Auth
+import KeychainSwift
 
 class AuthenticationInteractor: AuthenticationInteractorProtocol {
     
@@ -15,14 +16,19 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
     func doAuth(email: String, password: String, completion: @escaping (User?, Error?) -> Void) {
         Task {
             do {
-                var result = try await SupabaseSingleton
+                let result = try await SupabaseSingleton
                     .shared.client
                     .auth.signIn(
                         email: email,
                         password: password
                     )
                 print(result)
-                UserDefaultHelper.saveWithJson(result, with: UserDefaultsKeyConstant.supabaseSession)
+//                UserDefaultHelper.saveWithJson(result, with: UserDefaultsKeyConstant.supabaseSession)
+                let keychain = KeychainSwift()
+                keychain.set(result.accessToken, forKey: KeychainKeyConstant.accessToken, withAccess: .accessibleWhenUnlocked)
+                keychain.set(password, forKey: KeychainKeyConstant.password, withAccess: .accessibleWhenUnlocked)
+                keychain.set(email, forKey: KeychainKeyConstant.email, withAccess: .accessibleWhenUnlocked)
+                keychain.set(result.user.id.uuidString, forKey: KeychainKeyConstant.userId, withAccess: .accessibleWhenUnlocked)
                 completion(result.user, nil)
             } catch {
                 print(error)

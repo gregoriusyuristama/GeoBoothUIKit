@@ -18,7 +18,6 @@ class MapViewTableViewCell: UITableViewCell {
         self.setupLocationManager()
         self.mapView.showsUserLocation = true
         self.mapView.userTrackingMode = .follow
-        self.mapView.layer.cornerRadius = 16
         
     }
     

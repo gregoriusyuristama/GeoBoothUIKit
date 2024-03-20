@@ -40,16 +40,21 @@ class AddAlbumTableViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AddAlbumTextFieldTableViewCell.identifier,
                                                            for: indexPath) as? AddAlbumTextFieldTableViewCell else { return UITableViewCell() }
             self.albumNameTextField = cell.addAlbumTextField
+            
+            cell.roundCorners([.topLeft, .topRight], radius: 16)
+            
             return cell
         } else if indexPath.row == 1 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MapViewTableViewCell.identifier,
                                                            for: indexPath) as? MapViewTableViewCell else { return UITableViewCell() }
+            
             return cell
         } else if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AddAlbumButtonTableViewCell.identifier,
                                                            for: indexPath) as? AddAlbumButtonTableViewCell else { return UITableViewCell() }
             self.addAlbumButton = cell.addNewAlbumButton
             self.addAlbumButton.addTarget(self, action: #selector(doAddAlbum), for: .touchUpInside)
+            cell.roundCorners([.bottomLeft, .bottomRight], radius: 16)
             return cell
         }
         
@@ -76,49 +81,4 @@ class AddAlbumTableViewController: UITableViewController {
         print(self.albumNameTextField.text)
         print(LocationServices.shared.locationManager.location)
     }
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }

@@ -14,5 +14,9 @@ class CollectionPresenter: CollectionPresenterProtocol {
     
     var view: (any CollectionViewProtocol)?
     
+    func showAddAlbumModal() {
+        guard let view = view else { return }
+        router?.presentAddAlbumModal(from: view)
+    }
     
 }

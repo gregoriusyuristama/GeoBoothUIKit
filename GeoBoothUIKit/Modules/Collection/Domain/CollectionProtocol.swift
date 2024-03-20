@@ -11,6 +11,8 @@ import UIKit
 protocol CollectionRouterProtocol {
     
     static func build(usingNavigationFactory factory: NavigationFactory) -> UIViewController
+    
+    func presentAddAlbumModal(from view: CollectionViewProtocol)
 }
 
 protocol CollectionManagerProtocol {
@@ -29,4 +31,6 @@ protocol CollectionPresenterProtocol {
     var router: CollectionRouterProtocol? { get set }
     var interactor: CollectionInteratorProtocol? { get set }
     var view: CollectionViewProtocol? { get set }
+    
+    func showAddAlbumModal()
 }

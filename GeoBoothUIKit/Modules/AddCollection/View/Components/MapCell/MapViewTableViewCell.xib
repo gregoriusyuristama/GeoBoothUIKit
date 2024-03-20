@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,15 +19,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SY7-WZ-viq">
-                        <rect key="frame" x="32" y="11" width="256" height="278"/>
+                        <rect key="frame" x="16" y="11" width="288" height="278"/>
                         <standardMapConfiguration key="preferredConfiguration"/>
                     </mapView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="SY7-WZ-viq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0Gy-9b-dq8"/>
                     <constraint firstAttribute="bottomMargin" secondItem="SY7-WZ-viq" secondAttribute="bottom" id="RCF-zJ-1gT"/>
-                    <constraint firstItem="SY7-WZ-viq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="cVR-Jl-OW8"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="SY7-WZ-viq" secondAttribute="trailing" constant="16" id="yWG-Mt-Lhg"/>
+                    <constraint firstItem="SY7-WZ-viq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cVR-Jl-OW8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="SY7-WZ-viq" secondAttribute="trailing" id="yWG-Mt-Lhg"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

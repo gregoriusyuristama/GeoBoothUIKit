@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 class AuthenticationPresenter: AuthenticationPresenterProtocol {
     
@@ -27,22 +28,29 @@ class AuthenticationPresenter: AuthenticationPresenterProtocol {
         guard let view = view else { return }
         isLoading = true
         interactor?.doAuth(email: email, password: password) { user, error in
-            if let user = user {
+            if let errorMessage = error?.localizedDescription {
+                DispatchQueue.main.async { [weak self] in
+                    self?.isLoading = false
+                    self?.view?.updateViewWithError(errorMessage: errorMessage)
+                }
+            } else  {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.isLoading = false
                     self.router?.presentHomeView(from: view)
                 }
-            } else {
-                guard let errorMessage = error?.localizedDescription else { return }
-                DispatchQueue.main.async { [weak self] in
-                    self?.isLoading = false
-                    self?.view?.updateViewWithError(errorMessage: errorMessage)
-                }
-                
             }
             
         }
         
     }
+    
+    func viewWillAppear() {
+        let keychain = KeychainSwift()
+        guard let view = view, let email = keychain.get(KeychainKeyConstant.email), let password = keychain.get(KeychainKeyConstant.password) else { return }
+        
+        self.signInWithEmailPassword(email: email, password: password)
+        
+    }
+    
 }
