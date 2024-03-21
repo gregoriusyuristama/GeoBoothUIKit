@@ -9,6 +9,7 @@ import SnapKit
 import UIKit
 
 class AddAlbumViewController: UIViewController, AddCollectionViewProtocol {
+    var dismissalDelegate: (any CollectionViewModalDismissalDelegate)?
     var presenter: (any AddCollectionPresenterProtocol)?
     
     override func viewDidLoad() {
@@ -59,6 +60,7 @@ class AddAlbumViewController: UIViewController, AddCollectionViewProtocol {
             let alert = UIAlertController(title: "Success", message: "Successfully added new Album", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
                 self?.dismiss(animated: true)
+                self?.dismissalDelegate?.modalDismissed()
             }))
             self?.present(alert, animated: true, completion: nil)
         }

@@ -34,9 +34,11 @@ class CollectionRouter: CollectionRouterProtocol {
     }
     
     func presentAddAlbumModal(from view: any CollectionViewProtocol) {
-        let addAlbumView = AddCollectionRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:))
+        guard 
+            let viewController = view as? UIViewController & CollectionViewModalDismissalDelegate
+        else { fatalError("Invalid View Controller type") }
         
-        guard let viewController = view as? UIViewController else { fatalError("Invalid View Controller type") }
+        let addAlbumView = AddCollectionRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:), viewController: viewController)
         
         viewController.navigationController?.present(addAlbumView, animated: true)
     }

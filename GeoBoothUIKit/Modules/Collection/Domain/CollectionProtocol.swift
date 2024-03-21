@@ -43,4 +43,10 @@ protocol CollectionPresenterProtocol {
     
     func interactorDidFetchAlbums(with result: Result<[AlbumViewModel], Error>)
     func showAddAlbumModal()
+    
+    func triggerFetchAlbum()
+}
+
+protocol CollectionViewModalDismissalDelegate: AnyObject {
+    func modalDismissed()
 }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AddCollectionRouterProtocol {
-    static func build(usingNavigationFactory factory: NavigationFactory) -> UIViewController
+    static func build(usingNavigationFactory factory: NavigationFactory, viewController: CollectionViewModalDismissalDelegate) -> UIViewController
 }
 
 protocol AddCollectionManagerProtocol {
@@ -25,6 +25,7 @@ protocol AddCollectionInteratorProtocol {
 
 protocol AddCollectionViewProtocol {
     var presenter: AddCollectionPresenterProtocol? { get set }
+    var dismissalDelegate: CollectionViewModalDismissalDelegate? { get set }
     
     func updateViewAddSuccess()
     func updateViewAddFailed(errorMessage: String)

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class AddCollectionRouter: AddCollectionRouterProtocol {
-    static func build(usingNavigationFactory factory: NavigationFactory) -> UIViewController {
+    static func build(usingNavigationFactory factory: NavigationFactory, viewController: CollectionViewModalDismissalDelegate) -> UIViewController {
         let router = AddCollectionRouter()
         
         var view: AddCollectionViewProtocol = AddAlbumViewController()
@@ -18,6 +18,7 @@ class AddCollectionRouter: AddCollectionRouterProtocol {
         var interactor: AddCollectionInteratorProtocol = AddCollectionInteractor(manager: addCollectionManager)
         
         view.presenter = presenter
+        view.dismissalDelegate = viewController
         
         interactor.presenter = presenter
         

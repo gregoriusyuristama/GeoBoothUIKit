@@ -8,7 +8,7 @@
 import SnapKit
 import UIKit
 
-class CollectionViewController: UIViewController, CollectionViewProtocol {
+class CollectionViewController: UIViewController, CollectionViewProtocol, CollectionViewModalDismissalDelegate {
     var presenter: (any CollectionPresenterProtocol)?
     
     private var albums: [AlbumViewModel] = [] {
@@ -16,13 +16,12 @@ class CollectionViewController: UIViewController, CollectionViewProtocol {
             collectionView.reloadData()
         }
     }
-//    var dummyData: [AlbumViewModel] = .init(repeating: .init(albumName: "Test Album"), count: 10)
+    
+    private var spinner = LoadingViewController()
     
     /// Label displaying empty prompt when user doesn't have any album
     var contentLabel: UILabel!
     var contentView: UIView!
-    
-    private var spinner = LoadingViewController()
     
     private let collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -183,5 +182,9 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
         let width = view.frame.width / 2 - 32
         let height = width * 4 / 3 + 32
         return CGSize(width: width, height: height)
+    }
+    
+    func modalDismissed() {
+        presenter?.triggerFetchAlbum()
     }
 }

@@ -41,4 +41,9 @@ class CollectionPresenter: CollectionPresenterProtocol {
             view?.update(with: error.localizedDescription)
         }
     }
+    
+    func triggerFetchAlbum() {
+        interactor?.getAlbums()
+    }
+    
 }
