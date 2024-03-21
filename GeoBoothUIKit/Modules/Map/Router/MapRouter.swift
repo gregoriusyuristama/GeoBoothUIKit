@@ -8,13 +8,27 @@
 import Foundation
 import UIKit
 
-class MapRouter {
+class MapRouter: MapRouterProtocol {
     static func build(usingNavigationFactory factory: NavigationFactory) -> UIViewController {
-        let view = MapViewController()
-        view.navigationController?.navigationBar.prefersLargeTitles = true
-        view.navigationItem.title = "Places of Memories"
         let router = MapRouter()
         
-        return factory(view)
+        var view: MapViewProtocol = MapViewController()
+        var presenter: MapPresenterProtocol = MapPresenter()
+        var interactor: MapInteractorProtocol = MapInteractor()
+        
+        view.presenter = presenter
+        
+        interactor.presenter = presenter
+        
+        presenter.router = router
+        presenter.view = view
+        presenter.interactor = interactor
+        
+        guard let mapViewController = view as? UIViewController else { fatalError("Invalid UI Type") }
+        
+        mapViewController.navigationController?.navigationBar.prefersLargeTitles = true
+        mapViewController.navigationItem.title = "Places of Memories"
+        
+        return factory(mapViewController)
     }
 }

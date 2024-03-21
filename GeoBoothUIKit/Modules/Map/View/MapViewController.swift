@@ -5,18 +5,19 @@
 //  Created by Gregorius Yuristama Nugraha on 2/7/24.
 //
 
-import UIKit
 import MapKit
+import UIKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, MapViewProtocol {
+    var presenter: (any MapPresenterProtocol)?
     
     let mapView = MKMapView()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.view.backgroundColor = .systemBackground
-        self.setupMapView()
-        self.setupLocationManager()
+        view.backgroundColor = .systemBackground
+        setupMapView()
+        setupLocationManager()
     }
     
     fileprivate func setupMapView() {
@@ -57,12 +58,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.setUserTrackingMode(.follow, animated: true)
         }
     }
-    
 }
 
 extension MapViewController: ChangeAuthDelegate {
     func authorizationChanged(authStatus: CLAuthorizationStatus) {
         followUserIfPossible(authStatus: authStatus)
     }
-    
 }
