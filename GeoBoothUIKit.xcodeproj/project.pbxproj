@@ -11,6 +11,7 @@
 		B63B276D2BAC991E00658F38 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B276C2BAC991E00658F38 /* MapInteractor.swift */; };
 		B63B276F2BAC999100658F38 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B276E2BAC999100658F38 /* MapPresenter.swift */; };
 		B63B27712BAC99BA00658F38 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B27702BAC99BA00658F38 /* MapManager.swift */; };
+		B63B27732BACA27100658F38 /* DbFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B27722BACA27100658F38 /* DbFunction.swift */; };
 		B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */; };
 		B685B7D12BA0C20700D1AB6D /* NavigationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */; };
 		B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */; };
@@ -108,6 +109,7 @@
 		B63B276C2BAC991E00658F38 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		B63B276E2BAC999100658F38 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		B63B27702BAC99BA00658F38 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		B63B27722BACA27100658F38 /* DbFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbFunction.swift; sourceTree = "<group>"; };
 		B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFactory.swift; sourceTree = "<group>"; };
 		B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProtocol.swift; sourceTree = "<group>"; };
@@ -224,6 +226,30 @@
 				B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B63B27742BACA2BB00658F38 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B63B27752BACA2D300658F38 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B63B27762BACA2D800658F38 /* Remote */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B63B27762BACA2D800658F38 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B68A3A462BAACD8400AC6A11 /* AlbumDTO.swift */,
+				B68A3A4A2BAACF3700AC6A11 /* PhotoDTO.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		B685B7AB2BA0B78400D1AB6D /* Modules */ = {
@@ -437,6 +463,7 @@
 		B685B7C22BA0B88C00D1AB6D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B63B27742BACA2BB00658F38 /* Entity */,
 				B6A162E82BA9D70800C3C96A /* AddCollectionManager.swift */,
 			);
 			path = Manager;
@@ -575,9 +602,7 @@
 		B68A3A452BAACD7900AC6A11 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				B68A3A462BAACD8400AC6A11 /* AlbumDTO.swift */,
 				B68A3A482BAACDE700AC6A11 /* AlbumViewModel.swift */,
-				B68A3A4A2BAACF3700AC6A11 /* PhotoDTO.swift */,
 				B68A3A4C2BAACFE100AC6A11 /* PhotoViewModel.swift */,
 			);
 			path = Entity;
@@ -605,6 +630,7 @@
 		B694BE4B2B73CFE40084F9FE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B63B27752BACA2D300658F38 /* Entity */,
 				B6CE19C62BA235D70086A2B1 /* Themes */,
 				B6E4D8C52B75915A000324B8 /* Utilities */,
 				B694BE502B73D1760084F9FE /* Constants */,
@@ -725,6 +751,7 @@
 				B6CE19BB2BA21F910086A2B1 /* Supabase-Secret.plist */,
 				B6CE19BD2BA2213B0086A2B1 /* SupabaseConfig.swift */,
 				B6CE19BF2BA221750086A2B1 /* SupabaseSingleton.swift */,
+				B63B27722BACA27100658F38 /* DbFunction.swift */,
 			);
 			path = Supabase;
 			sourceTree = "<group>";
@@ -1002,6 +1029,7 @@
 				B6A162E92BA9D70800C3C96A /* AddCollectionManager.swift in Sources */,
 				B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */,
 				B63B276F2BAC999100658F38 /* MapPresenter.swift in Sources */,
+				B63B27732BACA27100658F38 /* DbFunction.swift in Sources */,
 				B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */,
 				B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */,
 				B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */,

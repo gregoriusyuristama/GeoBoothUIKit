@@ -11,7 +11,8 @@ import SnapKit
 class CollectionViewController: UIViewController, CollectionViewProtocol {
     var presenter: (any CollectionPresenterProtocol)?
     
-    var dummyData: [AlbumViewModel] = .init(repeating: .init(albumName: "Test Album"), count: 10)
+    var dummyData: [AlbumViewModel] = []
+//    var dummyData: [AlbumViewModel] = .init(repeating: .init(albumName: "Test Album"), count: 10)
     
     /// Label displaying empty prompt when user doesn't have any album
     var contentLabel: UILabel!

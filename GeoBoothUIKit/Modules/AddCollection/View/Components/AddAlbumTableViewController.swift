@@ -11,6 +11,7 @@ class AddAlbumTableViewController: UITableViewController {
     
     var albumNameTextField: UITextField!
     var addAlbumButton: UIButton!
+    var addAction: ( (_ albumName: String) -> Void )!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,8 +78,7 @@ class AddAlbumTableViewController: UITableViewController {
     }
     
     @objc func doAddAlbum() {
-        // TODO: Add save functionality to CoreData
-        print(self.albumNameTextField.text)
-        print(LocationServices.shared.locationManager.location)
+        guard let albumName = self.albumNameTextField.text else { return }
+        self.addAction(albumName)
     }
 }

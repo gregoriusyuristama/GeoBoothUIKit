@@ -14,4 +14,29 @@ class AddCollectionPresenter: AddCollectionPresenterProtocol {
     
     var view: (any AddCollectionViewProtocol)?
     
+    var isLoading: Bool = false {
+        didSet {
+            if isLoading {
+                view?.updateViewIsLoading()
+            } else {
+                view?.updateViewIsNotLoading()
+            }
+        }
+    }
+    
+    func addAlbum(albumName: String) {
+        isLoading = true
+        interactor?.addAlbum(albumName: albumName)
+    }
+    
+    func addAlbumSuccess() {
+        isLoading = false
+        view?.updateViewAddSuccess()
+    }
+    
+    func addAlbumFailed(errorMessage: String) {
+        isLoading = false
+        view?.updateViewAddFailed(errorMessage: errorMessage)
+    }
+    
 }

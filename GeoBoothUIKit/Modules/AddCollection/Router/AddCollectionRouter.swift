@@ -14,7 +14,8 @@ class AddCollectionRouter: AddCollectionRouterProtocol {
         
         var view: AddCollectionViewProtocol = AddAlbumViewController()
         var presenter: AddCollectionPresenterProtocol = AddCollectionPresenter()
-        var interactor: AddCollectionInteratorProtocol = AddCollectionInteractor()
+        let addCollectionManager: AddCollectionManagerProtocol = AddCollectionManager()
+        var interactor: AddCollectionInteratorProtocol = AddCollectionInteractor(manager: addCollectionManager)
         
         view.presenter = presenter
         
