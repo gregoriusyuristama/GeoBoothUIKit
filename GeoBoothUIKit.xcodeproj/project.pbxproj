@@ -12,6 +12,8 @@
 		B63B276F2BAC999100658F38 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B276E2BAC999100658F38 /* MapPresenter.swift */; };
 		B63B27712BAC99BA00658F38 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B27702BAC99BA00658F38 /* MapManager.swift */; };
 		B63B27732BACA27100658F38 /* DbFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B27722BACA27100658F38 /* DbFunction.swift */; };
+		B63B277A2BACB17100658F38 /* TableName.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B27792BACB17100658F38 /* TableName.swift */; };
+		B63B277C2BACB63D00658F38 /* EnumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B277B2BACB63D00658F38 /* EnumView.swift */; };
 		B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */; };
 		B685B7D12BA0C20700D1AB6D /* NavigationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */; };
 		B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */; };
@@ -110,6 +112,8 @@
 		B63B276E2BAC999100658F38 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		B63B27702BAC99BA00658F38 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		B63B27722BACA27100658F38 /* DbFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbFunction.swift; sourceTree = "<group>"; };
+		B63B27792BACB17100658F38 /* TableName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableName.swift; sourceTree = "<group>"; };
+		B63B277B2BACB63D00658F38 /* EnumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumView.swift; sourceTree = "<group>"; };
 		B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFactory.swift; sourceTree = "<group>"; };
 		B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProtocol.swift; sourceTree = "<group>"; };
@@ -492,6 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */,
+				B63B277B2BACB63D00658F38 /* EnumView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -752,6 +757,7 @@
 				B6CE19BD2BA2213B0086A2B1 /* SupabaseConfig.swift */,
 				B6CE19BF2BA221750086A2B1 /* SupabaseSingleton.swift */,
 				B63B27722BACA27100658F38 /* DbFunction.swift */,
+				B63B27792BACB17100658F38 /* TableName.swift */,
 			);
 			path = Supabase;
 			sourceTree = "<group>";
@@ -1024,6 +1030,7 @@
 				B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */,
 				B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */,
 				B68A3A522BAAD0C600AC6A11 /* CollectionViewCell.swift in Sources */,
+				B63B277A2BACB17100658F38 /* TableName.swift in Sources */,
 				B685B7E52BA1B6B600D1AB6D /* AuthenticationManager.swift in Sources */,
 				B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */,
 				B6A162E92BA9D70800C3C96A /* AddCollectionManager.swift in Sources */,
@@ -1042,6 +1049,7 @@
 				B6A167692B79732A001457B0 /* AddAlbumViewController.swift in Sources */,
 				B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */,
 				B685B7DA2BA0CF6400D1AB6D /* HomeProtocol.swift in Sources */,
+				B63B277C2BACB63D00658F38 /* EnumView.swift in Sources */,
 				B63B27712BAC99BA00658F38 /* MapManager.swift in Sources */,
 				B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */,
 				B6A162E72BA9D69500C3C96A /* AddCollectionProtocol.swift in Sources */,

@@ -30,13 +30,13 @@ class AuthenticationRouter: AuthenticationRouterProtocol {
         
         router.entry = viewEntry
         
-        return factory(viewEntry)
+        return factory(viewEntry, .authentication)
     }
     
     func presentHomeView(from view: any AuthenticationViewProtocol) {
         let submodules = (
-            collection: CollectionRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:)),
-            map: MapRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:))
+            collection: CollectionRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:)),
+            map: MapRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:))
         )
         let homeViewController = HomeRouter.createModule(usingSubmodules: submodules)
         

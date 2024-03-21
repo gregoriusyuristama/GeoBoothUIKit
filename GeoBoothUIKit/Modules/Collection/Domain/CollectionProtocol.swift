@@ -14,20 +14,33 @@ protocol CollectionRouterProtocol {
     func presentAddAlbumModal(from view: CollectionViewProtocol)
 }
 
-protocol CollectionManagerProtocol {}
+protocol CollectionManagerProtocol {
+    func getRemoteAlbums(completion: @escaping ((Result<[AlbumDTO], Error>) -> Void))
+}
 
 protocol CollectionInteratorProtocol {
     var presenter: CollectionPresenterProtocol? { get set }
+    var manager: CollectionManagerProtocol { get set }
+    
+    func getAlbums()
 }
 
 protocol CollectionViewProtocol {
     var presenter: CollectionPresenterProtocol? { get set }
+    
+    func update(with albums: [AlbumViewModel])
+    func update(with error: String)
+    func updateViewIsLoading()
+    func updateViewIsNotLoading()
 }
 
 protocol CollectionPresenterProtocol {
     var router: CollectionRouterProtocol? { get set }
     var interactor: CollectionInteratorProtocol? { get set }
     var view: CollectionViewProtocol? { get set }
-
+    
+    var isLoading: Bool { get set }
+    
+    func interactorDidFetchAlbums(with result: Result<[AlbumViewModel], Error>)
     func showAddAlbumModal()
 }

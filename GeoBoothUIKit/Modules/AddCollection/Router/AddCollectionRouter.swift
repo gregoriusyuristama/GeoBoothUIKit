@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class AddCollectionRouter: AddCollectionRouterProtocol {
-    static func build(usingNavigationFactory factory: (UIViewController) -> (UINavigationController)) -> UIViewController {
+    static func build(usingNavigationFactory factory: NavigationFactory) -> UIViewController {
         let router = AddCollectionRouter()
         
         var view: AddCollectionViewProtocol = AddAlbumViewController()
@@ -29,7 +29,7 @@ class AddCollectionRouter: AddCollectionRouterProtocol {
         
         viewController.navigationItem.title = "Add New Album"
         
-        return factory(viewController)
+        return factory(viewController, .addCollection)
     }
     
 }

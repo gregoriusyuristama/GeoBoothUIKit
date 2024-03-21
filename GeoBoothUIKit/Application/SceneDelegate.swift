@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
         
-        let initialView = AuthenticationRouter.start(usingNavigationFactory: NavigationBuilder.build(rootView:))
+        let initialView = AuthenticationRouter.start(usingNavigationFactory: NavigationBuilder.build(rootView:type:))
         
         window.rootViewController = initialView
     

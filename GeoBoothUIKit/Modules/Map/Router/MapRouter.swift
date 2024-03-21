@@ -29,6 +29,6 @@ class MapRouter: MapRouterProtocol {
         mapViewController.navigationController?.navigationBar.prefersLargeTitles = true
         mapViewController.navigationItem.title = "Places of Memories"
         
-        return factory(mapViewController)
+        return factory(mapViewController, .map)
     }
 }

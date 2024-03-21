@@ -22,8 +22,6 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
                         email: email,
                         password: password
                     )
-                print(result)
-//                UserDefaultHelper.saveWithJson(result, with: UserDefaultsKeyConstant.supabaseSession)
                 let keychain = KeychainSwift()
                 keychain.set(result.accessToken, forKey: KeychainKeyConstant.accessToken, withAccess: .accessibleWhenUnlocked)
                 keychain.set(password, forKey: KeychainKeyConstant.password, withAccess: .accessibleWhenUnlocked)

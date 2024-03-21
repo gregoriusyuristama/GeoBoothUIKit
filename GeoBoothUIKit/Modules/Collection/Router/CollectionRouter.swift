@@ -14,7 +14,8 @@ class CollectionRouter: CollectionRouterProtocol {
         
         var view: CollectionViewProtocol = CollectionViewController()
         var presenter: CollectionPresenterProtocol = CollectionPresenter()
-        var interactor: CollectionInteratorProtocol = CollectionInteractor()
+        let collectionManager: CollectionManagerProtocol = CollectionManager()
+        var interactor: CollectionInteratorProtocol = CollectionInteractor(manager: collectionManager)
         
         view.presenter = presenter
         
@@ -29,11 +30,11 @@ class CollectionRouter: CollectionRouterProtocol {
         viewCollection.navigationController?.navigationBar.prefersLargeTitles = true
         viewCollection.navigationItem.title = "GeoBooth"
         
-        return factory(viewCollection)
+        return factory(viewCollection, .collection)
     }
     
     func presentAddAlbumModal(from view: any CollectionViewProtocol) {
-        let addAlbumView = AddCollectionRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:))
+        let addAlbumView = AddCollectionRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:))
         
         guard let viewController = view as? UIViewController else { fatalError("Invalid View Controller type") }
         
