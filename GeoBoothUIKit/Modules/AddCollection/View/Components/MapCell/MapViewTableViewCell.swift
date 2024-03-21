@@ -20,13 +20,7 @@ class MapViewTableViewCell: UITableViewCell {
         self.mapView.userTrackingMode = .follow
         
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
+
     static func nib() -> UINib {
         .init(nibName: identifier, bundle: nil)
     }

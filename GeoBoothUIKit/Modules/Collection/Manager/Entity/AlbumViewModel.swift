@@ -18,5 +18,3 @@ struct AlbumViewModel {
         self.albumName = album.albumName
     }
 }
-
-

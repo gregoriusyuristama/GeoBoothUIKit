@@ -19,11 +19,6 @@ class CollectionViewCell: UICollectionViewCell {
         .init(nibName: identifier, bundle: nil)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func config(album: AlbumViewModel, photos: [PhotoViewModel]?) {
         self.albumNameLabel.text = album.albumName
         if let photos = photos {

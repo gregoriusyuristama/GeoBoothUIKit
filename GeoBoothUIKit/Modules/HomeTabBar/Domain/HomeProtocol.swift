@@ -32,5 +32,4 @@ protocol HomePresenterProtocol {
     var interactor: HomeInteractorProtocol? { get set }
     var view: HomeViewProtocol? { get set }
     
-    
 }

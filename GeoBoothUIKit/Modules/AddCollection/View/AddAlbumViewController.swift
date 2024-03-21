@@ -11,7 +11,6 @@ import SnapKit
 class AddAlbumViewController: UIViewController, AddCollectionViewProtocol {
     var presenter: (any AddCollectionPresenterProtocol)?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpNavMenu()

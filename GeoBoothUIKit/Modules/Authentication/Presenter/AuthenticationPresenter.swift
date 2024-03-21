@@ -27,13 +27,13 @@ class AuthenticationPresenter: AuthenticationPresenterProtocol {
     func signInWithEmailPassword(email: String, password: String) {
         guard let view = view else { return }
         isLoading = true
-        interactor?.doAuth(email: email, password: password) { user, error in
+        interactor?.doAuth(email: email, password: password) { _, error in
             if let errorMessage = error?.localizedDescription {
                 DispatchQueue.main.async { [weak self] in
                     self?.isLoading = false
                     self?.view?.updateViewWithError(errorMessage: errorMessage)
                 }
-            } else  {
+            } else {
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
                     self.isLoading = false
@@ -47,7 +47,10 @@ class AuthenticationPresenter: AuthenticationPresenterProtocol {
     
     func viewWillAppear() {
         let keychain = KeychainSwift()
-        guard let view = view, let email = keychain.get(KeychainKeyConstant.email), let password = keychain.get(KeychainKeyConstant.password) else { return }
+        guard 
+            let email = keychain.get(KeychainKeyConstant.email),
+            let password = keychain.get(KeychainKeyConstant.password)
+        else { return }
         
         self.signInWithEmailPassword(email: email, password: password)
         

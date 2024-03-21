@@ -21,7 +21,7 @@ protocol AddCollectionInteratorProtocol {
 }
 
 protocol AddCollectionViewProtocol {
-    var presenter : AddCollectionPresenterProtocol? { get set }
+    var presenter: AddCollectionPresenterProtocol? { get set }
 }
 
 protocol AddCollectionPresenterProtocol {

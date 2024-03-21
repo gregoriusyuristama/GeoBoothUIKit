@@ -24,12 +24,6 @@ class HomeTabBarController: UITabBarController, HomeViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        self.setupTabs()
-        // Do any additional setup after loading the view.
-    }
-    
     // MARK: Setup Tabs
     private func setupTabs() {
         let collection = self.createNav(

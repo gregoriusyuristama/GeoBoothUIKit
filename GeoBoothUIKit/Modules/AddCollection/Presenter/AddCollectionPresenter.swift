@@ -14,5 +14,4 @@ class AddCollectionPresenter: AddCollectionPresenterProtocol {
     
     var view: (any AddCollectionViewProtocol)?
     
-    
 }

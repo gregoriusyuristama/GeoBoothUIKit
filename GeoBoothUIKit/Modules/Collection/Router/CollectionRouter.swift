@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 class CollectionRouter: CollectionRouterProtocol {
     static func build(usingNavigationFactory factory: NavigationFactory) -> UIViewController {
         let router = CollectionRouter()
@@ -36,10 +35,9 @@ class CollectionRouter: CollectionRouterProtocol {
     func presentAddAlbumModal(from view: any CollectionViewProtocol) {
         let addAlbumView = AddCollectionRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:))
         
-        guard let vc = view as? UIViewController else { fatalError("Invalid View Controller type") }
+        guard let viewController = view as? UIViewController else { fatalError("Invalid View Controller type") }
         
-        vc.navigationController?.present(addAlbumView, animated: true)
+        viewController.navigationController?.present(addAlbumView, animated: true)
     }
-    
     
 }

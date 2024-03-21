@@ -102,7 +102,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         
     }
     
-    
     @objc func buttonClickedDown(sender: UIButton) {
         animateButton(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95))
         guard let email = userNameTextField.text, let password = passwordTextField.text else { return }
@@ -117,7 +116,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             viewToAnimate.transform = transform
         }
     }
-    
     
     func updateViewIsLoading() {
         DispatchQueue.main.async { [weak self] in

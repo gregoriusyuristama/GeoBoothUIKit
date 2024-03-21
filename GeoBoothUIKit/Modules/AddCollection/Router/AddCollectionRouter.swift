@@ -24,11 +24,11 @@ class AddCollectionRouter: AddCollectionRouterProtocol {
         presenter.view = view
         presenter.interactor = interactor
         
-        guard let vc = view as? UIViewController else { fatalError("Invalid UI Type") }
+        guard let viewController = view as? UIViewController else { fatalError("Invalid UI Type") }
         
-        vc.navigationItem.title = "Add New Album"
+        viewController.navigationItem.title = "Add New Album"
         
-        return factory(vc)
+        return factory(viewController)
     }
     
 }

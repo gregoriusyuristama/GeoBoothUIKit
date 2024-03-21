@@ -44,6 +44,5 @@ class AuthenticationRouter: AuthenticationRouterProtocol {
         viewController.view.window?.rootViewController = homeViewController
         
     }
-    
-    
+
 }

@@ -29,7 +29,6 @@ class HomeRouter {
         return tabBarController
     }
     
-    
 }
 
 extension HomeRouter {

@@ -19,8 +19,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.setupLocationManager()
     }
     
-    // TODO: refactor setup to createModule
-    
     fileprivate func setupMapView() {
         let safeArea = view.safeAreaLayoutGuide
         

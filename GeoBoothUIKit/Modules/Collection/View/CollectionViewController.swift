@@ -27,14 +27,11 @@ class CollectionViewController: UIViewController, CollectionViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        
-        
+
         self.setupNavbarItem()
         self.setupContentView()
     }
-    
-    
-    // TODO: refactor setup to createModule
+
     fileprivate func setupNavbarItem() {
         let plusIcon = UIImage(named: ResourcePath.plusIcon)?.resizeImage(scaledToSize: CGSize(width: 22, height: 22))
         let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: #selector(showAddModal))
@@ -131,7 +128,9 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell else { return UICollectionViewCell() }
+        guard 
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell
+        else { return UICollectionViewCell() }
         cell.config(album: dummyData[indexPath.row], photos: nil)
         return cell
     }

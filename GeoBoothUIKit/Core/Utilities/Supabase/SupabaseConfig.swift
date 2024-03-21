@@ -12,7 +12,7 @@ class SupabaseConfig {
         return get(filename: "Supabase-Secret", key: "SUPABASE_API_KEY")
     }
 
-    static var supabaseUrl: String{
+    static var supabaseUrl: String {
         return get(filename: "Supabase-Secret", key: "SUPABASE_URL")
     }
     

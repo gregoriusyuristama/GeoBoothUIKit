@@ -9,6 +9,4 @@ import Foundation
 
 class AddCollectionInteractor: AddCollectionInteratorProtocol {
     var presenter: (any AddCollectionPresenterProtocol)?
-    
-    
 }
