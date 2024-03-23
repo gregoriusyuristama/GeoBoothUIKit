@@ -19,7 +19,7 @@ class AddCollectionInteractor: AddCollectionInteratorProtocol {
     func addAlbum(albumName: String) {
         manager.addAlbum(albumName: albumName, completion: { result in
             switch result {
-            case .success():
+            case .success:
                 self.presenter?.addAlbumSuccess()
             case .failure(let failure):
                 self.presenter?.addAlbumFailed(errorMessage: failure.localizedDescription)
