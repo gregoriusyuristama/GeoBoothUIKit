@@ -30,7 +30,7 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
         )
         manager?.editAlbum(album: updatedAlbum, completion: { result in
             switch result {
-            case .success(_):
+            case .success:
                 self.presenter?.updateViewSuccess(newAlbumName: newAlbumName)
             case .failure(let failure):
                 self.presenter?.updateViewFailed(errorMessage: failure.localizedDescription)
@@ -43,11 +43,16 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
         else { fatalError("Empty album on interactor") }
         manager?.deleteAlbum(album: album, completion: { result in
             switch result {
-            case .success(let success):
+            case .success:
                 self.presenter?.updateViewDeleteSuccess()
             case .failure(let failure):
                 self.presenter?.updateViewFailed(errorMessage: failure.localizedDescription)
             }
         })
     }
+    
+    func getPhotos() {
+        self.presenter?.interactorDidFetchPhotos(with: album?.photos ?? [])
+    }
+    
 }

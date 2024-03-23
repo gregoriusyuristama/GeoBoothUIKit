@@ -21,7 +21,10 @@ class CollectionViewCell: UICollectionViewCell {
     func config(album: AlbumViewModel) {
         albumNameLabel.text = album.albumName
 
+        photoCountLabel.textColor = .systemGray2
         photoCountLabel.text = "\(album.photos.count)"
+        
+        collectionImageView.contentMode = .scaleAspectFill
         
         if let lastImage = album.photos.last, let imageUrl = URL(string: lastImage.photoUrl) {
             collectionImageView.kf.setImage(with: imageUrl)

@@ -10,7 +10,11 @@ import Foundation
 class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
     var router: (any CollectionDetailRouterProtocol)?
     
-    var interactor: (any CollectionDetailInteractorProtocol)?
+    var interactor: (any CollectionDetailInteractorProtocol)? {
+        didSet {
+            interactor?.getPhotos()
+        }
+    }
     
     var view: (any CollectionDetailViewProtocol)?
     
@@ -49,4 +53,7 @@ class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
         view?.updateViewDeleteSuccess()
     }
     
+    func interactorDidFetchPhotos(with photos: [PhotoViewModel]) {
+        view?.displayPhotos(photos: photos)
+    }
 }

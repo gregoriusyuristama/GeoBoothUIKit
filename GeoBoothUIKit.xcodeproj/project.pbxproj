@@ -21,9 +21,9 @@
 		B63B278E2BAEA87900658F38 /* CollectionDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B278D2BAEA87900658F38 /* CollectionDetailInteractor.swift */; };
 		B63B27902BAEA88400658F38 /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B278F2BAEA88400658F38 /* CollectionDetailViewController.swift */; };
 		B63B27A22BAEBF7C00658F38 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B63B27A12BAEBF7C00658F38 /* SnapKit */; };
-		B66AA6D12BAF18930070B75F /* ContextMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D02BAF18930070B75F /* ContextMenuButton.swift */; };
 		B66AA6D32BAF305C0070B75F /* UpdateAlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D22BAF305C0070B75F /* UpdateAlbumDTO.swift */; };
 		B66AA6D62BAF387A0070B75F /* InsertAlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D52BAF387A0070B75F /* InsertAlbumDTO.swift */; };
+		B66AA6DA2BAF6CD80070B75F /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D92BAF6CD80070B75F /* PhotoCell.swift */; };
 		B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */; };
 		B685B7D12BA0C20700D1AB6D /* NavigationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */; };
 		B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */; };
@@ -128,10 +128,10 @@
 		B63B278B2BAEA86F00658F38 /* CollectionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailPresenter.swift; sourceTree = "<group>"; };
 		B63B278D2BAEA87900658F38 /* CollectionDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailInteractor.swift; sourceTree = "<group>"; };
 		B63B278F2BAEA88400658F38 /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
-		B66AA6D02BAF18930070B75F /* ContextMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuButton.swift; sourceTree = "<group>"; };
 		B66AA6D22BAF305C0070B75F /* UpdateAlbumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAlbumDTO.swift; sourceTree = "<group>"; };
 		B66AA6D52BAF387A0070B75F /* InsertAlbumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAlbumDTO.swift; sourceTree = "<group>"; };
 		B66AA6D82BAF3BAF0070B75F /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
+		B66AA6D92BAF6CD80070B75F /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFactory.swift; sourceTree = "<group>"; };
 		B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProtocol.swift; sourceTree = "<group>"; };
@@ -340,7 +340,7 @@
 		B66AA6CF2BAF188A0070B75F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B66AA6D02BAF18930070B75F /* ContextMenuButton.swift */,
+				B66AA6D92BAF6CD80070B75F /* PhotoCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1134,7 +1134,6 @@
 				B685B7D82BA0CE4600D1AB6D /* MapRouter.swift in Sources */,
 				B685B7E12BA1B69C00D1AB6D /* AuthenticationViewController.swift in Sources */,
 				B63B276D2BAC991E00658F38 /* MapInteractor.swift in Sources */,
-				B66AA6D12BAF18930070B75F /* ContextMenuButton.swift in Sources */,
 				B68A3A3B2BAABA7400AC6A11 /* UIView+RoundedCorner.swift in Sources */,
 				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
 				B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */,
@@ -1170,6 +1169,7 @@
 				B685B7D62BA0CDAE00D1AB6D /* CollectionRouter.swift in Sources */,
 				B6A162EB2BA9D71400C3C96A /* AddCollectionPresenter.swift in Sources */,
 				B68A3A4D2BAACFE100AC6A11 /* PhotoViewModel.swift in Sources */,
+				B66AA6DA2BAF6CD80070B75F /* PhotoCell.swift in Sources */,
 				B68A3A432BAAC43400AC6A11 /* KeychainKeyConstant.swift in Sources */,
 				B68A3A4B2BAACF3700AC6A11 /* PhotoDTO.swift in Sources */,
 				B6CE19B72BA21D050086A2B1 /* CollectionPresenter.swift in Sources */,

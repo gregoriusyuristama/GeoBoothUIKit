@@ -23,6 +23,8 @@ protocol CollectionDetailInteractorProtocol {
     
     var album: AlbumViewModel? { get set }
     
+    func getPhotos()
+    
     func editAlbum(newAlbumName: String)
     func deleteAlbum()
 }
@@ -37,6 +39,8 @@ protocol CollectionDetailViewProtocol {
     
     func updateViewIsLoading()
     func updateViewIsNotLoading()
+    
+    func displayPhotos(photos: [PhotoViewModel])
 }
 
 protocol CollectionDetailPresenterProtocol {
@@ -44,6 +48,8 @@ protocol CollectionDetailPresenterProtocol {
     var interactor: CollectionDetailInteractorProtocol? { get set }
     var view: CollectionDetailViewProtocol? { get set }
     var isLoading: Bool { get set }
+    
+    func interactorDidFetchPhotos(with photos: [PhotoViewModel])
     
     func editAlbum(newAlbumName: String)
     func deleteAlbum()

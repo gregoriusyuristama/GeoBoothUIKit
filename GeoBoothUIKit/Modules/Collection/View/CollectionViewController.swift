@@ -24,7 +24,12 @@ class CollectionViewController: UIViewController, CollectionViewProtocol, Collec
     var contentView: UIView!
     
     private let collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.isHidden = true
         return collectionView
@@ -190,9 +195,8 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.frame.width / 2 - 32
-        let height = width * 4 / 3 + 32
-        return CGSize(width: width, height: height)
+        let width = collectionView.frame.width / 2
+        return CGSize(width: width, height: width + 24)
     }
     
     func modalDismissed() {

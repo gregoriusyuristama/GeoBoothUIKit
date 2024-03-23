@@ -6,22 +6,84 @@
 //
 
 import Foundation
+import Kingfisher
+import SnapKit
 import UIKit
 
-class CollectionDetailViewController: UIViewController, CollectionDetailViewProtocol {
+class CollectionDetailViewController: UIViewController {
     var presenter: (any CollectionDetailPresenterProtocol)?
     
     private var spinner = LoadingViewController()
     
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .systemBackground
+        collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: PhotoCell.identifier)
+        return collectionView
+    }()
+    
+    private var photos: [PhotoViewModel] = [] {
+        didSet {
+            collectionView.reloadData()
+            if photos.isEmpty {
+                emptyLabel.isHidden = false
+                collectionView.isHidden = true
+            } else {
+                emptyLabel.isHidden = true
+                collectionView.isHidden = false
+            }
+        }
+    }
+    
+    private let emptyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No Photos yet"
+        label.textAlignment = .center
+        label.textColor = .systemGray3
+        label.isHidden = true
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        view.addSubview(emptyLabel)
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
         setupNavbarItem()
+        setupCollectionView()
+        setupEmptyLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    fileprivate func setupEmptyLabel() {
+        emptyLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+    }
+    
+    fileprivate func setupCollectionView() {
+        
+        view.addSubview(collectionView)
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
     
     fileprivate func setupNavbarItem() {
@@ -81,6 +143,53 @@ class CollectionDetailViewController: UIViewController, CollectionDetailViewProt
         }
     }
     
+    @objc private func takePhoto() {
+        // TODO: add functionality to display camera and take picture
+    }
+    
+    @objc private func deleteAlbum() {
+        let alertControlller = UIAlertController(title: "Are you sure do you want delete this album", message: nil, preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [unowned alertControlller] _ in
+            self.presenter?.deleteAlbum()
+            alertControlller.dismiss(animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [unowned alertControlller] _ in
+            alertControlller.dismiss(animated: true)
+        }
+        
+        alertControlller.addAction(deleteAction)
+        alertControlller.addAction(cancelAction)
+        present(alertControlller, animated: true)
+    }
+    
+    @objc private func editAlbum() {
+        let alertControlller = UIAlertController(title: "New Album name", message: nil, preferredStyle: .alert)
+        alertControlller.addTextField()
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned alertControlller] _ in
+            if let newAlbumName = alertControlller.textFields?[0].text {
+                if !newAlbumName.isEmpty {
+                    self.presenter?.editAlbum(newAlbumName: newAlbumName)
+                }
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [unowned alertControlller] _ in
+            alertControlller.dismiss(animated: true)
+        }
+        
+        alertControlller.addAction(submitAction)
+        alertControlller.addAction(cancelAction)
+        
+        present(alertControlller, animated: true)
+    }
+}
+
+extension CollectionDetailViewController: CollectionDetailViewProtocol {
+    func displayPhotos(photos: [PhotoViewModel]) {
+        self.photos = photos
+    }
+    
     func updateViewSuccess(newAlbumName: String) {
         DispatchQueue.main.async { [weak self] in
             self?.navigationItem.title = newAlbumName
@@ -125,38 +234,32 @@ class CollectionDetailViewController: UIViewController, CollectionDetailViewProt
             self?.present(alert, animated: true, completion: nil)
         }
     }
-    
-    @objc private func takePhoto() {}
-    
-    @objc private func deleteAlbum() {
-        let alertControlller = UIAlertController(title: "Are you sure do you want delete this album", message: nil, preferredStyle: .alert)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [unowned alertControlller] _ in
-            self.presenter?.deleteAlbum()
-            alertControlller.dismiss(animated: true)
-        }
-        
-        alertControlller.addAction(deleteAction)
-        present(alertControlller, animated: true)
+}
+
+extension CollectionDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.count
     }
     
-    @objc private func editAlbum() {
-        let alertControlller = UIAlertController(title: "New Album name", message: nil, preferredStyle: .alert)
-        alertControlller.addTextField()
-        let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned alertControlller] _ in
-            if let newAlbumName = alertControlller.textFields?[0].text {
-                if !newAlbumName.isEmpty {
-                    self.presenter?.editAlbum(newAlbumName: newAlbumName)
-                }
-            }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: PhotoCell.identifier,
+                for: indexPath
+            ) as? PhotoCell
+        else { return UICollectionViewCell() }
+        if let imageUrl = URL(string: photos[indexPath.row].photoUrl) {
+            cell.imageView.kf.setImage(with: imageUrl)
+        } else {
+            cell.imageView.image = UIImage(systemName: "photos.fill")
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [unowned alertControlller] _ in
-            alertControlller.dismiss(animated: true)
-        }
-        
-        alertControlller.addAction(submitAction)
-        alertControlller.addAction(cancelAction)
-        
-        present(alertControlller, animated: true)
+        return cell
+    }
+}
+
+extension CollectionDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width / 3
+        return CGSize(width: width, height: width)
     }
 }
