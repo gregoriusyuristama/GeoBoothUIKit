@@ -131,6 +131,7 @@
 		B66AA6D02BAF18930070B75F /* ContextMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuButton.swift; sourceTree = "<group>"; };
 		B66AA6D22BAF305C0070B75F /* UpdateAlbumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAlbumDTO.swift; sourceTree = "<group>"; };
 		B66AA6D52BAF387A0070B75F /* InsertAlbumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAlbumDTO.swift; sourceTree = "<group>"; };
+		B66AA6D82BAF3BAF0070B75F /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFactory.swift; sourceTree = "<group>"; };
 		B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProtocol.swift; sourceTree = "<group>"; };
@@ -350,6 +351,14 @@
 				B66AA6D22BAF305C0070B75F /* UpdateAlbumDTO.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		B66AA6D72BAF3B940070B75F /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				B66AA6D82BAF3BAF0070B75F /* ci_pre_xcodebuild.sh */,
+			);
+			path = ci_scripts;
 			sourceTree = "<group>";
 		};
 		B685B7AB2BA0B78400D1AB6D /* Modules */ = {
@@ -801,6 +810,7 @@
 			isa = PBXGroup;
 			children = (
 				B6A168762B7B3D0A001457B0 /* GeoBoothUIKitTestPlan.xctestplan */,
+				B66AA6D72BAF3B940070B75F /* ci_scripts */,
 				B6BA6D352B73B9CF00E01723 /* GeoBoothUIKit */,
 				B6A1685F2B7B3A4F001457B0 /* GeoBoothUIKitTests */,
 				B6A1686C2B7B3A64001457B0 /* GeoBoothUIKitUITests */,
