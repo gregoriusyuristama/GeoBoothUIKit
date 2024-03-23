@@ -9,4 +9,5 @@ import Foundation
 
 struct TableName {
     static let album = "album"
+    static let photo = "photo"
 }

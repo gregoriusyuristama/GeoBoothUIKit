@@ -8,13 +8,7 @@
 import Foundation
 
 struct AlbumViewModel {
+    let id: Int
     var albumName: String
-    
-    init(albumName: String) {
-        self.albumName = albumName
-    }
-    
-    init(album: AlbumDTO) {
-        self.albumName = album.albumName
-    }
+    var photos: [PhotoViewModel]
 }

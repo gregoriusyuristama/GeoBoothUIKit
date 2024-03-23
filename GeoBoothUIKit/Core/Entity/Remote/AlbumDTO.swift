@@ -9,23 +9,30 @@ import Foundation
 
 struct AlbumDTO: Codable {
     let id: Int?
-    var albumName: String
-    var latitude: Double
-    var longitude: Double
+    var name: String
+    var latitude: Double?
+    var longitude: Double?
     var createdAt: Date?
     var userId: UUID
-    
+    var photos: [PhotoDTO]?
+
     enum CodingKeys: String, CodingKey {
-        case id
-        case albumName = "album_name"
-        case latitude, longitude
+        case id, name, latitude, longitude
         case createdAt = "created_at"
         case userId = "user_id"
+        case photos = "photo"
     }
 }
 
 extension AlbumDTO {
     func toDomain() -> AlbumViewModel {
-        AlbumViewModel(album: self)
+        guard let photos = self.photos?.map({ $0.toDomain() }) else { fatalError("failed to parse photos") }
+
+        let album = AlbumViewModel(
+            id: self.id!,
+            albumName: self.name,
+            photos: photos
+        )
+        return album
     }
 }

@@ -24,8 +24,7 @@ class AddCollectionManager: AddCollectionManagerProtocol {
                     .database
                     .rpc(
                         DbFunction.addAlbum,
-                        params: AlbumDTO(
-                            id: nil,
+                        params: InsertAlbumDTO(
                             albumName: albumName,
                             latitude: latitude,
                             longitude: longitude,

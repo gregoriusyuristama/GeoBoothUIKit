@@ -8,13 +8,11 @@
 import Foundation
 
 struct PhotoViewModel {
+    var id: Int
     var photoUrl: String
     
-    init(photoUrl: String) {
-        self.photoUrl = photoUrl
-    }
-    
     init(photo: PhotoDTO) {
+        self.id = photo.id
         self.photoUrl = photo.photoUrl
     }
 }

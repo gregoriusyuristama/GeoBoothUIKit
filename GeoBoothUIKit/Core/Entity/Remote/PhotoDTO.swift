@@ -7,11 +7,18 @@
 
 import Foundation
 
-struct PhotoDTO: Decodable {
+struct PhotoDTO: Codable {
     let id: Int
     var photoUrl: String
-    var createdAt: Date
+    var createdAt: Date?
     var albumId: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case photoUrl = "photo_url"
+        case createdAt = "created_at"
+        case albumId = "album_id"
+    }
 }
 
 extension PhotoDTO {

@@ -8,15 +8,14 @@
 import UIKit
 
 class AddAlbumTableViewController: UITableViewController {
-    
     var albumNameTextField: UITextField!
     var addAlbumButton: UIButton!
-    var addAction: ( (_ albumName: String) -> Void )!
+    var addAction: ((_ albumName: String) -> Void)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTable()
-        self.view.backgroundColor = .systemGray6
+        view.backgroundColor = .systemGray6
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -40,7 +39,7 @@ class AddAlbumTableViewController: UITableViewController {
         if indexPath.row == 0 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AddAlbumTextFieldTableViewCell.identifier,
                                                            for: indexPath) as? AddAlbumTextFieldTableViewCell else { return UITableViewCell() }
-            self.albumNameTextField = cell.addAlbumTextField
+            albumNameTextField = cell.addAlbumTextField
             
             cell.roundCorners([.topLeft, .topRight], radius: 16)
             
@@ -53,8 +52,8 @@ class AddAlbumTableViewController: UITableViewController {
         } else if indexPath.row == 2 {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AddAlbumButtonTableViewCell.identifier,
                                                            for: indexPath) as? AddAlbumButtonTableViewCell else { return UITableViewCell() }
-            self.addAlbumButton = cell.addNewAlbumButton
-            self.addAlbumButton.addTarget(self, action: #selector(doAddAlbum), for: .touchUpInside)
+            addAlbumButton = cell.addNewAlbumButton
+            addAlbumButton.addTarget(self, action: #selector(doAddAlbum), for: .touchUpInside)
             cell.roundCorners([.bottomLeft, .bottomRight], radius: 16)
             return cell
         }
@@ -78,7 +77,7 @@ class AddAlbumTableViewController: UITableViewController {
     }
     
     @objc func doAddAlbum() {
-        guard let albumName = self.albumNameTextField.text else { return }
-        self.addAction(albumName)
+        guard let albumName = albumNameTextField.text else { return }
+        addAction(albumName)
     }
 }

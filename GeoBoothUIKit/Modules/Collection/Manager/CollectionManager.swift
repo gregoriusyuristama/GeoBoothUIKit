@@ -22,11 +22,13 @@ class CollectionManager: CollectionManagerProtocol {
                     .select(
                         """
                         id,
-                        album_name,
+                        name,
                         latitude,
                         longitude,
                         created_at,
-                        user_id
+                        user_id,
+                        \(TableName.photo): photo
+                        (*)
                         """
                     )
                     .eq(

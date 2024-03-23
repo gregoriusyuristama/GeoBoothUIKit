@@ -5,31 +5,30 @@
 //  Created by Gregorius Yuristama Nugraha on 3/20/24.
 //
 
-import UIKit
 import Kingfisher
+import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var collectionImageView: UIImageView!
-    @IBOutlet weak var albumNameLabel: UILabel!
-    @IBOutlet weak var photoCountLabel: UILabel!
+    @IBOutlet var collectionImageView: UIImageView!
+    @IBOutlet var albumNameLabel: UILabel!
+    @IBOutlet var photoCountLabel: UILabel!
     static let identifier = "CollectionViewCell"
-    
+
     static func nib() -> UINib {
         .init(nibName: identifier, bundle: nil)
     }
-    
-    func config(album: AlbumViewModel, photos: [PhotoViewModel]?) {
-        self.albumNameLabel.text = album.albumName
-        if let photos = photos {
-            photoCountLabel.text = photos.count.description
-            if let imageUrl = URL(string: photos.first?.photoUrl ?? "") {
-                collectionImageView.kf.setImage(with: imageUrl)
-            }
-        } else {
-            photoCountLabel.text = "0"
-            collectionImageView.image = UIImage(systemName: "photo.fill")
-        }
-    }
 
+    func config(album: AlbumViewModel) {
+        albumNameLabel.text = album.albumName
+
+        photoCountLabel.text = "\(album.photos.count)"
+        
+        if let lastImage = album.photos.last, let imageUrl = URL(string: lastImage.photoUrl) {
+            collectionImageView.kf.setImage(with: imageUrl)
+        } else {
+            collectionImageView.image = UIImage(systemName: "photo.fill")
+            
+        }
+        
+    }
 }

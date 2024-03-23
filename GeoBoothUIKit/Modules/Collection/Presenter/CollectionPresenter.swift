@@ -33,6 +33,11 @@ class CollectionPresenter: CollectionPresenterProtocol {
         router?.presentAddAlbumModal(from: view)
     }
     
+    func showAlbumDetail(album: AlbumViewModel) {
+        guard let view = view else { return }
+        router?.presentAlbumDetail(from: view, album: album)
+    }
+    
     func interactorDidFetchAlbums(with result: Result<[AlbumViewModel], any Error>) {
         switch result {
         case .success(let albums):

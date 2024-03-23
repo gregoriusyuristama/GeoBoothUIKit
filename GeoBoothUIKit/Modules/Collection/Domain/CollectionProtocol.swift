@@ -12,6 +12,7 @@ protocol CollectionRouterProtocol {
     static func build(usingNavigationFactory factory: NavigationFactory) -> UIViewController
 
     func presentAddAlbumModal(from view: CollectionViewProtocol)
+    func presentAlbumDetail(from view: CollectionViewProtocol, album: AlbumViewModel)
 }
 
 protocol CollectionManagerProtocol {
@@ -43,6 +44,7 @@ protocol CollectionPresenterProtocol {
     
     func interactorDidFetchAlbums(with result: Result<[AlbumViewModel], Error>)
     func showAddAlbumModal()
+    func showAlbumDetail(album: AlbumViewModel)
     
     func triggerFetchAlbum()
 }

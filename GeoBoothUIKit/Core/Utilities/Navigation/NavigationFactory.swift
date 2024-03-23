@@ -14,10 +14,7 @@ class NavigationBuilder {
     static func build(rootView: UIViewController, type: EnumView) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootView)
         navigationController.navigationBar.prefersLargeTitles = true
-//        let appearance = UINavigationBarAppearance()
-//        appearance.configureWithOpaqueBackground()
-//        navigationController.navigationBar.scrollEdgeAppearance = appearance
-        
+
         if type == .collection {
             let navBarAppearance = UINavigationBarAppearance()
             navBarAppearance.configureWithDefaultBackground()
@@ -31,7 +28,7 @@ class NavigationBuilder {
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
         }
-        
+
         return navigationController
     }
 }

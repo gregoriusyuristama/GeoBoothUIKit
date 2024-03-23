@@ -9,7 +9,6 @@ import Foundation
 import KeychainSwift
 
 class AuthenticationPresenter: AuthenticationPresenterProtocol {
-    
     var router: (any AuthenticationRouterProtocol)?
     var view: (any AuthenticationViewProtocol)?
     var interactor: (any AuthenticationInteractorProtocol)?
@@ -40,20 +39,16 @@ class AuthenticationPresenter: AuthenticationPresenterProtocol {
                     self.router?.presentHomeView(from: view)
                 }
             }
-            
         }
-        
     }
     
     func viewWillAppear() {
         let keychain = KeychainSwift()
-        guard 
+        guard
             let email = keychain.get(KeychainKeyConstant.email),
             let password = keychain.get(KeychainKeyConstant.password)
         else { return }
         
-        self.signInWithEmailPassword(email: email, password: password)
-        
+        signInWithEmailPassword(email: email, password: password)
     }
-    
 }

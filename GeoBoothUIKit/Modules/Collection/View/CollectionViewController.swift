@@ -38,6 +38,13 @@ class CollectionViewController: UIViewController, CollectionViewProtocol, Collec
         setupContentView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.largeTitleDisplayMode = .automatic
+        self.title = "GeoBooth"
+        presenter?.triggerFetchAlbum()
+    }
+    
     fileprivate func setupNavbarItem() {
         let plusIcon = UIImage(named: ResourcePath.plusIcon)?.resizeImage(scaledToSize: CGSize(width: 22, height: 22))
         let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: #selector(showAddModal))
@@ -174,8 +181,12 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
         guard
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell
         else { return UICollectionViewCell() }
-        cell.config(album: albums[indexPath.row], photos: nil)
+        cell.config(album: albums[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.showAlbumDetail(album: albums[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

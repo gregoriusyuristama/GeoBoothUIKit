@@ -9,4 +9,5 @@ import Foundation
 
 struct DbFunction {
     static let addAlbum: String = "add_album"
+    static let editAlbum: String = "update_album"
 }
