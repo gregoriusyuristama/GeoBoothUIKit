@@ -31,6 +31,8 @@ extension AlbumDTO {
         let album = AlbumViewModel(
             id: self.id!,
             albumName: self.name,
+            latitude: self.latitude!,
+            longitude: self.longitude!,
             photos: photos
         )
         return album

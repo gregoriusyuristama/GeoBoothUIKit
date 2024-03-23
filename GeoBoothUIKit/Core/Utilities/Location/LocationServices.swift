@@ -5,16 +5,17 @@
 //  Created by Gregorius Yuristama Nugraha on 2/9/24.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 class LocationServices: NSObject, CLLocationManagerDelegate {
     public static let shared = LocationServices()
     let locationManager = CLLocationManager()
     var currentLocation: CLLocationCoordinate2D?
     var changeAuthDelegate: ChangeAuthDelegate?
+    var regionMovementDelegate: RegionMovementDelegate?
     
-    private override init() {
+    override private init() {
         super.init()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -38,4 +39,23 @@ class LocationServices: NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func startMonitoring(region: CLRegion) {
+        region.notifyOnExit = true
+        region.notifyOnEntry = true
+        locationManager.startMonitoring(for: region)
+    }
+    
+    func stopMonitoring(region: CLRegion) {
+        region.notifyOnExit = false
+        region.notifyOnEntry = false
+        locationManager.stopMonitoring(for: region)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        regionMovementDelegate?.didEnterRegion()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        regionMovementDelegate?.didExitRegion()
+    }
 }

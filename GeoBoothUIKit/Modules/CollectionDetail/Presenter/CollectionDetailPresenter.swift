@@ -13,6 +13,7 @@ class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
     var interactor: (any CollectionDetailInteractorProtocol)? {
         didSet {
             interactor?.getPhotos()
+            interactor?.getRegion()
         }
     }
     
@@ -24,6 +25,16 @@ class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
                 view?.updateViewIsLoading()
             } else {
                 view?.updateViewIsNotLoading()
+            }
+        }
+    }
+    
+    var isInRegion: Bool = false {
+        didSet {
+            if isInRegion {
+                view?.updateCameraInRegion()
+            } else {
+                view?.updateCameraOutRegion()
             }
         }
     }
@@ -55,5 +66,9 @@ class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
     
     func interactorDidFetchPhotos(with photos: [PhotoViewModel]) {
         view?.displayPhotos(photos: photos)
+    }
+    
+    func viewWillDissappear() {
+        interactor?.stopMonitoringRegion()
     }
 }

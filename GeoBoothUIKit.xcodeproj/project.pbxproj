@@ -24,6 +24,7 @@
 		B66AA6D32BAF305C0070B75F /* UpdateAlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D22BAF305C0070B75F /* UpdateAlbumDTO.swift */; };
 		B66AA6D62BAF387A0070B75F /* InsertAlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D52BAF387A0070B75F /* InsertAlbumDTO.swift */; };
 		B66AA6DA2BAF6CD80070B75F /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D92BAF6CD80070B75F /* PhotoCell.swift */; };
+		B66AA6E32BAF77840070B75F /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6E22BAF77840070B75F /* CameraViewController.swift */; };
 		B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */; };
 		B685B7D12BA0C20700D1AB6D /* NavigationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */; };
 		B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */; };
@@ -132,6 +133,7 @@
 		B66AA6D52BAF387A0070B75F /* InsertAlbumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAlbumDTO.swift; sourceTree = "<group>"; };
 		B66AA6D82BAF3BAF0070B75F /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		B66AA6D92BAF6CD80070B75F /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		B66AA6E22BAF77840070B75F /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B685B7CA2BA0C12800D1AB6D /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		B685B7D02BA0C20700D1AB6D /* NavigationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFactory.swift; sourceTree = "<group>"; };
 		B685B7D32BA0C68300D1AB6D /* MapProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProtocol.swift; sourceTree = "<group>"; };
@@ -361,6 +363,62 @@
 			path = ci_scripts;
 			sourceTree = "<group>";
 		};
+		B66AA6DB2BAF76F70070B75F /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				B66AA6DC2BAF77470070B75F /* Domain */,
+				B66AA6E02BAF775F0070B75F /* Interactor */,
+				B66AA6DF2BAF775B0070B75F /* Manager */,
+				B66AA6DE2BAF77540070B75F /* Presenter */,
+				B66AA6DD2BAF774F0070B75F /* Router */,
+				B66AA6E12BAF776A0070B75F /* View */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		B66AA6DC2BAF77470070B75F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B66AA6DD2BAF774F0070B75F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B66AA6DE2BAF77540070B75F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B66AA6DF2BAF775B0070B75F /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B66AA6E02BAF775F0070B75F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B66AA6E12BAF776A0070B75F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B66AA6E22BAF77840070B75F /* CameraViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B685B7AB2BA0B78400D1AB6D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +428,7 @@
 				B63B277D2BAEA7A100658F38 /* CollectionDetail */,
 				B685B7BE2BA0B87700D1AB6D /* AddCollection */,
 				B685B7AD2BA0B7B700D1AB6D /* Map */,
+				B66AA6DB2BAF76F70070B75F /* Camera */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1173,6 +1232,7 @@
 				B68A3A432BAAC43400AC6A11 /* KeychainKeyConstant.swift in Sources */,
 				B68A3A4B2BAACF3700AC6A11 /* PhotoDTO.swift in Sources */,
 				B6CE19B72BA21D050086A2B1 /* CollectionPresenter.swift in Sources */,
+				B66AA6E32BAF77840070B75F /* CameraViewController.swift in Sources */,
 				B6F76D802B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift in Sources */,
 				B685B7E32BA1B6AD00D1AB6D /* AuthenticationInteractor.swift in Sources */,
 				B6A167E32B79A7A1001457B0 /* SceneDelegate.swift in Sources */,
@@ -1438,6 +1498,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to camera in order to capture photo";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to access your location for saving album location and tracking location on map";
@@ -1475,6 +1536,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to camera in order to capture photo";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need to access your location for saving album location and tracking location on map";

@@ -5,6 +5,7 @@
 //  Created by Gregorius Yuristama Nugraha on 3/23/24.
 //
 
+import AVFoundation
 import Foundation
 import Kingfisher
 import SnapKit
@@ -14,6 +15,12 @@ class CollectionDetailViewController: UIViewController {
     var presenter: (any CollectionDetailPresenterProtocol)?
     
     private var spinner = LoadingViewController()
+    
+    private let cameraButton: UIBarButtonItem = {
+        
+        let button = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: nil, action: #selector(takePhoto))
+        return button
+    }()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -63,6 +70,11 @@ class CollectionDetailViewController: UIViewController {
         setupEmptyLabel()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDissappear()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.largeTitleDisplayMode = .never
@@ -75,7 +87,6 @@ class CollectionDetailViewController: UIViewController {
     }
     
     fileprivate func setupCollectionView() {
-        
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
@@ -87,8 +98,7 @@ class CollectionDetailViewController: UIViewController {
     }
     
     fileprivate func setupNavbarItem() {
-        let cameraButton = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: self, action: #selector(takePhoto))
-        
+        cameraButton.target = self
         if #available(iOS 14.0, *) {
             let renameItem = UIAction(
                 title: "Rename Album",
@@ -144,7 +154,21 @@ class CollectionDetailViewController: UIViewController {
     }
     
     @objc private func takePhoto() {
-        // TODO: add functionality to display camera and take picture
+        AVCaptureDevice.requestAccess(for: .video) { response in
+            if response {
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(CameraViewController(), animated: true)
+                }
+            }
+        }
+    }
+    
+    @objc private func takePhotoBlocked() {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Locked", message: "You are outside GeoBooth collection region", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self?.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc private func deleteAlbum() {
@@ -233,6 +257,16 @@ extension CollectionDetailViewController: CollectionDetailViewProtocol {
             }))
             self?.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func updateCameraInRegion() {
+        cameraButton.image = UIImage(systemName: "camera")
+        cameraButton.action = #selector(takePhoto)
+    }
+    
+    func updateCameraOutRegion() {
+        cameraButton.image = UIImage(systemName: "lock")
+        cameraButton.action = #selector(takePhotoBlocked)
     }
 }
 

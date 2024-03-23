@@ -20,54 +20,8 @@ class CollectionViewController: UIViewController, CollectionViewProtocol, Collec
     private var spinner = LoadingViewController()
     
     /// Label displaying empty prompt when user doesn't have any album
-    var contentLabel: UILabel!
-    var contentView: UIView!
-    
-    private let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
-        collectionView.isHidden = true
-        return collectionView
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-
-        setupNavbarItem()
-        setupContentView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.largeTitleDisplayMode = .automatic
-        self.title = "GeoBooth"
-        presenter?.triggerFetchAlbum()
-    }
-    
-    fileprivate func setupNavbarItem() {
-        let plusIcon = UIImage(named: ResourcePath.plusIcon)?.resizeImage(scaledToSize: CGSize(width: 22, height: 22))
-        let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: #selector(showAddModal))
-        navigationItem.rightBarButtonItem = addButton
-    }
-    
-    fileprivate func setupContentView() {
-        contentView = UIView()
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
-            make.width.height.equalToSuperview()
-        }
-        setupContentLabel()
-        setupCollectionView()
-    }
-    
-    fileprivate func setupContentLabel() {
-        contentLabel = UILabel()
+    private var contentLabel: UILabel = {
+        let contentLabel = UILabel()
         contentLabel.numberOfLines = 0
         let attrString = NSMutableAttributedString(
             string: "\(AppLabel.emptyStateLabel[0])\n",
@@ -108,19 +62,63 @@ class CollectionViewController: UIViewController, CollectionViewProtocol, Collec
             ]
         ))
         
-        contentView.addSubview(contentLabel)
         contentLabel.attributedText = attrString
         contentLabel.textAlignment = .center
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        // MARK: Auto Layout
+        return contentLabel
+    }()
+    
+    var contentView: UIView!
+    
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
+        collectionView.isHidden = true
+        return collectionView
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
 
-        NSLayoutConstraint.activate([
-            contentLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            contentLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            contentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            contentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
+        setupNavbarItem()
+        setupContentView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.largeTitleDisplayMode = .automatic
+        title = "GeoBooth"
+        presenter?.triggerFetchAlbum()
+    }
+    
+    fileprivate func setupNavbarItem() {
+        let plusIcon = UIImage(named: ResourcePath.plusIcon)?.resizeImage(scaledToSize: CGSize(width: 22, height: 22))
+        let addButton = UIBarButtonItem(image: plusIcon, style: .plain, target: self, action: #selector(showAddModal))
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    fileprivate func setupContentView() {
+        contentView = UIView()
+        view.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.width.height.equalToSuperview()
+        }
+        setupContentLabel()
+        setupCollectionView()
+    }
+    
+    fileprivate func setupContentLabel() {
+        contentView.addSubview(contentLabel)
+        
+        contentLabel.snp.makeConstraints { make in
+            make.width.height.equalToSuperview()
+        }
     }
     
     fileprivate func setupCollectionView() {

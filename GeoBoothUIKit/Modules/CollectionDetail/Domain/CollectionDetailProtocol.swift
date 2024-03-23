@@ -27,6 +27,10 @@ protocol CollectionDetailInteractorProtocol {
     
     func editAlbum(newAlbumName: String)
     func deleteAlbum()
+    
+    func getRegion()
+    
+    func stopMonitoringRegion()
 }
 
 protocol CollectionDetailViewProtocol {
@@ -41,6 +45,9 @@ protocol CollectionDetailViewProtocol {
     func updateViewIsNotLoading()
     
     func displayPhotos(photos: [PhotoViewModel])
+    
+    func updateCameraInRegion()
+    func updateCameraOutRegion()
 }
 
 protocol CollectionDetailPresenterProtocol {
@@ -48,8 +55,11 @@ protocol CollectionDetailPresenterProtocol {
     var interactor: CollectionDetailInteractorProtocol? { get set }
     var view: CollectionDetailViewProtocol? { get set }
     var isLoading: Bool { get set }
+    var isInRegion: Bool { get set }
     
     func interactorDidFetchPhotos(with photos: [PhotoViewModel])
+    
+    func viewWillDissappear()
     
     func editAlbum(newAlbumName: String)
     func deleteAlbum()

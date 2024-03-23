@@ -10,5 +10,7 @@ import Foundation
 struct AlbumViewModel {
     let id: Int
     var albumName: String
+    var latitude: Double
+    var longitude: Double
     var photos: [PhotoViewModel]
 }
