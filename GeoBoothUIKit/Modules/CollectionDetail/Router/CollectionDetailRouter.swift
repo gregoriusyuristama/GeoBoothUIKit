@@ -30,4 +30,14 @@ class CollectionDetailRouter: CollectionDetailRouterProtocol {
         
         return viewController
     }
+    
+    
+    func showCameraView(from view: any CollectionDetailViewProtocol) {
+        guard let viewController = view as? UIViewController else { fatalError("Invalid View Controller type") }
+        
+        let cameraView = CameraRouter.build()
+        
+        viewController.navigationController?.pushViewController(cameraView, animated: true)
+    }
+    
 }

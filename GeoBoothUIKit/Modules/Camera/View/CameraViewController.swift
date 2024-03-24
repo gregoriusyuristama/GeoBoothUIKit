@@ -13,18 +13,62 @@ class CameraViewController: UIViewController {
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
+    var currentCamera: AVCaptureDevice.Position = .back
+    
+    var presenter: (any CameraPresenterProtocol)?
     
     let shutterButton: UIButton = {
-        let button = UIButton(
-            frame: CGRect(x: 0, y: 0, width: 40, height: 40)
-        )
+        let button = UIButton()
         button.backgroundColor = .white
+        return button
+    }()
+    
+    let flipCameraButton: UIButton = {
+        let button = UIButton()
+        let font = UIFont.systemFont(ofSize: 30)
+        let config = UIImage.SymbolConfiguration(font: font)
+        let image = UIImage(
+            systemName: "arrow.triangle.2.circlepath.camera",
+            withConfiguration: config
+        )?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        button.setImage(image, for: .normal)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupCamera()
+        setupUI()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        shutterButton.layer.cornerRadius = shutterButton.frame.size.width / 2
+        shutterButton.clipsToBounds = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = .black
+        tabBarController?.tabBar.isHidden = true
+        configureTransparentNavbar()
+        if !captureSession.isRunning {
+            DispatchQueue.global(qos: .background).async {
+                self.captureSession.startRunning()
+            }
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+        if captureSession.isRunning {
+            captureSession.stopRunning()
+        }
+    }
+    
+    func setupCamera() {
         captureSession = AVCaptureSession()
         captureSession.sessionPreset = .photo
         
@@ -46,12 +90,15 @@ class CameraViewController: UIViewController {
         } catch {
             print("Error Unable to initialize back camera: \(error.localizedDescription)")
         }
-        
+    }
+    
+    func setupUI() {
         view.addSubview(shutterButton)
         
         shutterButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.snp.bottomMargin).inset(20)
+            make.width.height.equalTo(80)
         }
         
         shutterButton.addTarget(
@@ -59,35 +106,62 @@ class CameraViewController: UIViewController {
             action: #selector(takePhoto),
             for: .touchUpInside
         )
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if !captureSession.isRunning {
-            DispatchQueue.global(qos: .background).async {
-                self.captureSession.startRunning()
-            }
+        
+        view.addSubview(flipCameraButton)
+        flipCameraButton.snp.makeConstraints { make in
+            make.leading.equalTo(shutterButton.snp.trailing).offset(40)
+            make.bottom.equalToSuperview().inset(80)
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if captureSession.isRunning {
-            captureSession.stopRunning()
-        }
+               
+        flipCameraButton.addTarget(self, action: #selector(flipCamera), for: .touchUpInside)
     }
     
     func setupLivePreview() {
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        videoPreviewLayer.videoGravity = .resizeAspectFill
+        videoPreviewLayer.videoGravity = .resizeAspect
         videoPreviewLayer.connection?.videoOrientation = .portrait
         videoPreviewLayer.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer)
     }
     
+    private func configureTransparentNavbar() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = UIColor.clear
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+    }
+    
     @objc func takePhoto() {
         let settings = AVCapturePhotoSettings()
         stillImageOutput.capturePhoto(with: settings, delegate: self)
+    }
+    
+    @objc func flipCamera() {
+        captureSession.beginConfiguration()
+        for input in captureSession.inputs {
+            captureSession.removeInput(input)
+        }
+        
+        currentCamera = currentCamera == .back ? .front : .back
+        
+        if let newCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: currentCamera) {
+            do {
+                let newInput = try AVCaptureDeviceInput(device: newCamera)
+                if captureSession.canAddInput(newInput) {
+                    captureSession.addInput(newInput)
+                } else {
+                    print("Failed to add input")
+                }
+            } catch {
+                print("Error switching cameras: \(error)")
+            }
+        } else {
+            print("Failed to get new camera")
+        }
+        
+        captureSession.commitConfiguration()
     }
 }
 
@@ -115,3 +189,5 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         view.addSubview(capturedImageView)
     }
 }
+
+extension CameraViewController: CameraViewProtocol {}

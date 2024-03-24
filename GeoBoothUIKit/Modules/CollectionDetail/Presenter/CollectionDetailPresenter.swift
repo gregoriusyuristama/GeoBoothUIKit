@@ -71,4 +71,10 @@ class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
     func viewWillDissappear() {
         interactor?.stopMonitoringRegion()
     }
+    
+    func presentCameraView() {
+        guard let view = view else { fatalError("Empty View") }
+        router?.showCameraView(from: view)
+    }
+    
 }

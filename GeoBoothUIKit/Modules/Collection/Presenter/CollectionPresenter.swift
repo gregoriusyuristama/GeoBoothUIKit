@@ -18,7 +18,7 @@ class CollectionPresenter: CollectionPresenterProtocol {
     
     var view: (any CollectionViewProtocol)?
     
-    var isLoading: Bool = false {
+    var isLoading: Bool = true {
         didSet {
             if isLoading {
                 view?.updateViewIsLoading()
@@ -39,6 +39,7 @@ class CollectionPresenter: CollectionPresenterProtocol {
     }
     
     func interactorDidFetchAlbums(with result: Result<[AlbumViewModel], any Error>) {
+        isLoading = false
         switch result {
         case .success(let albums):
             view?.update(with: albums)
