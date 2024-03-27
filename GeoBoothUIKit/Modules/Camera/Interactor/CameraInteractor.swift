@@ -8,6 +8,8 @@
 import Foundation
 
 class CameraInteractor: CameraInteractorProtocol {
+    var album: AlbumViewModel?
+    
     var presenter: (any CameraPresenterProtocol)?
     
     var manager: (any CameraManagerProtocol)?
@@ -17,14 +19,16 @@ class CameraInteractor: CameraInteractorProtocol {
     }
     
     func savePhoto(imageData: Data) {
-        manager?.savePhoto(imageData: imageData, completion: { result in
+        guard let album = album else { return }
+        manager?.savePhoto(imageData: imageData, album: album, completion: { result in
             switch result {
-            case .success(let success):
-                print("success")
+            case .success:
+                self.presenter?.savePhotoSuccess()
             case .failure(let failure):
-                print("failure")
+                self.presenter?.savePhotoFailed(
+                    errorMessage: failure.localizedDescription
+                )
             }
         })
     }
-    
 }

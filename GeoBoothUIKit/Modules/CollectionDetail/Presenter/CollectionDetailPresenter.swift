@@ -73,8 +73,15 @@ class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
     }
     
     func presentCameraView() {
-        guard let view = view else { fatalError("Empty View") }
-        router?.showCameraView(from: view)
+        guard
+            let view = view,
+            let album = interactor?.album
+        else {
+            fatalError("Empty View")
+        }
+        router?.showCameraView(
+            from: view,
+            album: album
+        )
     }
-    
 }

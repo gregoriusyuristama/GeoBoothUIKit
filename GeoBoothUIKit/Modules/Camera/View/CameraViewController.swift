@@ -15,7 +15,11 @@ class CameraViewController: UIViewController {
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     var currentCamera: AVCaptureDevice.Position = .back
     
+    var capturedImageView: UIImageView?
+    
     var presenter: (any CameraPresenterProtocol)?
+    
+    private var spinner = LoadingViewController()
     
     let shutterButton: UIButton = {
         let button = UIButton()
@@ -163,6 +167,23 @@ class CameraViewController: UIViewController {
         
         captureSession.commitConfiguration()
     }
+    
+    @objc func savePhoto() {
+        guard let imgData = capturedImageView?.image?.jpegData(compressionQuality: 0.5) else { return }
+        presenter?.doSavePhoto(imageData: imgData)
+    }
+    
+    @objc func retakePhoto() {
+        
+        capturedImageView?.removeFromSuperview()
+        capturedImageView = nil
+        
+        navigationItem.rightBarButtonItem = .none
+        
+        navigationItem.setHidesBackButton(false, animated: true)
+        
+        navigationItem.leftBarButtonItem = .none
+    }
 }
 
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
@@ -181,13 +202,61 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
         
         // Do something with the captured image
         // For example, present it in another view controller
-        let capturedImageView = UIImageView(image: image)
-        capturedImageView.contentMode = .scaleAspectFit
-        capturedImageView.frame = view.bounds
-        capturedImageView.backgroundColor = .black
-        capturedImageView.isUserInteractionEnabled = true
+        capturedImageView = UIImageView(image: image)
+        capturedImageView?.contentMode = .scaleAspectFit
+        capturedImageView?.frame = view.bounds
+        capturedImageView?.backgroundColor = .black
+        capturedImageView?.isUserInteractionEnabled = true
+        guard let capturedImageView = capturedImageView else { return }
         view.addSubview(capturedImageView)
+        
+        let saveBarButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(savePhoto))
+        navigationItem.rightBarButtonItem = saveBarButton
+        
+        let retakeButton = UIBarButtonItem(title: "Retake", style: .plain, target: self, action: #selector(retakePhoto))
+        
+        navigationItem.rightBarButtonItem = saveBarButton
+        
+        navigationItem.setHidesBackButton(true, animated: true)
+        
+        navigationItem.leftBarButtonItem = retakeButton
     }
 }
 
-extension CameraViewController: CameraViewProtocol {}
+extension CameraViewController: CameraViewProtocol {
+    func updateViewSavePhotoSuccess() {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Success", message: "Successfully added new photo", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                self?.presenter?.popViewController()
+            }))
+            self?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func updateViewSavePhotoFailed(errorMessage: String) {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func updateViewIsLoading() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.addChild(self.spinner)
+            self.spinner.view.frame = self.view.frame
+            self.view.addSubview(self.spinner.view)
+            self.spinner.didMove(toParent: self)
+        }
+    }
+    
+    func updateViewIsNotLoading() {
+        DispatchQueue.main.async { [weak self] in
+            self?.spinner.willMove(toParent: nil)
+            self?.spinner.view.removeFromSuperview()
+            self?.spinner.removeFromParent()
+        }
+    }
+}

@@ -11,7 +11,7 @@ import UIKit
 protocol CollectionDetailRouterProtocol {
     static func build(album: AlbumViewModel) -> UIViewController
     
-    func showCameraView(from view: CollectionDetailViewProtocol)
+    func showCameraView(from view: CollectionDetailViewProtocol, album: AlbumViewModel)
 }
 
 protocol CollectionDetailManagerProtocol {

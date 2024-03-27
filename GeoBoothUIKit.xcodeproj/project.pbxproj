@@ -92,6 +92,8 @@
 		B6CE19C22BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */; };
 		B6CE19C52BA230B70086A2B1 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C42BA230B70086A2B1 /* UserDefaultHelper.swift */; };
 		B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */; };
+		B6D1DFF62BB4168500AD415B /* StorageNameConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1DFF52BB4168500AD415B /* StorageNameConstant.swift */; };
+		B6D1DFF92BB41D2900AD415B /* InsertPhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1DFF82BB41D2900AD415B /* InsertPhotoDTO.swift */; };
 		B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C72B75916F000324B8 /* LocationServices.swift */; };
 		B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */; };
 		B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */; };
@@ -200,6 +202,8 @@
 		B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyConstant.swift; sourceTree = "<group>"; };
 		B6CE19C42BA230B70086A2B1 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		B6D1DFF52BB4168500AD415B /* StorageNameConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageNameConstant.swift; sourceTree = "<group>"; };
+		B6D1DFF82BB41D2900AD415B /* InsertPhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPhotoDTO.swift; sourceTree = "<group>"; };
 		B6E4D8C72B75916F000324B8 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAuthDelegate.swift; sourceTree = "<group>"; };
 		B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumTableViewController.swift; sourceTree = "<group>"; };
@@ -413,6 +417,7 @@
 		B66AA6DF2BAF775B0070B75F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B6D1DFF72BB41D1E00AD415B /* Entity */,
 				B663A5A02BB0BDF50087A0BE /* CameraManager.swift */,
 			);
 			path = Manager;
@@ -842,6 +847,7 @@
 				B694BE532B73D1F40084F9FE /* AppLabel.swift */,
 				B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */,
 				B68A3A422BAAC43400AC6A11 /* KeychainKeyConstant.swift */,
+				B6D1DFF52BB4168500AD415B /* StorageNameConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -965,6 +971,14 @@
 				B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B6D1DFF72BB41D1E00AD415B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B6D1DFF82BB41D2900AD415B /* InsertPhotoDTO.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		B6E4D8C52B75915A000324B8 /* Utilities */ = {
@@ -1200,6 +1214,7 @@
 				B663A5A32BB0BDFD0087A0BE /* CameraPresenter.swift in Sources */,
 				B6A162E52BA9D68000C3C96A /* AddCollectionRouter.swift in Sources */,
 				B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */,
+				B6D1DFF62BB4168500AD415B /* StorageNameConstant.swift in Sources */,
 				B66AA6D32BAF305C0070B75F /* UpdateAlbumDTO.swift in Sources */,
 				B63B27902BAEA88400658F38 /* CollectionDetailViewController.swift in Sources */,
 				B6CE19B92BA21D0D0086A2B1 /* CollectionInteractor.swift in Sources */,
@@ -1211,6 +1226,7 @@
 				B663A59F2BB0BDEE0087A0BE /* CameraInteractor.swift in Sources */,
 				B63B276D2BAC991E00658F38 /* MapInteractor.swift in Sources */,
 				B68A3A3B2BAABA7400AC6A11 /* UIView+RoundedCorner.swift in Sources */,
+				B6D1DFF92BB41D2900AD415B /* InsertPhotoDTO.swift in Sources */,
 				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
 				B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */,
 				B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */,
