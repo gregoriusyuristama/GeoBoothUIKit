@@ -11,7 +11,6 @@ extension String {
     func extractGeoboothPathComponent() -> String? {
         guard let url = URL(string: self),
               let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-              let _ = components.host,
               let path = components.path.components(separatedBy: "\(StorageNameConstant.geoBooth)/").last else {
             return nil
         }

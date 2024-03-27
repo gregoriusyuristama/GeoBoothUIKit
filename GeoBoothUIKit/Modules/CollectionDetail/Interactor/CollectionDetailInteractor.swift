@@ -66,9 +66,8 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
         })
     }
     
-    
     func deletePhoto(photo: PhotoViewModel) {
-        manager?.deletePhoto(album: self.album, photo: photo, completion: { result in
+        manager?.deletePhoto(album: album, photo: photo, completion: { result in
             switch result {
             case .success:
                 self.presenter?.updateViewDeleteSuccess()
@@ -77,7 +76,6 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
             }
         })
     }
-    
     
     func getRegion() {
         LocationServices.shared.regionMovementDelegate = self

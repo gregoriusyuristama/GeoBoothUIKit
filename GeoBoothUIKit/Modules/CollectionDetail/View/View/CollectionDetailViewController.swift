@@ -14,7 +14,7 @@ import UIKit
 class CollectionDetailViewController: UIViewController {
     var presenter: (any CollectionDetailPresenterProtocol)?
     
-    private var selectedImage: PhotoViewModel? = nil
+    private var selectedImage: PhotoViewModel? 
     private var spinner = LoadingViewController()
     
     private let cameraButton: UIBarButtonItem = {
