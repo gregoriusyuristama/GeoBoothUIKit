@@ -15,12 +15,11 @@ class CollectionDetailRouter: CollectionDetailRouterProtocol {
         var view: CollectionDetailViewProtocol = CollectionDetailViewController()
         var presenter: CollectionDetailPresenterProtocol = CollectionDetailPresenter()
         let manager: CollectionDetailManagerProtocol = CollectionDetailManager()
-        var interactor: CollectionDetailInteractorProtocol = CollectionDetailInteractor(manager: manager)
+        var interactor: CollectionDetailInteractorProtocol = CollectionDetailInteractor(manager: manager, album: album)
         
         view.presenter = presenter
         
         interactor.presenter = presenter
-        interactor.album = album
         
         presenter.router = router
         presenter.view = view

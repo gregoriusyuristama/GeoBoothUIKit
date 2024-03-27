@@ -22,6 +22,7 @@ class LocationServices: NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
+        currentLocation = locationManager.location?.coordinate
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

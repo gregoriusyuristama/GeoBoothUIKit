@@ -25,7 +25,7 @@ protocol CollectionDetailInteractorProtocol {
     var presenter: CollectionDetailPresenterProtocol? { get set }
     var manager: CollectionDetailManagerProtocol? { get set }
     
-    var album: AlbumViewModel? { get set }
+    var album: AlbumViewModel { get set }
     
     func getPhotos()
     
