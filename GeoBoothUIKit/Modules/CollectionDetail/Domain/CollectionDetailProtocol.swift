@@ -12,6 +12,8 @@ protocol CollectionDetailRouterProtocol {
     static func build(album: AlbumViewModel) -> UIViewController
     
     func showCameraView(from view: CollectionDetailViewProtocol, album: AlbumViewModel)
+    
+    func showFullImage(from view: CollectionDetailViewProtocol, image: UIImage)
 }
 
 protocol CollectionDetailManagerProtocol {
@@ -72,4 +74,5 @@ protocol CollectionDetailPresenterProtocol {
     func updateViewDeleteSuccess()
     
     func presentCameraView()
+    func presentFullImage(image: UIImage)
 }

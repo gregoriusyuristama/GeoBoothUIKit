@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B612280A2BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */; };
+		B62D4D992BB49CF70093FA40 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */; };
+		B62D4D9D2BB4A3160093FA40 /* PanImageZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */; };
 		B63B276D2BAC991E00658F38 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B276C2BAC991E00658F38 /* MapInteractor.swift */; };
 		B63B276F2BAC999100658F38 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B276E2BAC999100658F38 /* MapPresenter.swift */; };
 		B63B27712BAC99BA00658F38 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B27702BAC99BA00658F38 /* MapManager.swift */; };
@@ -124,6 +126,8 @@
 
 /* Begin PBXFileReference section */
 		B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractorTests.swift; sourceTree = "<group>"; };
+		B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
+		B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanImageZoomView.swift; sourceTree = "<group>"; };
 		B63B276C2BAC991E00658F38 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		B63B276E2BAC999100658F38 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		B63B27702BAC99BA00658F38 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
@@ -265,6 +269,22 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		B62D4D9A2BB4A2EE0093FA40 /* PanZoomImageView */ = {
+			isa = PBXGroup;
+			children = (
+				B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */,
+			);
+			path = PanZoomImageView;
+			sourceTree = "<group>";
+		};
+		B62D4D9B2BB4A2F70093FA40 /* PhotoCellItem */ = {
+			isa = PBXGroup;
+			children = (
+				B66AA6D92BAF6CD80070B75F /* PhotoCell.swift */,
+			);
+			path = PhotoCellItem;
+			sourceTree = "<group>";
+		};
 		B63B27742BACA2BB00658F38 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +369,7 @@
 			children = (
 				B66AA6CF2BAF188A0070B75F /* Components */,
 				B63B278F2BAEA88400658F38 /* CollectionDetailViewController.swift */,
+				B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,7 +377,8 @@
 		B66AA6CF2BAF188A0070B75F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B66AA6D92BAF6CD80070B75F /* PhotoCell.swift */,
+				B62D4D9B2BB4A2F70093FA40 /* PhotoCellItem */,
+				B62D4D9A2BB4A2EE0093FA40 /* PanZoomImageView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1228,6 +1250,7 @@
 				B68A3A3B2BAABA7400AC6A11 /* UIView+RoundedCorner.swift in Sources */,
 				B6D1DFF92BB41D2900AD415B /* InsertPhotoDTO.swift in Sources */,
 				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
+				B62D4D9D2BB4A3160093FA40 /* PanImageZoomView.swift in Sources */,
 				B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */,
 				B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */,
 				B663A5A52BB0BE040087A0BE /* CameraRouter.swift in Sources */,
@@ -1242,6 +1265,7 @@
 				B63B27732BACA27100658F38 /* DbFunction.swift in Sources */,
 				B6BA6D3B2B73B9CF00E01723 /* CollectionViewController.swift in Sources */,
 				B685B7CB2BA0C12800D1AB6D /* HomeRouter.swift in Sources */,
+				B62D4D992BB49CF70093FA40 /* FullImageViewController.swift in Sources */,
 				B6B29D4C2B751C120079BB95 /* UIImage+Color.swift in Sources */,
 				B63B278A2BAEA86800658F38 /* CollectionDetailManager.swift in Sources */,
 				B6CE19C52BA230B70086A2B1 /* UserDefaultHelper.swift in Sources */,

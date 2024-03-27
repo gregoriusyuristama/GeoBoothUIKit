@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
     var router: (any CollectionDetailRouterProtocol)?
@@ -84,4 +85,10 @@ class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
             album: album
         )
     }
+    
+    func presentFullImage(image: UIImage) {
+        guard let view = view else { fatalError("Empty View on Presenter") }
+        router?.showFullImage(from: view, image: image)
+    }
+    
 }

@@ -77,6 +77,7 @@ class CollectionDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
         navigationItem.largeTitleDisplayMode = .never
     }
     
@@ -288,6 +289,15 @@ extension CollectionDetailViewController: UICollectionViewDataSource, UICollecti
             cell.imageView.image = UIImage(systemName: "photos.fill")
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard
+            let photoCell = collectionView.cellForItem(at: indexPath) as? PhotoCell,
+            let image = photoCell.imageView.image
+        else { return }
+        
+        presenter?.presentFullImage(image: image)
     }
 }
 

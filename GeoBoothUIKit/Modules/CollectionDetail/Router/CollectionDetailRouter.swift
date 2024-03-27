@@ -38,4 +38,15 @@ class CollectionDetailRouter: CollectionDetailRouterProtocol {
         
         viewController.navigationController?.pushViewController(cameraView, animated: true)
     }
+    
+    func showFullImage(from view: any CollectionDetailViewProtocol, image: UIImage) {
+        guard let viewController = view as? UIViewController else { fatalError("Invalid View Controller Type") }
+        
+        let fullImageVc = FullImageViewController()
+        fullImageVc.image = image
+        
+        viewController.navigationController?.pushViewController(fullImageVc, animated: true)
+        
+    }
+    
 }
