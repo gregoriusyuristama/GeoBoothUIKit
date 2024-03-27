@@ -156,8 +156,8 @@ class CollectionDetailViewController: UIViewController {
     @objc private func takePhoto() {
         AVCaptureDevice.requestAccess(for: .video) { response in
             if response {
-                DispatchQueue.main.async {
-                    self.navigationController?.pushViewController(CameraViewController(), animated: true)
+                DispatchQueue.main.async { [weak self] in
+                    self?.presenter?.presentCameraView()
                 }
             }
         }

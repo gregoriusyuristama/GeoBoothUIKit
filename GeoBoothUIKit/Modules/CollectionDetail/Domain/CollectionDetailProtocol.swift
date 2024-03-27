@@ -10,6 +10,8 @@ import UIKit
 
 protocol CollectionDetailRouterProtocol {
     static func build(album: AlbumViewModel) -> UIViewController
+    
+    func showCameraView(from view: CollectionDetailViewProtocol, album: AlbumViewModel)
 }
 
 protocol CollectionDetailManagerProtocol {
@@ -68,4 +70,6 @@ protocol CollectionDetailPresenterProtocol {
     func updateViewFailed(errorMessage: String)
     
     func updateViewDeleteSuccess()
+    
+    func presentCameraView()
 }

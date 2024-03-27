@@ -21,6 +21,11 @@
 		B63B278E2BAEA87900658F38 /* CollectionDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B278D2BAEA87900658F38 /* CollectionDetailInteractor.swift */; };
 		B63B27902BAEA88400658F38 /* CollectionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B278F2BAEA88400658F38 /* CollectionDetailViewController.swift */; };
 		B63B27A22BAEBF7C00658F38 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B63B27A12BAEBF7C00658F38 /* SnapKit */; };
+		B663A59D2BB0BD5E0087A0BE /* CameraProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663A59C2BB0BD5E0087A0BE /* CameraProtocol.swift */; };
+		B663A59F2BB0BDEE0087A0BE /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663A59E2BB0BDEE0087A0BE /* CameraInteractor.swift */; };
+		B663A5A12BB0BDF50087A0BE /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663A5A02BB0BDF50087A0BE /* CameraManager.swift */; };
+		B663A5A32BB0BDFD0087A0BE /* CameraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663A5A22BB0BDFD0087A0BE /* CameraPresenter.swift */; };
+		B663A5A52BB0BE040087A0BE /* CameraRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B663A5A42BB0BE040087A0BE /* CameraRouter.swift */; };
 		B66AA6D32BAF305C0070B75F /* UpdateAlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D22BAF305C0070B75F /* UpdateAlbumDTO.swift */; };
 		B66AA6D62BAF387A0070B75F /* InsertAlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D52BAF387A0070B75F /* InsertAlbumDTO.swift */; };
 		B66AA6DA2BAF6CD80070B75F /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66AA6D92BAF6CD80070B75F /* PhotoCell.swift */; };
@@ -87,6 +92,8 @@
 		B6CE19C22BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */; };
 		B6CE19C52BA230B70086A2B1 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C42BA230B70086A2B1 /* UserDefaultHelper.swift */; };
 		B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */; };
+		B6D1DFF62BB4168500AD415B /* StorageNameConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1DFF52BB4168500AD415B /* StorageNameConstant.swift */; };
+		B6D1DFF92BB41D2900AD415B /* InsertPhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1DFF82BB41D2900AD415B /* InsertPhotoDTO.swift */; };
 		B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C72B75916F000324B8 /* LocationServices.swift */; };
 		B6E4D8CA2B759515000324B8 /* ChangeAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */; };
 		B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */; };
@@ -129,6 +136,11 @@
 		B63B278B2BAEA86F00658F38 /* CollectionDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailPresenter.swift; sourceTree = "<group>"; };
 		B63B278D2BAEA87900658F38 /* CollectionDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailInteractor.swift; sourceTree = "<group>"; };
 		B63B278F2BAEA88400658F38 /* CollectionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionDetailViewController.swift; sourceTree = "<group>"; };
+		B663A59C2BB0BD5E0087A0BE /* CameraProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraProtocol.swift; sourceTree = "<group>"; };
+		B663A59E2BB0BDEE0087A0BE /* CameraInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInteractor.swift; sourceTree = "<group>"; };
+		B663A5A02BB0BDF50087A0BE /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		B663A5A22BB0BDFD0087A0BE /* CameraPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPresenter.swift; sourceTree = "<group>"; };
+		B663A5A42BB0BE040087A0BE /* CameraRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRouter.swift; sourceTree = "<group>"; };
 		B66AA6D22BAF305C0070B75F /* UpdateAlbumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateAlbumDTO.swift; sourceTree = "<group>"; };
 		B66AA6D52BAF387A0070B75F /* InsertAlbumDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertAlbumDTO.swift; sourceTree = "<group>"; };
 		B66AA6D82BAF3BAF0070B75F /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
@@ -190,6 +202,8 @@
 		B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeyConstant.swift; sourceTree = "<group>"; };
 		B6CE19C42BA230B70086A2B1 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		B6D1DFF52BB4168500AD415B /* StorageNameConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageNameConstant.swift; sourceTree = "<group>"; };
+		B6D1DFF82BB41D2900AD415B /* InsertPhotoDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertPhotoDTO.swift; sourceTree = "<group>"; };
 		B6E4D8C72B75916F000324B8 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B6E4D8C92B759515000324B8 /* ChangeAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAuthDelegate.swift; sourceTree = "<group>"; };
 		B6F76D7B2B7BD22C00909C80 /* AddAlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlbumTableViewController.swift; sourceTree = "<group>"; };
@@ -379,6 +393,7 @@
 		B66AA6DC2BAF77470070B75F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				B663A59C2BB0BD5E0087A0BE /* CameraProtocol.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -386,6 +401,7 @@
 		B66AA6DD2BAF774F0070B75F /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				B663A5A42BB0BE040087A0BE /* CameraRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -393,6 +409,7 @@
 		B66AA6DE2BAF77540070B75F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				B663A5A22BB0BDFD0087A0BE /* CameraPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -400,6 +417,8 @@
 		B66AA6DF2BAF775B0070B75F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B6D1DFF72BB41D1E00AD415B /* Entity */,
+				B663A5A02BB0BDF50087A0BE /* CameraManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -407,6 +426,7 @@
 		B66AA6E02BAF775F0070B75F /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				B663A59E2BB0BDEE0087A0BE /* CameraInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -827,6 +847,7 @@
 				B694BE532B73D1F40084F9FE /* AppLabel.swift */,
 				B6CE19C12BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift */,
 				B68A3A422BAAC43400AC6A11 /* KeychainKeyConstant.swift */,
+				B6D1DFF52BB4168500AD415B /* StorageNameConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -950,6 +971,14 @@
 				B6CE19C82BA235F40086A2B1 /* LoadingViewController.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B6D1DFF72BB41D1E00AD415B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B6D1DFF82BB41D2900AD415B /* InsertPhotoDTO.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		B6E4D8C52B75915A000324B8 /* Utilities */ = {
@@ -1182,8 +1211,10 @@
 				B68A3A472BAACD8400AC6A11 /* AlbumDTO.swift in Sources */,
 				B6CE19B02BA20ABF0086A2B1 /* AuthenticationPresenter.swift in Sources */,
 				B68A3A492BAACDE700AC6A11 /* AlbumViewModel.swift in Sources */,
+				B663A5A32BB0BDFD0087A0BE /* CameraPresenter.swift in Sources */,
 				B6A162E52BA9D68000C3C96A /* AddCollectionRouter.swift in Sources */,
 				B694BE522B73D1800084F9FE /* ResourcePath.swift in Sources */,
+				B6D1DFF62BB4168500AD415B /* StorageNameConstant.swift in Sources */,
 				B66AA6D32BAF305C0070B75F /* UpdateAlbumDTO.swift in Sources */,
 				B63B27902BAEA88400658F38 /* CollectionDetailViewController.swift in Sources */,
 				B6CE19B92BA21D0D0086A2B1 /* CollectionInteractor.swift in Sources */,
@@ -1192,11 +1223,14 @@
 				B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */,
 				B685B7D82BA0CE4600D1AB6D /* MapRouter.swift in Sources */,
 				B685B7E12BA1B69C00D1AB6D /* AuthenticationViewController.swift in Sources */,
+				B663A59F2BB0BDEE0087A0BE /* CameraInteractor.swift in Sources */,
 				B63B276D2BAC991E00658F38 /* MapInteractor.swift in Sources */,
 				B68A3A3B2BAABA7400AC6A11 /* UIView+RoundedCorner.swift in Sources */,
+				B6D1DFF92BB41D2900AD415B /* InsertPhotoDTO.swift in Sources */,
 				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
 				B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */,
 				B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */,
+				B663A5A52BB0BE040087A0BE /* CameraRouter.swift in Sources */,
 				B68A3A522BAAD0C600AC6A11 /* CollectionViewCell.swift in Sources */,
 				B63B277A2BACB17100658F38 /* TableName.swift in Sources */,
 				B685B7E52BA1B6B600D1AB6D /* AuthenticationManager.swift in Sources */,
@@ -1225,6 +1259,7 @@
 				B63B27712BAC99BA00658F38 /* MapManager.swift in Sources */,
 				B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */,
 				B6A162E72BA9D69500C3C96A /* AddCollectionProtocol.swift in Sources */,
+				B663A5A12BB0BDF50087A0BE /* CameraManager.swift in Sources */,
 				B685B7D62BA0CDAE00D1AB6D /* CollectionRouter.swift in Sources */,
 				B6A162EB2BA9D71400C3C96A /* AddCollectionPresenter.swift in Sources */,
 				B68A3A4D2BAACFE100AC6A11 /* PhotoViewModel.swift in Sources */,
@@ -1234,6 +1269,7 @@
 				B6CE19B72BA21D050086A2B1 /* CollectionPresenter.swift in Sources */,
 				B66AA6E32BAF77840070B75F /* CameraViewController.swift in Sources */,
 				B6F76D802B7BDF2800909C80 /* AddAlbumTextFieldTableViewCell.swift in Sources */,
+				B663A59D2BB0BD5E0087A0BE /* CameraProtocol.swift in Sources */,
 				B685B7E32BA1B6AD00D1AB6D /* AuthenticationInteractor.swift in Sources */,
 				B6A167E32B79A7A1001457B0 /* SceneDelegate.swift in Sources */,
 				B6CE19B52BA21CFD0086A2B1 /* CollectionManager.swift in Sources */,
