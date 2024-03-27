@@ -41,7 +41,12 @@ class CameraManager: CameraManagerProtocol {
                     .from(TableName.photo)
                     .insert(
                         InsertPhotoDTO(
-                            photoUrl: imagePath, 
+                            photoUrl: SupabaseSingleton
+                                .shared
+                                .client
+                                .storage
+                                .from(StorageNameConstant.geoBooth)
+                                .getPublicURL(path: imagePath).absoluteString, 
                             albumId: album.id
                         )
                     )
