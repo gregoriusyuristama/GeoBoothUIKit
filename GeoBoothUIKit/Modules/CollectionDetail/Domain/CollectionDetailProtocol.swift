@@ -13,12 +13,14 @@ protocol CollectionDetailRouterProtocol {
     
     func showCameraView(from view: CollectionDetailViewProtocol, album: AlbumViewModel)
     
-    func showFullImage(from view: CollectionDetailViewProtocol, image: UIImage)
+    func showFullImage(from view: CollectionDetailViewProtocol, image: UIImage, selector: Selector)
 }
 
 protocol CollectionDetailManagerProtocol {
-    func editAlbum(album: UpdateAlbumDTO, completion: @escaping((Result<Void, Error>) -> Void))
-    func deleteAlbum(album: AlbumViewModel, completion: @escaping((Result<Void, Error>) -> Void))
+    func editAlbum(album: UpdateAlbumDTO, completion: @escaping ((Result<Void, Error>) -> Void))
+    func deleteAlbum(album: AlbumViewModel, completion: @escaping ((Result<Void, Error>) -> Void))
+    func fetchPhotos(album: AlbumViewModel, completion: @escaping ((Result<[PhotoDTO], Error>) -> Void))
+    func deletePhoto(album: AlbumViewModel, photo: PhotoViewModel, completion: @escaping (Result<Void, Error>) -> Void)
 }
 
 protocol CollectionDetailInteractorProtocol {
@@ -28,6 +30,8 @@ protocol CollectionDetailInteractorProtocol {
     var album: AlbumViewModel { get set }
     
     func getPhotos()
+    func fetchPhotos()
+    func deletePhoto(photo: PhotoViewModel)
     
     func editAlbum(newAlbumName: String)
     func deleteAlbum()
@@ -74,5 +78,8 @@ protocol CollectionDetailPresenterProtocol {
     func updateViewDeleteSuccess()
     
     func presentCameraView()
-    func presentFullImage(image: UIImage)
+    func presentFullImage(image: UIImage, selector: Selector)
+    
+    func triggerPhotosUpdate()
+    func triggerPhotoDeletion(photo: PhotoViewModel)
 }

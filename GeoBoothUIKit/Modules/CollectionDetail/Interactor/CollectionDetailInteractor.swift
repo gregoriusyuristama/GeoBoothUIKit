@@ -54,6 +54,31 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
         presenter?.interactorDidFetchPhotos(with: album.photos)
     }
     
+    func fetchPhotos() {
+        manager?.fetchPhotos(album: album, completion: { result in
+            switch result {
+            case .success(let photos):
+                let photosVm = photos.map { $0.toDomain() }
+                self.presenter?.interactorDidFetchPhotos(with: photosVm)
+            case .failure(let failure):
+                self.presenter?.updateViewFailed(errorMessage: failure.localizedDescription)
+            }
+        })
+    }
+    
+    
+    func deletePhoto(photo: PhotoViewModel) {
+        manager?.deletePhoto(album: self.album, photo: photo, completion: { result in
+            switch result {
+            case .success:
+                self.presenter?.updateViewDeleteSuccess()
+            case .failure(let failure):
+                self.presenter?.updateViewFailed(errorMessage: failure.localizedDescription)
+            }
+        })
+    }
+    
+    
     func getRegion() {
         LocationServices.shared.regionMovementDelegate = self
         startMonitoringAlbumRegion()

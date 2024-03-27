@@ -10,6 +10,7 @@
 		B612280A2BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */; };
 		B62D4D992BB49CF70093FA40 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */; };
 		B62D4D9D2BB4A3160093FA40 /* PanImageZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */; };
+		B62D4DA12BB4B62F0093FA40 /* URLComponentExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4DA02BB4B62F0093FA40 /* URLComponentExtractor.swift */; };
 		B63B276D2BAC991E00658F38 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B276C2BAC991E00658F38 /* MapInteractor.swift */; };
 		B63B276F2BAC999100658F38 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B276E2BAC999100658F38 /* MapPresenter.swift */; };
 		B63B27712BAC99BA00658F38 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63B27702BAC99BA00658F38 /* MapManager.swift */; };
@@ -128,6 +129,7 @@
 		B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractorTests.swift; sourceTree = "<group>"; };
 		B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanImageZoomView.swift; sourceTree = "<group>"; };
+		B62D4DA02BB4B62F0093FA40 /* URLComponentExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentExtractor.swift; sourceTree = "<group>"; };
 		B63B276C2BAC991E00658F38 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
 		B63B276E2BAC999100658F38 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
 		B63B27702BAC99BA00658F38 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
@@ -285,6 +287,23 @@
 			path = PhotoCellItem;
 			sourceTree = "<group>";
 		};
+		B62D4D9E2BB4AD7B0093FA40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B63B278F2BAEA88400658F38 /* CollectionDetailViewController.swift */,
+				B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B62D4D9F2BB4B6180093FA40 /* URLComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B62D4DA02BB4B62F0093FA40 /* URLComponentExtractor.swift */,
+			);
+			path = URLComponents;
+			sourceTree = "<group>";
+		};
 		B63B27742BACA2BB00658F38 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,9 +386,8 @@
 		B63B27842BAEA84400658F38 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B62D4D9E2BB4AD7B0093FA40 /* View */,
 				B66AA6CF2BAF188A0070B75F /* Components */,
-				B63B278F2BAEA88400658F38 /* CollectionDetailViewController.swift */,
-				B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1006,6 +1024,7 @@
 		B6E4D8C52B75915A000324B8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B62D4D9F2BB4B6180093FA40 /* URLComponents */,
 				B6CE19C32BA230A90086A2B1 /* UserDefaults */,
 				B6CE19BA2BA21F390086A2B1 /* Supabase */,
 				B685B7CC2BA0C17C00D1AB6D /* Navigation */,
@@ -1286,6 +1305,7 @@
 				B663A5A12BB0BDF50087A0BE /* CameraManager.swift in Sources */,
 				B685B7D62BA0CDAE00D1AB6D /* CollectionRouter.swift in Sources */,
 				B6A162EB2BA9D71400C3C96A /* AddCollectionPresenter.swift in Sources */,
+				B62D4DA12BB4B62F0093FA40 /* URLComponentExtractor.swift in Sources */,
 				B68A3A4D2BAACFE100AC6A11 /* PhotoViewModel.swift in Sources */,
 				B66AA6DA2BAF6CD80070B75F /* PhotoCell.swift in Sources */,
 				B68A3A432BAAC43400AC6A11 /* KeychainKeyConstant.swift in Sources */,

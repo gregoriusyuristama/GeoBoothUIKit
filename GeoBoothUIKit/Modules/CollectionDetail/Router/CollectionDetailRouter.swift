@@ -38,11 +38,13 @@ class CollectionDetailRouter: CollectionDetailRouterProtocol {
         viewController.navigationController?.pushViewController(cameraView, animated: true)
     }
     
-    func showFullImage(from view: any CollectionDetailViewProtocol, image: UIImage) {
+    func showFullImage(from view: any CollectionDetailViewProtocol, image: UIImage, selector: Selector) {
         guard let viewController = view as? UIViewController else { fatalError("Invalid View Controller Type") }
         
         let fullImageVc = FullImageViewController()
         fullImageVc.image = image
+        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: viewController, action: selector)
+        fullImageVc.navigationItem.rightBarButtonItem = deleteButton
         
         viewController.navigationController?.pushViewController(fullImageVc, animated: true)
         
