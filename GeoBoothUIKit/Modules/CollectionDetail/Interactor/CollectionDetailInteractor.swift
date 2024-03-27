@@ -10,20 +10,21 @@ import Foundation
 import KeychainSwift
 
 class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
-    var album: AlbumViewModel?
+    var album: AlbumViewModel
     
     var presenter: (any CollectionDetailPresenterProtocol)?
 
     var manager: (any CollectionDetailManagerProtocol)?
     
-    init(manager: (any CollectionDetailManagerProtocol)? = nil) {
+    init(
+        manager: (any CollectionDetailManagerProtocol)? = nil,
+        album: AlbumViewModel
+    ) {
         self.manager = manager
+        self.album = album
     }
     
     func editAlbum(newAlbumName: String) {
-        guard let album = album
-        else { fatalError("Empty album on interactor") }
-        
         let updatedAlbum = UpdateAlbumDTO(
             albumId: album.id,
             albumName: newAlbumName
@@ -39,8 +40,6 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
     }
     
     func deleteAlbum() {
-        guard let album = album
-        else { fatalError("Empty album on interactor") }
         manager?.deleteAlbum(album: album, completion: { result in
             switch result {
             case .success:
@@ -52,8 +51,33 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
     }
     
     func getPhotos() {
-        presenter?.interactorDidFetchPhotos(with: album?.photos ?? [])
+        presenter?.interactorDidFetchPhotos(with: album.photos)
     }
+    
+    func fetchPhotos() {
+        manager?.fetchPhotos(album: album, completion: { result in
+            switch result {
+            case .success(let photos):
+                let photosVm = photos.map { $0.toDomain() }
+                self.presenter?.interactorDidFetchPhotos(with: photosVm)
+            case .failure(let failure):
+                self.presenter?.updateViewFailed(errorMessage: failure.localizedDescription)
+            }
+        })
+    }
+    
+    
+    func deletePhoto(photo: PhotoViewModel) {
+        manager?.deletePhoto(album: self.album, photo: photo, completion: { result in
+            switch result {
+            case .success:
+                self.presenter?.updateViewDeleteSuccess()
+            case .failure(let failure):
+                self.presenter?.updateViewFailed(errorMessage: failure.localizedDescription)
+            }
+        })
+    }
+    
     
     func getRegion() {
         LocationServices.shared.regionMovementDelegate = self
@@ -61,21 +85,17 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
     }
     
     private func startMonitoringAlbumRegion() {
-        guard
-            let albumLatitude = album?.latitude,
-            let albumLongitude = album?.longitude,
-            let albumId = album?.id
-        else {
-            return
-        }
         let region = CLCircularRegion(
-            center: CLLocationCoordinate2D(latitude: albumLatitude, longitude: albumLongitude),
+            center: CLLocationCoordinate2D(
+                latitude: album.latitude,
+                longitude: album.longitude
+            ),
             radius: 150,
-            identifier: "\(albumId)"
+            identifier: "\(album.id)"
         )
         LocationServices.shared.startMonitoring(region: region)
         
-        getInitialLocationCheck(albumLatitude, albumLongitude)
+        getInitialLocationCheck(album.latitude, album.longitude)
     }
     
     private func getInitialLocationCheck(_ latitude: Double, _ longitude: Double) {
@@ -96,18 +116,13 @@ class CollectionDetailInteractor: CollectionDetailInteractorProtocol {
     }
     
     func stopMonitoringRegion() {
-        guard
-            let albumLatitude = album?.latitude,
-            let albumLongitude = album?.longitude,
-            let albumId = album?.id
-        else {
-            return
-        }
-        
         let region = CLCircularRegion(
-            center: CLLocationCoordinate2D(latitude: albumLatitude, longitude: albumLongitude),
+            center: CLLocationCoordinate2D(
+                latitude: album.latitude,
+                longitude: album.longitude
+            ),
             radius: 150,
-            identifier: "\(albumId)"
+            identifier: "\(album.id)"
         )
         LocationServices.shared.stopMonitoring(region: region)
     }

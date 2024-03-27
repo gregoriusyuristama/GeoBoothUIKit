@@ -15,12 +15,11 @@ class CollectionDetailRouter: CollectionDetailRouterProtocol {
         var view: CollectionDetailViewProtocol = CollectionDetailViewController()
         var presenter: CollectionDetailPresenterProtocol = CollectionDetailPresenter()
         let manager: CollectionDetailManagerProtocol = CollectionDetailManager()
-        var interactor: CollectionDetailInteractorProtocol = CollectionDetailInteractor(manager: manager)
+        var interactor: CollectionDetailInteractorProtocol = CollectionDetailInteractor(manager: manager, album: album)
         
         view.presenter = presenter
         
         interactor.presenter = presenter
-        interactor.album = album
         
         presenter.router = router
         presenter.view = view
@@ -38,4 +37,17 @@ class CollectionDetailRouter: CollectionDetailRouterProtocol {
         
         viewController.navigationController?.pushViewController(cameraView, animated: true)
     }
+    
+    func showFullImage(from view: any CollectionDetailViewProtocol, image: UIImage, selector: Selector) {
+        guard let viewController = view as? UIViewController else { fatalError("Invalid View Controller Type") }
+        
+        let fullImageVc = FullImageViewController()
+        fullImageVc.image = image
+        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: viewController, action: selector)
+        fullImageVc.navigationItem.rightBarButtonItem = deleteButton
+        
+        viewController.navigationController?.pushViewController(fullImageVc, animated: true)
+        
+    }
+    
 }

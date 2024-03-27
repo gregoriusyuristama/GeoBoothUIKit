@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
     var router: (any CollectionDetailRouterProtocol)?
@@ -84,4 +85,18 @@ class CollectionDetailPresenter: CollectionDetailPresenterProtocol {
             album: album
         )
     }
+    
+    func presentFullImage(image: UIImage, selector: Selector) {
+        guard let view = view else { fatalError("Empty View on Presenter") }
+        router?.showFullImage(from: view, image: image, selector: selector)
+    }
+    
+    func triggerPhotosUpdate() {
+        interactor?.fetchPhotos()
+    }
+    
+    func triggerPhotoDeletion(photo: PhotoViewModel) {
+        interactor?.deletePhoto(photo: photo)
+    }
+    
 }

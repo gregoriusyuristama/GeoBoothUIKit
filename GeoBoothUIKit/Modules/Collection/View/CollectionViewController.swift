@@ -11,11 +11,7 @@ import UIKit
 class CollectionViewController: UIViewController, CollectionViewProtocol, CollectionViewModalDismissalDelegate {
     var presenter: (any CollectionPresenterProtocol)?
     
-    private var albums: [AlbumViewModel] = [] {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    private var albums: [AlbumViewModel] = []
     
     private var spinner = LoadingViewController()
     

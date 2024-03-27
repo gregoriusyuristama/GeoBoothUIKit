@@ -14,10 +14,10 @@ import UIKit
 class CollectionDetailViewController: UIViewController {
     var presenter: (any CollectionDetailPresenterProtocol)?
     
+    private var selectedImage: PhotoViewModel? = nil
     private var spinner = LoadingViewController()
     
     private let cameraButton: UIBarButtonItem = {
-        
         let button = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: nil, action: #selector(takePhoto))
         return button
     }()
@@ -37,13 +37,17 @@ class CollectionDetailViewController: UIViewController {
     
     private var photos: [PhotoViewModel] = [] {
         didSet {
-            collectionView.reloadData()
-            if photos.isEmpty {
-                emptyLabel.isHidden = false
-                collectionView.isHidden = true
-            } else {
-                emptyLabel.isHidden = true
-                collectionView.isHidden = false
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                self.collectionView.reloadData()
+                
+                if self.photos.isEmpty {
+                    self.emptyLabel.isHidden = false
+                    self.collectionView.isHidden = true
+                } else {
+                    self.emptyLabel.isHidden = true
+                    self.collectionView.isHidden = false
+                }
             }
         }
     }
@@ -77,7 +81,9 @@ class CollectionDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
         navigationItem.largeTitleDisplayMode = .never
+        presenter?.triggerPhotosUpdate()
     }
     
     fileprivate func setupEmptyLabel() {
@@ -207,6 +213,26 @@ class CollectionDetailViewController: UIViewController {
         
         present(alertControlller, animated: true)
     }
+    
+    @objc private func deletePhoto() {
+        print("Delete Photo")
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Delete Photo", message: "Are you sure want to delete this photo?", preferredStyle: .actionSheet)
+            
+            alert.addAction(
+                UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                    guard let selectedImage = self?.selectedImage else { return }
+                    self?.presenter?.triggerPhotoDeletion(photo: selectedImage)
+                })
+            )
+            alert.addAction(
+                UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            )
+            
+            self?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 extension CollectionDetailViewController: CollectionDetailViewProtocol {
@@ -288,6 +314,17 @@ extension CollectionDetailViewController: UICollectionViewDataSource, UICollecti
             cell.imageView.image = UIImage(systemName: "photos.fill")
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard
+            let photoCell = collectionView.cellForItem(at: indexPath) as? PhotoCell,
+            let image = photoCell.imageView.image
+        else { return }
+        
+        selectedImage = photos[indexPath.row]
+        
+        presenter?.presentFullImage(image: image, selector: #selector(deletePhoto))
     }
 }
 
