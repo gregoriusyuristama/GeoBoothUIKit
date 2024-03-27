@@ -479,10 +479,10 @@
 			isa = PBXGroup;
 			children = (
 				B6CE19B12BA21B7F0086A2B1 /* Domain */,
-				B685B7B22BA0B7D700D1AB6D /* Router */,
+				B685B7AF2BA0B7CA00D1AB6D /* Interactor */,
 				B685B7B12BA0B7D200D1AB6D /* Manager */,
 				B685B7B02BA0B7CE00D1AB6D /* Presenter */,
-				B685B7AF2BA0B7CA00D1AB6D /* Interactor */,
+				B685B7B22BA0B7D700D1AB6D /* Router */,
 				B685B7AE2BA0B7C500D1AB6D /* View */,
 			);
 			path = Collection;

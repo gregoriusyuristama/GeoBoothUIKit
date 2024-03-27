@@ -27,6 +27,7 @@ class CollectionViewCell: UICollectionViewCell {
         collectionImageView.contentMode = .scaleAspectFill
         
         if let lastImage = album.photos.last, let imageUrl = URL(string: lastImage.photoUrl) {
+            collectionImageView.layer.cornerRadius = 16
             collectionImageView.kf.setImage(with: imageUrl)
         } else {
             collectionImageView.image = UIImage(systemName: "photo.fill")
