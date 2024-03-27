@@ -16,11 +16,6 @@ class SupabaseConfig {
         return get(filename: "Supabase-Secret", key: "SUPABASE_URL")
     }
     
-    // FIXME: Change to use Supabase Root API Key since it will bypass row level security
-    static var supabaseRootAPIKey: String {
-        return get(filename: "Supabase-Secret", key: "SUPABASE_ROOT_API_KEY")
-    }
-    
     init() {}
     
     static private func get(filename: String, key: String) -> String {
