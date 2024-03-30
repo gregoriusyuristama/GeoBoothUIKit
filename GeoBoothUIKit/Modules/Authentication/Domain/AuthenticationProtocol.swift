@@ -25,6 +25,7 @@ protocol AuthenticationInteractorProtocol {
     var presenter: AuthenticationPresenterProtocol? { get set }
     
     func doAuth(email: String, password: String, completion: @escaping (User?, Error?) -> Void)
+    func doSignUp(email: String, password: String, completion: @escaping (Void?, Error?) -> Void)
 }
 
 protocol AuthenticationViewProtocol {
@@ -33,7 +34,7 @@ protocol AuthenticationViewProtocol {
     func updateViewIsLoading()
     func updateViewIsNotLoading()
     func updateViewWithError(errorMessage: String)
-    
+    func updateViewSignUpSuccess()
 }
 
 protocol AuthenticationPresenterProtocol {
@@ -46,4 +47,5 @@ protocol AuthenticationPresenterProtocol {
     func viewWillAppear()
     
     func signInWithEmailPassword(email: String, password: String)
+    func signUpWithEmailPassword(email: String, password: String)
 }

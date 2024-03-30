@@ -42,6 +42,23 @@ class AuthenticationPresenter: AuthenticationPresenterProtocol {
         }
     }
     
+    func signUpWithEmailPassword(email: String, password: String) {
+        isLoading = true
+        interactor?.doSignUp(email: email, password: password, completion: { _, error in
+            if let errorMessage = error?.localizedDescription {
+                DispatchQueue.main.async { [weak self] in
+                    self?.isLoading = false
+                    self?.view?.updateViewWithError(errorMessage: errorMessage)
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.isLoading = false
+                    self?.view?.updateViewSignUpSuccess()
+                }
+            }
+        })
+    }
+    
     func viewWillAppear() {
         let keychain = KeychainSwift()
         guard
