@@ -14,7 +14,8 @@ class MapRouter: MapRouterProtocol {
         
         var view: MapViewProtocol = MapViewController()
         var presenter: MapPresenterProtocol = MapPresenter()
-        var interactor: MapInteractorProtocol = MapInteractor()
+        let manager: MapManagerProtocol = MapManager()
+        var interactor: MapInteractorProtocol = MapInteractor(manager: manager)
         
         view.presenter = presenter
         

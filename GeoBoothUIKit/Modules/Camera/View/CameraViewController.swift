@@ -99,9 +99,10 @@ class CameraViewController: UIViewController {
     func setupUI() {
         view.addSubview(shutterButton)
         
-        shutterButton.snp.makeConstraints { make in
+        shutterButton.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(view.snp.bottomMargin).inset(20)
+            make.bottom.equalTo(self.view.snp.bottomMargin).inset(20)
             make.width.height.equalTo(80)
         }
         
@@ -112,7 +113,8 @@ class CameraViewController: UIViewController {
         )
         
         view.addSubview(flipCameraButton)
-        flipCameraButton.snp.makeConstraints { make in
+        flipCameraButton.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
             make.leading.equalTo(shutterButton.snp.trailing).offset(40)
             make.bottom.equalToSuperview().inset(80)
         }
