@@ -8,8 +8,10 @@
 struct AppLabel {
     static let collectionTabTitle = "Collection"
     static let collectionNavTitle = "GeoBooth"
+    static let settingTabTitle = "Settings"
     static let mapTabTitle = "Map"
     static let mapNavTitle = "Places of Memories"
+    static let settingNavTitle = "Settings"
     static let emptyStateLabel = [
         "No Collection",
         "You can add new collection by tapping button ",

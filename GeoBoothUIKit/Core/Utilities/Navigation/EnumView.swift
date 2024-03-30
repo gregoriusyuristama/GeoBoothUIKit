@@ -13,4 +13,5 @@ enum EnumView {
     case collection
     case map
     case addCollection
+    case setting
 }

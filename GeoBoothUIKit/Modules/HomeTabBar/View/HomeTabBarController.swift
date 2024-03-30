@@ -9,7 +9,8 @@ import UIKit
 
 typealias HomeTabs = (
     collection: UIViewController,
-    map: UIViewController
+    map: UIViewController,
+    setting: UIViewController
 )
 
 class HomeTabBarController: UITabBarController, HomeViewProtocol {
@@ -17,14 +18,16 @@ class HomeTabBarController: UITabBarController, HomeViewProtocol {
     
     init(tabs: HomeTabs) {
         super.init(nibName: nil, bundle: nil)
-        viewControllers = [tabs.collection, tabs.map]
+        viewControllers = [tabs.collection, tabs.map, tabs.setting]
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: Setup Tabs
+
     private func setupTabs() {
         let collection = self.createNav(
             with: AppLabel.collectionTabTitle,
@@ -40,8 +43,14 @@ class HomeTabBarController: UITabBarController, HomeViewProtocol {
             viewController: MapViewController()
         )
         
-        self.setViewControllers([collection, map], animated: true)
+        let setting = self.createNav(
+            with: AppLabel.settingNavTitle,
+            and: UIImage(systemName: "gear"),
+            navTitle: AppLabel.settingNavTitle,
+            viewController: SettingViewController()
+        )
         
+        self.setViewControllers([collection, map, setting], animated: true)
     }
     
     private func createNav(with title: String, and image: UIImage?, navTitle: String, viewController: UIViewController) -> UINavigationController {
@@ -55,5 +64,4 @@ class HomeTabBarController: UITabBarController, HomeViewProtocol {
         
         return nav
     }
-    
 }

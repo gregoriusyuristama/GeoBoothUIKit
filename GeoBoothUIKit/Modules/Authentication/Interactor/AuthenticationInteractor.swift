@@ -5,12 +5,11 @@
 //  Created by Gregorius Yuristama Nugraha on 3/13/24.
 //
 
-import Foundation
 import Auth
+import Foundation
 import KeychainSwift
 
 class AuthenticationInteractor: AuthenticationInteractorProtocol {
-    
     var presenter: (any AuthenticationPresenterProtocol)?
     
     func doAuth(email: String, password: String, completion: @escaping (User?, Error?) -> Void) {
@@ -35,4 +34,14 @@ class AuthenticationInteractor: AuthenticationInteractorProtocol {
         }
     }
     
+    func doSignUp(email: String, password: String, completion: @escaping (Void?, (any Error)?) -> Void) {
+        Task {
+            do {
+                try await SupabaseSingleton.shared.client.auth.signUp(email: email, password: password)
+                completion((), nil)
+            } catch {
+                completion(nil, error)
+            }
+        }
+    }
 }

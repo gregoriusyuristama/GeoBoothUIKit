@@ -5,11 +5,10 @@
 //  Created by Gregorius Yuristama Nugraha on 3/13/24.
 //
 
-import UIKit
 import SnapKit
+import UIKit
 
 class AuthenticationViewController: UIViewController, AuthenticationViewProtocol {
-
     var presenter: (any AuthenticationPresenterProtocol)?
     
     private var titleLabel: UILabel = {
@@ -30,7 +29,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     
     private var userNameTextField: UITextField = {
         var textField = UITextField()
-        textField.placeholder = "Username"
+        textField.placeholder = "Email"
         textField.borderStyle = .roundedRect
         
         return textField
@@ -53,6 +52,13 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         return button
     }()
     
+    private var signUpButton: UIButton = {
+        var button = UIButton()
+        button.setTitle("Sign up", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        return button
+    }()
+    
     private var spinner = LoadingViewController()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,12 +68,13 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .systemBackground
-        self.view.addSubview(titleLabel)
-        self.view.addSubview(subtitleLabel)
-        self.view.addSubview(userNameTextField)
-        self.view.addSubview(passwordTextField)
-        self.view.addSubview(signInButton)
+        view.backgroundColor = .systemBackground
+        view.addSubview(titleLabel)
+        view.addSubview(subtitleLabel)
+        view.addSubview(userNameTextField)
+        view.addSubview(passwordTextField)
+        view.addSubview(signInButton)
+        view.addSubview(signUpButton)
         
         titleLabel.snp.makeConstraints { [weak self] make in
             guard let self = self else { return }
@@ -102,9 +109,18 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             make.top.equalTo(passwordTextField).offset(50)
         }
         
-        self.signInButton.addTarget(self, action: #selector(buttonClickedDown), for: [.touchDown, .touchDragEnter])
-        self.signInButton.addTarget(self, action: #selector(buttonClickedUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
+        signUpButton.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().inset(16)
+            make.top.equalTo(signInButton).offset(50)
+        }
         
+        signInButton.addTarget(self, action: #selector(buttonClickedDown), for: [.touchDown, .touchDragEnter])
+        signInButton.addTarget(self, action: #selector(buttonClickedUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
+        
+        signUpButton.addTarget(self, action: #selector(signUpClickedDown), for: [.touchDown, .touchDragEnter])
+        signUpButton.addTarget(self, action: #selector(signUpClickedUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
     }
     
     @objc func buttonClickedDown(sender: UIButton) {
@@ -112,7 +128,47 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         guard let email = userNameTextField.text, let password = passwordTextField.text else { return }
         presenter?.signInWithEmailPassword(email: email, password: password)
     }
+
     @objc func buttonClickedUp(sender: UIButton) {
+        animateButton(sender, transform: .identity)
+    }
+    
+    @objc func signUpClickedDown(sender: UIButton) {
+        animateButton(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95))
+        let alertControlller = UIAlertController(title: "Sign Up", message: nil, preferredStyle: .alert)
+        alertControlller.addTextField { textField in
+            textField.placeholder = "Email"
+            textField.keyboardType = .emailAddress
+        }
+        alertControlller.addTextField { textField in
+            textField.placeholder = "Password"
+            textField.isSecureTextEntry = true
+        }
+        alertControlller.addTextField { textField in
+            textField.placeholder = "Confirm Password"
+            textField.isSecureTextEntry = true
+        }
+        let submitAction = UIAlertAction(title: "Sign Up", style: .default) { [unowned alertControlller] _ in
+            if
+                let email = alertControlller.textFields?[0].text,
+                let password = alertControlller.textFields?[1].text,
+                let passwordConfirmation = alertControlller.textFields?[2].text
+            {
+                self.presenter?.signUpWithEmailPassword(email: email, password: password)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [unowned alertControlller] _ in
+            alertControlller.dismiss(animated: true)
+        }
+        
+        alertControlller.addAction(submitAction)
+        alertControlller.addAction(cancelAction)
+        
+        present(alertControlller, animated: true)
+    }
+    
+    @objc func signUpClickedUp(sender: UIButton) {
         animateButton(sender, transform: .identity)
     }
     
@@ -130,7 +186,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             self.view.addSubview(self.spinner.view)
             self.spinner.didMove(toParent: self)
         }
-        
     }
     
     func updateViewIsNotLoading() {
@@ -141,10 +196,23 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         }
     }
     
+    
+    func updateViewSignUpSuccess() {
+        DispatchQueue.main.async { [weak self] in
+            let alert = UIAlertController(title: "Sign Up Success", message: "Please login with Your New Account", preferredStyle: .alert)
+            
+            alert.addAction(
+                UIAlertAction(title: "Ok", style: .default, handler: nil)
+            )
+            
+            self?.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
     func updateViewWithError(errorMessage: String) {
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
-    
 }

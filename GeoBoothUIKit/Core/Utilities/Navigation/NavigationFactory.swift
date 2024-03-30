@@ -27,6 +27,18 @@ class NavigationBuilder {
                 UITabBar.appearance().standardAppearance = tabBarAppearance
                 UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
             }
+        } else if type == .authentication {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithTransparentBackground()
+            UINavigationBar.appearance().standardAppearance = navBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+
+            if #available(iOS 15.0, *) {
+                let tabBarAppearance = UITabBarAppearance()
+                tabBarAppearance.configureWithTransparentBackground()
+                UITabBar.appearance().standardAppearance = tabBarAppearance
+                UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+            }
         }
 
         return navigationController
