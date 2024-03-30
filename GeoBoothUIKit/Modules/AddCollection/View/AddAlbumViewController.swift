@@ -28,7 +28,8 @@ class AddAlbumViewController: UIViewController, AddCollectionViewProtocol {
     private func setUpContent() {
         let addPlaceholder = UIView()
         self.view.addSubview(addPlaceholder)
-        addPlaceholder.snp.makeConstraints { make in
+        addPlaceholder.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
             make.center.equalToSuperview()
             make.height.width.equalToSuperview()
         }
@@ -39,7 +40,8 @@ class AddAlbumViewController: UIViewController, AddCollectionViewProtocol {
         self.addChild(addAlbumTableView)
         addAlbumTableView.didMove(toParent: self)
         
-        addAlbumTableView.tableView.snp.updateConstraints { make in
+        addAlbumTableView.tableView.snp.updateConstraints { [weak self] make in
+            guard let self = self else { return }
             make.width.equalToSuperview().inset(16)
             make.height.equalToSuperview()
             make.center.equalToSuperview()

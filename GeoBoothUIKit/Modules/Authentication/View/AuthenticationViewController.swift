@@ -69,29 +69,34 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         self.view.addSubview(passwordTextField)
         self.view.addSubview(signInButton)
         
-        titleLabel.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-200)
         }
         
-        subtitleLabel.snp.makeConstraints { make in
+        subtitleLabel.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
             make.centerX.equalToSuperview()
             make.top.equalTo(titleLabel).offset(60)
         }
         
-        userNameTextField.snp.makeConstraints { make in
+        userNameTextField.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
             make.width.equalToSuperview().inset(16)
             make.centerX.equalToSuperview()
             make.top.equalTo(subtitleLabel).offset(40)
         }
         
-        passwordTextField.snp.makeConstraints { make in
+        passwordTextField.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
             make.width.equalToSuperview().inset(16)
             make.centerX.equalToSuperview()
             make.top.equalTo(userNameTextField).offset(50)
         }
         
-        signInButton.snp.makeConstraints { make in
+        signInButton.snp.makeConstraints { [weak self] make in
+            guard let self = self else { return }
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().inset(16)
             make.top.equalTo(passwordTextField).offset(50)

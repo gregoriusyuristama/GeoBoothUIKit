@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B612280A2BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */; };
+		B628BC7A2BB889630055FB31 /* AlbumAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC792BB889630055FB31 /* AlbumAnnotationView.swift */; };
+		B628BC7D2BB88C5B0055FB31 /* AlbumAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC7C2BB88C5B0055FB31 /* AlbumAnnotation.swift */; };
 		B62D4D992BB49CF70093FA40 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */; };
 		B62D4D9D2BB4A3160093FA40 /* PanImageZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */; };
 		B62D4DA12BB4B62F0093FA40 /* URLComponentExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4DA02BB4B62F0093FA40 /* URLComponentExtractor.swift */; };
@@ -127,6 +129,8 @@
 
 /* Begin PBXFileReference section */
 		B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractorTests.swift; sourceTree = "<group>"; };
+		B628BC792BB889630055FB31 /* AlbumAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumAnnotationView.swift; sourceTree = "<group>"; };
+		B628BC7C2BB88C5B0055FB31 /* AlbumAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumAnnotation.swift; sourceTree = "<group>"; };
 		B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanImageZoomView.swift; sourceTree = "<group>"; };
 		B62D4DA02BB4B62F0093FA40 /* URLComponentExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentExtractor.swift; sourceTree = "<group>"; };
@@ -269,6 +273,22 @@
 				B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B628BC782BB8894B0055FB31 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC792BB889630055FB31 /* AlbumAnnotationView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B628BC7B2BB88C450055FB31 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC7C2BB88C5B0055FB31 /* AlbumAnnotation.swift */,
+			);
+			path = Annotation;
 			sourceTree = "<group>";
 		};
 		B62D4D9A2BB4A2EE0093FA40 /* PanZoomImageView */ = {
@@ -510,10 +530,10 @@
 			isa = PBXGroup;
 			children = (
 				B685B7D22BA0C67700D1AB6D /* Domain */,
-				B685B7B72BA0B80100D1AB6D /* Router */,
+				B685B7B42BA0B7ED00D1AB6D /* Interactor */,
 				B685B7B62BA0B7FD00D1AB6D /* Manager */,
 				B685B7B52BA0B7F500D1AB6D /* Presenter */,
-				B685B7B42BA0B7ED00D1AB6D /* Interactor */,
+				B685B7B72BA0B80100D1AB6D /* Router */,
 				B685B7B32BA0B7EA00D1AB6D /* View */,
 			);
 			path = Map;
@@ -564,6 +584,7 @@
 		B685B7B32BA0B7EA00D1AB6D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B628BC782BB8894B0055FB31 /* Components */,
 				B6BA6D4A2B73C02600E01723 /* MapViewController.swift */,
 			);
 			path = View;
@@ -1024,6 +1045,7 @@
 		B6E4D8C52B75915A000324B8 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B628BC7B2BB88C450055FB31 /* Annotation */,
 				B62D4D9F2BB4B6180093FA40 /* URLComponents */,
 				B6CE19C32BA230A90086A2B1 /* UserDefaults */,
 				B6CE19BA2BA21F390086A2B1 /* Supabase */,
@@ -1260,11 +1282,13 @@
 				B63B27902BAEA88400658F38 /* CollectionDetailViewController.swift in Sources */,
 				B6CE19B92BA21D0D0086A2B1 /* CollectionInteractor.swift in Sources */,
 				B6A162ED2BA9D71C00C3C96A /* AddCollectionInteractor.swift in Sources */,
+				B628BC7D2BB88C5B0055FB31 /* AlbumAnnotation.swift in Sources */,
 				B6CE19C02BA221750086A2B1 /* SupabaseSingleton.swift in Sources */,
 				B6E4D8C82B75916F000324B8 /* LocationServices.swift in Sources */,
 				B685B7D82BA0CE4600D1AB6D /* MapRouter.swift in Sources */,
 				B685B7E12BA1B69C00D1AB6D /* AuthenticationViewController.swift in Sources */,
 				B663A59F2BB0BDEE0087A0BE /* CameraInteractor.swift in Sources */,
+				B628BC7A2BB889630055FB31 /* AlbumAnnotationView.swift in Sources */,
 				B63B276D2BAC991E00658F38 /* MapInteractor.swift in Sources */,
 				B68A3A3B2BAABA7400AC6A11 /* UIView+RoundedCorner.swift in Sources */,
 				B6D1DFF92BB41D2900AD415B /* InsertPhotoDTO.swift in Sources */,
