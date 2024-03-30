@@ -10,6 +10,12 @@
 		B612280A2BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */; };
 		B628BC7A2BB889630055FB31 /* AlbumAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC792BB889630055FB31 /* AlbumAnnotationView.swift */; };
 		B628BC7D2BB88C5B0055FB31 /* AlbumAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC7C2BB88C5B0055FB31 /* AlbumAnnotation.swift */; };
+		B628BC862BB898510055FB31 /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC852BB898510055FB31 /* SettingRouter.swift */; };
+		B628BC882BB898560055FB31 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC872BB898560055FB31 /* SettingManager.swift */; };
+		B628BC8A2BB8985D0055FB31 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC892BB8985D0055FB31 /* SettingPresenter.swift */; };
+		B628BC8C2BB898670055FB31 /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC8B2BB898670055FB31 /* SettingInteractor.swift */; };
+		B628BC8E2BB8987C0055FB31 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC8D2BB8987C0055FB31 /* SettingViewController.swift */; };
+		B628BC912BB898890055FB31 /* SettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC902BB898890055FB31 /* SettingProtocol.swift */; };
 		B62D4D992BB49CF70093FA40 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */; };
 		B62D4D9D2BB4A3160093FA40 /* PanImageZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */; };
 		B62D4DA12BB4B62F0093FA40 /* URLComponentExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4DA02BB4B62F0093FA40 /* URLComponentExtractor.swift */; };
@@ -131,6 +137,12 @@
 		B61228092BA2A2BE00CF8ECC /* AuthenticationInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractorTests.swift; sourceTree = "<group>"; };
 		B628BC792BB889630055FB31 /* AlbumAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumAnnotationView.swift; sourceTree = "<group>"; };
 		B628BC7C2BB88C5B0055FB31 /* AlbumAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumAnnotation.swift; sourceTree = "<group>"; };
+		B628BC852BB898510055FB31 /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
+		B628BC872BB898560055FB31 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
+		B628BC892BB8985D0055FB31 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
+		B628BC8B2BB898670055FB31 /* SettingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInteractor.swift; sourceTree = "<group>"; };
+		B628BC8D2BB8987C0055FB31 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B628BC902BB898890055FB31 /* SettingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingProtocol.swift; sourceTree = "<group>"; };
 		B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanImageZoomView.swift; sourceTree = "<group>"; };
 		B62D4DA02BB4B62F0093FA40 /* URLComponentExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLComponentExtractor.swift; sourceTree = "<group>"; };
@@ -289,6 +301,67 @@
 				B628BC7C2BB88C5B0055FB31 /* AlbumAnnotation.swift */,
 			);
 			path = Annotation;
+			sourceTree = "<group>";
+		};
+		B628BC7F2BB897B00055FB31 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC8F2BB898800055FB31 /* Protocol */,
+				B628BC842BB898270055FB31 /* Router */,
+				B628BC832BB898240055FB31 /* Manager */,
+				B628BC822BB8981D0055FB31 /* Presenter */,
+				B628BC812BB8981A0055FB31 /* Interactor */,
+				B628BC802BB898150055FB31 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B628BC802BB898150055FB31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC8D2BB8987C0055FB31 /* SettingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B628BC812BB8981A0055FB31 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC8B2BB898670055FB31 /* SettingInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B628BC822BB8981D0055FB31 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC892BB8985D0055FB31 /* SettingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B628BC832BB898240055FB31 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC872BB898560055FB31 /* SettingManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		B628BC842BB898270055FB31 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC852BB898510055FB31 /* SettingRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		B628BC8F2BB898800055FB31 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B628BC902BB898890055FB31 /* SettingProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		B62D4D9A2BB4A2EE0093FA40 /* PanZoomImageView */ = {
@@ -509,6 +582,7 @@
 				B685B7BE2BA0B87700D1AB6D /* AddCollection */,
 				B685B7AD2BA0B7B700D1AB6D /* Map */,
 				B66AA6DB2BAF76F70070B75F /* Camera */,
+				B628BC7F2BB897B00055FB31 /* Settings */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1294,6 +1368,7 @@
 				B6D1DFF92BB41D2900AD415B /* InsertPhotoDTO.swift in Sources */,
 				B6BA6D4B2B73C02600E01723 /* MapViewController.swift in Sources */,
 				B62D4D9D2BB4A3160093FA40 /* PanImageZoomView.swift in Sources */,
+				B628BC912BB898890055FB31 /* SettingProtocol.swift in Sources */,
 				B6BA6D4D2B73C06E00E01723 /* HomeTabBarController.swift in Sources */,
 				B6CE19C92BA235F40086A2B1 /* LoadingViewController.swift in Sources */,
 				B663A5A52BB0BE040087A0BE /* CameraRouter.swift in Sources */,
@@ -1301,8 +1376,10 @@
 				B63B277A2BACB17100658F38 /* TableName.swift in Sources */,
 				B685B7E52BA1B6B600D1AB6D /* AuthenticationManager.swift in Sources */,
 				B63B278C2BAEA86F00658F38 /* CollectionDetailPresenter.swift in Sources */,
+				B628BC862BB898510055FB31 /* SettingRouter.swift in Sources */,
 				B694BE542B73D1F40084F9FE /* AppLabel.swift in Sources */,
 				B6A162E92BA9D70800C3C96A /* AddCollectionManager.swift in Sources */,
+				B628BC8C2BB898670055FB31 /* SettingInteractor.swift in Sources */,
 				B685B7D42BA0C68300D1AB6D /* MapProtocol.swift in Sources */,
 				B63B276F2BAC999100658F38 /* MapPresenter.swift in Sources */,
 				B63B27732BACA27100658F38 /* DbFunction.swift in Sources */,
@@ -1322,9 +1399,11 @@
 				B6BA6D372B73B9CF00E01723 /* AppDelegate.swift in Sources */,
 				B685B7DA2BA0CF6400D1AB6D /* HomeProtocol.swift in Sources */,
 				B63B278E2BAEA87900658F38 /* CollectionDetailInteractor.swift in Sources */,
+				B628BC8A2BB8985D0055FB31 /* SettingPresenter.swift in Sources */,
 				B63B277C2BACB63D00658F38 /* EnumView.swift in Sources */,
 				B63B27712BAC99BA00658F38 /* MapManager.swift in Sources */,
 				B694BE4E2B73D13A0084F9FE /* UIImage+Resize.swift in Sources */,
+				B628BC882BB898560055FB31 /* SettingManager.swift in Sources */,
 				B6A162E72BA9D69500C3C96A /* AddCollectionProtocol.swift in Sources */,
 				B663A5A12BB0BDF50087A0BE /* CameraManager.swift in Sources */,
 				B685B7D62BA0CDAE00D1AB6D /* CollectionRouter.swift in Sources */,
@@ -1343,6 +1422,7 @@
 				B6CE19B52BA21CFD0086A2B1 /* CollectionManager.swift in Sources */,
 				B66AA6D62BAF387A0070B75F /* InsertAlbumDTO.swift in Sources */,
 				B6F76D7C2B7BD22C00909C80 /* AddAlbumTableViewController.swift in Sources */,
+				B628BC8E2BB8987C0055FB31 /* SettingViewController.swift in Sources */,
 				B6CE19C22BA22F3D0086A2B1 /* UserDefaultsKeyConstant.swift in Sources */,
 				B6F76D882B7BE69700909C80 /* AddAlbumButtonTableViewCell.swift in Sources */,
 			);

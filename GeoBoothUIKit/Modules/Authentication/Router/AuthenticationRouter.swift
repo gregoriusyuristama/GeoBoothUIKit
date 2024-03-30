@@ -36,7 +36,8 @@ class AuthenticationRouter: AuthenticationRouterProtocol {
     func presentHomeView(from view: any AuthenticationViewProtocol) {
         let submodules = (
             collection: CollectionRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:)),
-            map: MapRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:))
+            map: MapRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:)),
+            setting: SettingRouter.build(usingNavigationFactory: NavigationBuilder.build(rootView:type:))
         )
         let homeViewController = HomeRouter.createModule(usingSubmodules: submodules)
         

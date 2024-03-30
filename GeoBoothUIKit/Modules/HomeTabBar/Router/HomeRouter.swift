@@ -9,12 +9,12 @@ import Foundation
 import UIKit
 
 class HomeRouter {
-    
     var viewController: UIViewController
     
     typealias Submodules = (
         collection: UIViewController,
-        map: UIViewController
+        map: UIViewController,
+        setting: UIViewController
     )
     
     init(viewController: UIViewController, submodules: Submodules) {
@@ -22,13 +22,11 @@ class HomeRouter {
     }
     
     static func createModule(usingSubmodules submodules: HomeRouter.Submodules) -> UITabBarController {
-        
         let tabs = HomeRouter.tabs(usingSubmodules: submodules)
         let tabBarController = HomeTabBarController(tabs: tabs)
         
         return tabBarController
     }
-    
 }
 
 extension HomeRouter {
@@ -44,11 +42,19 @@ extension HomeRouter {
             tag: 2
         )
         
+        let settingTabBarItem = UITabBarItem(
+            title: AppLabel.settingTabTitle,
+            image: UIImage(systemName: "gear")?.resizeImage(scaledToSize: CGSize(width: 22, height: 22)),
+            tag: 3
+        )
+        
         submodules.collection.tabBarItem = collectionTabBarItem
         submodules.map.tabBarItem = mapTabBarItem
+        submodules.setting.tabBarItem = settingTabBarItem
         return (
             collection: submodules.collection,
-            map: submodules.map
+            map: submodules.map,
+            setting: submodules.setting
         )
     }
 }
