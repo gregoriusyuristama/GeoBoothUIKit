@@ -76,8 +76,7 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         view.addSubview(signInButton)
         view.addSubview(signUpButton)
         
-        titleLabel.snp.makeConstraints { [weak self] make in
-            guard let self = self else { return }
+        titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.centerY.equalToSuperview().offset(-200)
         }
@@ -191,7 +190,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
         }
     }
     
-    
     func updateViewSignUpSuccess() {
         DispatchQueue.main.async { [weak self] in
             let alert = UIAlertController(title: "Sign Up Success", message: "Please login with Your New Account", preferredStyle: .alert)
@@ -203,7 +201,6 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             self?.present(alert, animated: true, completion: nil)
         }
     }
-    
     
     func updateViewWithError(errorMessage: String) {
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)

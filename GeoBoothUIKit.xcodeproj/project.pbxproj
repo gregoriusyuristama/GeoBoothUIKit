@@ -16,6 +16,7 @@
 		B628BC8C2BB898670055FB31 /* SettingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC8B2BB898670055FB31 /* SettingInteractor.swift */; };
 		B628BC8E2BB8987C0055FB31 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC8D2BB8987C0055FB31 /* SettingViewController.swift */; };
 		B628BC912BB898890055FB31 /* SettingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628BC902BB898890055FB31 /* SettingProtocol.swift */; };
+		B628BC942BB9566E0055FB31 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B628BC932BB9566E0055FB31 /* Lottie */; };
 		B62D4D992BB49CF70093FA40 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D982BB49CF70093FA40 /* FullImageViewController.swift */; };
 		B62D4D9D2BB4A3160093FA40 /* PanImageZoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4D9C2BB4A3160093FA40 /* PanImageZoomView.swift */; };
 		B62D4DA12BB4B62F0093FA40 /* URLComponentExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62D4DA02BB4B62F0093FA40 /* URLComponentExtractor.swift */; };
@@ -261,6 +262,7 @@
 				B68A3A552BAAD4CC00AC6A11 /* Kingfisher in Frameworks */,
 				B685B8082BA1F84200D1AB6D /* Functions in Frameworks */,
 				B685B8102BA1F84200D1AB6D /* Supabase in Frameworks */,
+				B628BC942BB9566E0055FB31 /* Lottie in Frameworks */,
 				B685B80C2BA1F84200D1AB6D /* Realtime in Frameworks */,
 				B63B27A22BAEBF7C00658F38 /* SnapKit in Frameworks */,
 				B685B8062BA1F84200D1AB6D /* Auth in Frameworks */,
@@ -1209,6 +1211,7 @@
 				B68A3A402BAABF6B00AC6A11 /* KeychainSwift */,
 				B68A3A542BAAD4CC00AC6A11 /* Kingfisher */,
 				B63B27A12BAEBF7C00658F38 /* SnapKit */,
+				B628BC932BB9566E0055FB31 /* Lottie */,
 			);
 			productName = GeoBoothUIKit;
 			productReference = B6BA6D332B73B9CF00E01723 /* GeoBoothUIKit.app */;
@@ -1251,6 +1254,7 @@
 				B68A3A3F2BAABF6B00AC6A11 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				B68A3A532BAAD4CC00AC6A11 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B63B27A02BAEBF7C00658F38 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B628BC922BB9566E0055FB31 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = B6BA6D342B73B9CF00E01723 /* Products */;
 			projectDirPath = "";
@@ -1793,6 +1797,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B628BC922BB9566E0055FB31 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
 		B63B27A02BAEBF7C00658F38 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1828,6 +1840,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B628BC932BB9566E0055FB31 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B628BC922BB9566E0055FB31 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
 		B63B27A12BAEBF7C00658F38 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B63B27A02BAEBF7C00658F38 /* XCRemoteSwiftPackageReference "SnapKit" */;
