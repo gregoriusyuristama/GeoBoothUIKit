@@ -144,15 +144,10 @@ class AuthenticationViewController: UIViewController, AuthenticationViewProtocol
             textField.placeholder = "Password"
             textField.isSecureTextEntry = true
         }
-        alertControlller.addTextField { textField in
-            textField.placeholder = "Confirm Password"
-            textField.isSecureTextEntry = true
-        }
         let submitAction = UIAlertAction(title: "Sign Up", style: .default) { [unowned alertControlller] _ in
             if
                 let email = alertControlller.textFields?[0].text,
-                let password = alertControlller.textFields?[1].text,
-                let passwordConfirmation = alertControlller.textFields?[2].text
+                let password = alertControlller.textFields?[1].text
             {
                 self.presenter?.signUpWithEmailPassword(email: email, password: password)
             }

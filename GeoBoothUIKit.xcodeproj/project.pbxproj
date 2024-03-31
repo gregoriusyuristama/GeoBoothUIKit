@@ -1682,6 +1682,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GeoBooth;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to camera in order to capture photo";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need to access your location for saving album location and tracking location on map";
@@ -1720,6 +1722,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GeoBoothUIKit/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GeoBooth;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to camera in order to capture photo";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need to access your location for saving album location and tracking location on map";
 				INFOPLIST_KEY_NSLocationUsageDescription = "We need to access your location for saving album location and tracking location on map";
